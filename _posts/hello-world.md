@@ -1,0 +1,18 @@
+---
+title: "ACMC 2011 thanks"
+created: 2011-07-19
+categories: 
+  - news
+authors: 
+  - charlesmartin
+---
+
+On behalf of ACMA I would like to thank John Coulter and the entire conference team for all their hard work in Auckland.
+
+It was a big event, and there were a lot of people involved to make it run as smoothly as it did. The coffee was always hot at the end of every paper session, the tech team for the concerts and installations were amazing, and the functions were very well catered. The whole event ran with an organic and fluid motion that would have taken a lot of preparation.
+
+I would also like to thank our keynote speakers Simon Emmerson and Ian Whalley, who were both such kind and welcome participants throughout the conference, also our other special guests John Cousins, Gerardo Dirie, John Elmsly, and Jason Phillips.
+
+Thanks also to the School of Music at the University of Auckland and Professor Jenny Dixon for allowing us to use those wonderful facilities, and for opening the conference for us. Also thank you to everyone who participated in and attended the conference. It takes a whole community to make a conference.
+
+Cheers, Tim Opie

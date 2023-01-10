@@ -18,21 +18,29 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Your awesome title
-email: your-email@example.com
+title: Australasian Computer Music Association
+email: info@computermusic.org.au
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  The Australasian Computer Music Association was founded in 1989. The organisation provides a forum for new compositions, information sharing, and research about music technology and computer music, principally throughout Australia and New Zealand. The Australasian Computer Music Association is a community of composers, performers, teachers and technologists who have an interest in, are making, or supporting music making with computers.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+url: "https://computermusic.org.au" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: acma89
+github_username: australasian-computer-music-association
 
 # Build settings
-theme: minima
+remote_theme: daviddarnes/alembic@main
 plugins:
   - jekyll-feed
+  - jekyll-remote-theme
+  - jekyll-sitemap
+  - jekyll-mentions
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-redirect-from
+  - jekyll-commonmark
+  - jekyll-include-cache
+  - jemoji
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.
