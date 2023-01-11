@@ -1,0 +1,33 @@
+name: Deploys to FTP Site
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  github-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.3.1
+      - uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - name: build
+        run: |
+          bundle exec jekyll build
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4.2.5
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: _site # The folder the action should deploy.
+    - name: 📂 Deploy files via ftp
+      uses: SamKirkland/FTP-Deploy-Action@4.3.0
+      with:
+        server: computermusic.org.au
+        username: ${{ secrets.ftp_username }}
+        password: ${{ secrets.ftp_password }}
+        local-dir: _site
+        server-dir: public_html/
+        dry-run: false
