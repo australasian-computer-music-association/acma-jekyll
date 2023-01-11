@@ -19,7 +19,7 @@ proceedings are published in full.
 
 Proceedings and further information from conferences are available via the links below.
 
-- 2022: [Te Whanganui-a-Tara, Aoteroa; Wellington, New Zealand](https://computermusic.org.au/conferences/acmc-2022/)
+- 2022: [Te Whanganui-a-Tara, Aoteroa; Wellington, New Zealand](https://computermusic.org.au/conferences/acmc-2021/)
 - 2021: [Sydney/Melbourne, Australian Institute of Music](https://computermusic.org.au/conferences/acmc-2021/)
 - 2020: [Canberra, Australian National University](http://computermusic.org.au/news/acmc-2020-inclusion/)
 - 2019: [Melbourne, Monash University](http://computermusic.org.au/conferences/acmc-2019/)
