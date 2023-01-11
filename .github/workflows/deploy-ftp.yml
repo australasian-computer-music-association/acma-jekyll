@@ -28,6 +28,6 @@ jobs:
           server: computermusic.org.au
           username: ${{ secrets.ftp_username }}
           password: ${{ secrets.ftp_password }}
-          local-dir: _site
+          local-dir: _site/
           server-dir: public_html/
           dry-run: false
