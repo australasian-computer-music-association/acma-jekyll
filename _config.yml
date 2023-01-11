@@ -53,6 +53,12 @@ social: # jekyll-seo-tag > social overrides
   # options: ["SMART", "FOOTNOTES"]
   # extensions: ["strikethrough", "autolink", "table"]
 
+# 4. Jekyll settings
+sass:
+  style: compressed # Style compression
+permalink: pretty  # Permalink style (/YYYY/MM/DD/page-name/)
+excerpt_separator: <!-- more --> # Marks end of excerpt in posts
+timezone: Australia/Canberra # Timezone for blog posts and alike
 
 # 5. Collections
 collections:
@@ -89,7 +95,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   The Australasian Computer Music Association was founded in 1989. The organisation provides a forum for new compositions, information sharing, and research about music technology and computer music, principally throughout Australia and New Zealand. The Australasian Computer Music Association is a community of composers, performers, teachers and technologists who have an interest in, are making, or supporting music making with computers.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://computermusic.org.au" # the base hostname & protocol for your site, e.g. http://example.com
-encoding: utf-8 # Make sure the encoding is right
+encoding: "UTF-8" # Make sure the encoding is right
 lang: en-GB # Set the site language
 logo: "/assets/logos/acma-logo-square-black.svg" # Site logo, also used in jekyll-seo-tag
 repo: "https://github.com/australasian_computer_music_association/acma-jekyll"
@@ -105,12 +111,9 @@ css_inline: true # Will insert all styles into a single <style> block in the <he
 favicons: # Favicons are also used in the manifest file. Syntax is 'size: path'
   16: '/assets/logos/logo@16px.png'
   32: '/assets/logos/logo@32px.png'
-  96: '/assets/logos/logo@96px.png'
-  120: '/assets/logos/logo@120px.png'
-  144: '/assets/logos/logo@144px.png'
   180: '/assets/logos/logo@180px.png'
+  192: '/assets/logos/logo@192px.png'
   512: '/assets/logos/logo@512px.png'
-  1024: '/assets/logos/logo@1024px.png'
 
 # 9. Site navigation
 navigation_header:

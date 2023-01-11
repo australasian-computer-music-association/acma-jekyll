@@ -10,7 +10,7 @@ September 1**. See the conference website at
 [https://www.acmc2022.com](https://www.acmc2022.com)
 
 The [Australasian Computer Music
-Association](https://computermusic.org.au/about/) is a forum for Australian and
+Association]({% link about.md %}) is a forum for Australian and
 New Zealand composers and researchers with an interest in music technology and
 computer music. The association was founded in 1989.
 
@@ -23,12 +23,12 @@ _[Chroma](https://journal.computermusic.org.au/chroma)_ is our peer-reviewed
 Journal, and was relaunched in 2021. [Submissions are now
 open](https://journal.computermusic.org.au/chroma).
 
-[Membership](https://computermusic.org.au/membership/) of the Australasian
+[Membership]({% link membership.md %}}) of the Australasian
 Computer Music Association is available for individuals and organisations, and
 is included in conference registration. Membership fees assist with our
 publishing costs and pay for conference scholarships and awards.
 
-The [committee](https://computermusic.org.au/committee/) is responsible for the
+The [committee]({% link committee.md %}) is responsible for the
 association's governance, and planning our activities and publications. It is
 elected from the association's members. The association is not run for profit
 and all committee members are volunteers.
