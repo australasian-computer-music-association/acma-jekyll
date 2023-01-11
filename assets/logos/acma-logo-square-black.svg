@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xl="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" version="1.1" viewBox="-42 -260 400 380" width="400" height="380">
+  <defs/>
+  <g id="square" stroke-opacity="1" fill="none" fill-opacity="1" stroke="none" stroke-dasharray="none">
+    <title>square</title>
+    <g id="square_better_blocks">
+      <title>better blocks</title>
+      <g id="Group_129">
+        <g id="Group_128">
+          <title>m group</title>
+          <g id="Graphic_127">
+            <path d="M -16.357189 38.26276 L -16.357189 84.06276 L 162.44281 84.06276 L 162.44281 38.26276 Z M 145.6494 50.55617 C 151.5073 56.41403 151.5073 65.91149 145.6494 71.76935 C 139.79154 77.62724 130.29408 77.62724 124.43622 71.76935 C 118.57833 65.91149 118.57833 56.41403 124.43622 50.55617 C 130.29408 44.69828 139.79154 44.69828 145.6494 50.55617 M 103.8494 50.55617 C 109.70729 56.41403 109.70729 65.91149 103.8494 71.76935 C 97.99154 77.62724 88.49408 77.62724 82.63622 71.76935 C 76.77833 65.91149 76.77833 56.41403 82.63622 50.55617 C 88.49408 44.69828 97.99154 44.69828 103.8494 50.55617 M 51.44161 46.16276 L 51.44161 46.16276 C 52.822324 46.16276 53.94161 47.28205 53.94161 48.66276 L 53.94161 73.66276 C 53.94161 75.04347 52.822324 76.16276 51.44161 76.16276 C 50.0609 76.16276 48.94161 75.04347 48.94161 73.66276 L 48.94161 48.66276 C 48.94161 47.28205 50.0609 46.16276 51.44161 46.16276 Z M 9.041612 46.16276 L 9.041612 46.16276 C 10.422324 46.16276 11.541612 47.28205 11.541612 48.66276 L 11.541612 73.66276 C 11.541612 75.04347 10.422324 76.16276 9.041612 76.16276 C 7.6609 76.16276 6.541612 75.04347 6.541612 73.66276 L 6.541612 48.66276 C 6.541612 47.28205 7.6609 46.16276 9.041612 46.16276 Z" fill="black"/>
+          </g>
+          <g id="Graphic_114">
+            <circle cx="93.09837" cy="61.16276" r="10.5555724222978" fill="black"/>
+          </g>
+          <g id="Graphic_113">
+            <circle cx="134.9026" cy="61.16276" r="10.5555724222978" fill="black"/>
+          </g>
+        </g>
+        <g id="Group_72">
+          <title>last a group</title>
+          <g id="Graphic_76">
+            <circle cx="190.37864" cy="61.083005" r="12.5000199737737" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+          </g>
+          <g id="Graphic_75">
+            <circle cx="231.83086" cy="61.083005" r="12.5000199737737" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+          </g>
+          <g id="Graphic_74">
+            <circle cx="273.28308" cy="61.083005" r="12.5000199737737" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+          </g>
+          <g id="Graphic_73">
+            <circle cx="314.7353" cy="61.242514" r="12.5000199737737" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+          </g>
+        </g>
+        <g id="Graphic_54">
+          <text transform="translate(-16.485073 -270.70457)" fill="black">
+            <tspan font-family="Helvetica Neue" font-size="156" fill="black" x="4192202e-19" y="149">a</tspan>
+          </text>
+        </g>
+        <g id="Graphic_53">
+          <text transform="translate(162.9671 -271)" fill="black">
+            <tspan font-family="Helvetica Neue" font-size="156" fill="black" x="4192202e-19" y="149">c</tspan>
+          </text>
+        </g>
+        <g id="Graphic_52">
+          <text transform="translate(-14.049671 -116.24308)" fill="black">
+            <tspan font-family="Helvetica Neue" font-size="156" fill="black" x="0" y="149">m</tspan>
+          </text>
+        </g>
+        <g id="Graphic_51">
+          <text transform="translate(165.89256 -116.29293)" fill="black">
+            <tspan font-family="Helvetica Neue" font-size="156" fill="black" x="4192202e-19" y="149">a</tspan>
+          </text>
+        </g>
+        <g id="Group_67">
+          <title>c group</title>
+          <g id="Graphic_71">
+            <circle cx="191.51493" cy="-92.99198" r="12.5000199737737" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+          </g>
+          <g id="Graphic_70">
+            <circle cx="232.96714" cy="-92.99198" r="12.5000199737737" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+          </g>
+          <g id="Graphic_69">
+            <circle cx="315.8716" cy="-92.83247" r="12.5000199737737" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+          </g>
+          <g id="Line_68">
+            <line x1="273.91936" y1="-80.87848" x2="273.91936" y2="-105.87848" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+          </g>
+        </g>
+        <g id="Group_111">
+          <title>a group</title>
+          <g id="Graphic_96">
+            <path d="M -16.485075 -116.00548 L -16.485075 -70.20548 L 162.31493 -70.20548 L 162.31493 -116.00548 Z M 20.121516 -103.71207 C 25.979406 -97.85421 25.979406 -88.35675 20.121516 -82.49889 C 14.263656 -76.641 4.7661955 -76.641 -1.0916645 -82.49889 C -6.9495545 -88.35675 -6.9495545 -97.85421 -1.0916645 -103.71207 C 4.7661955 -109.56996 14.263656 -109.56996 20.121516 -103.71207 M 61.921516 -103.71207 C 67.77941 -97.85421 67.77941 -88.35675 61.921516 -82.49889 C 56.063656 -76.641 46.566196 -76.641 40.708336 -82.49889 C 34.850446 -88.35675 34.850446 -97.85421 40.708336 -103.71207 C 46.566196 -109.56996 56.063656 -109.56996 61.921516 -103.71207 M 103.72152 -103.71207 C 109.57941 -97.85421 109.57941 -88.35675 103.72152 -82.49889 C 97.86366 -76.641 88.3662 -76.641 82.50834 -82.49889 C 76.65045 -88.35675 76.65045 -97.85421 82.50834 -103.71207 C 88.3662 -109.56996 97.86366 -109.56996 103.72152 -103.71207 M 145.52152 -103.71207 C 151.3794 -97.85421 151.3794 -88.35675 145.52152 -82.49889 C 139.66366 -76.641 130.1662 -76.641 124.30834 -82.49889 C 118.45045 -88.35675 118.45045 -97.85421 124.30834 -103.71207 C 130.1662 -109.56996 139.66366 -109.56996 145.52152 -103.71207" fill="black"/>
+          </g>
+          <g id="Graphic_94">
+            <circle cx="9.566251" cy="-93.10548" r="10.5555724222978" fill="black"/>
+          </g>
+          <g id="Graphic_108">
+            <circle cx="51.37048" cy="-93.10548" r="10.5555724222978" fill="black"/>
+          </g>
+          <g id="Graphic_109">
+            <circle cx="93.17471" cy="-93.10548" r="10.5555724222978" fill="black"/>
+          </g>
+          <g id="Graphic_110">
+            <circle cx="134.97894" cy="-93.10548" r="10.5555724222978" fill="black"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
