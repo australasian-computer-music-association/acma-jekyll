@@ -8,14 +8,15 @@ permalink: /conferences/
 layout: page
 ---
 
+{:.info-box}
+We are always searching for potential hosts for ACMC. We have information for hosting on [this page.]({% link hosting-acmc.md %})
+
 Since 1993, the annual Australasian Computer Music Conference (ACMC) has been
 held in Australia or New Zealand. These conferences include research papers,
 artist talks, studio reports, concerts, workshops, and poster sessions, and
-proceedings are published in full.
+proceedings have generally been published in full.
 
-**[ACMC Code of Conduct]({% link code-of-conduct.md %})**
-
-[**Download the ACMC paper templates here**.](http://www.computermusic.org.au/ACMC-Templates.zip)
+[ACMC Code of Conduct]({% link code-of-conduct.md %})
 
 Proceedings and further information from conferences are available via the links below.
 
