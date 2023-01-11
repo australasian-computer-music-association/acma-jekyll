@@ -4,7 +4,7 @@ created: 2011-07-18
 authors: 
   - charlesmartin
 feature_image: /assets/images/acmc2019-vr.jpg
-permalink: /conference/
+permalink: /conferences/
 layout: page
 ---
 
@@ -18,6 +18,14 @@ proceedings are published in full.
 [**Download the ACMC paper templates here**.](http://www.computermusic.org.au/ACMC-Templates.zip)
 
 Proceedings and further information from conferences are available via the links below.
+
+## Conferences
+
+{% for conf in site.conferences reversed %}
+- [{{conf.title}}]({{ conf.url | relative_url }}) {{conf.location}}
+{% endfor %}
+
+## Archived Conference List
 
 - 2022: [Te Whanganui-a-Tara, Aoteroa; Wellington, New Zealand](https://computermusic.org.au/conferences/acmc-2021/)
 - 2021: [Sydney/Melbourne, Australian Institute of Music](https://computermusic.org.au/conferences/acmc-2021/)
@@ -49,3 +57,5 @@ Proceedings and further information from conferences are available via the links
 - 1995: Melbourne, University of Melbourne
 - 1994: Canberra, Australian Centre for the Arts and Technology
 - 1993: Sydney, University of Sydney
+
+

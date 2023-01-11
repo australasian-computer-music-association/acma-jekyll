@@ -3,6 +3,12 @@ title: false
 styles: true
 ---
 
+// Inter Font
+@import url('https://rsms.me/inter/inter.css');
+@supports (font-variation-settings: normal) {
+  html { font-family: 'Inter var', sans-serif; }
+}
+
 // Background colours
 $backgroundColour: #ffffff;
 $codeBackgroundColour: #fafafa;
@@ -20,7 +26,7 @@ $white: #ffffff;
 
 // Typography
 $bodytype: (
-  font-family: "Source Serif Pro, Georgia, serif",
+  font-family: "Inter var, serif",
   regular: 400,
   bold: 700,
   italic: italic,
@@ -28,7 +34,7 @@ $bodytype: (
 ) ;
 
 $headingtype: (
-  font-family: "Inter, Arial, sans",
+  font-family: "Inter var, sans-serif",
   regular: 400,
   bold: 700,
   cap-height: 0.75
@@ -39,6 +45,42 @@ $monospacetype: (
   regular: 400,
   cap-height: 0.68
 ) ;
+
+
+// nice callout boxes
+
+
+// swiped from ANU neotheme, but adjusted to use custom colours, not ANU colormap.
+@function get-custom-color-level($color, $level: 0) {
+	@return mix(#ffffff, $color, $level * 22%);
+}
+
+%callout-box {
+  padding: 1rem;
+  border-top: 4px solid get-color-level(#000000, 3);
+  background-color: get-color-level(#000000, 4);
+  margin: 1rem 0;
+
+  *:first-child {
+    margin-top: 0;
+  }
+
+  *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.callout-box {
+  @extend %callout-box;
+}
+
+
+.info-box {
+  @extend %callout-box;
+  border-color: $accentColour;
+  background: get-custom-color-level($accentColour, 4);
+}
+
 
 // TIP: Load custom fonts in _config.yaml
 

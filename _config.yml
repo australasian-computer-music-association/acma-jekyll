@@ -69,6 +69,9 @@ collections:
     output: true
     description: "News from the Australasian Computer Music Association" # The post list page content
     feature_image: /assets/images/acmc2019-concert-e1618799441533.jpg
+  conferences:
+    output: true
+    permalink: /conferences/:path/
 
 # 6. Jekyll collections settings
 defaults:
@@ -89,6 +92,11 @@ defaults:
       type: "pages"
     values:
       layout: page # Set the default layout for pages
+  -
+    scope:
+      path: _conferences
+    values:
+      layout: page
 
 # 7. Site settings
 title: Australasian Computer Music Association
@@ -124,7 +132,7 @@ navigation_header:
 - title: News
   url: /news/
 - title: Chroma
-  url: /chroma-archive/
+  url: /chroma/
 - title: Conferences
   url: /conferences/
 - title: Mailing List

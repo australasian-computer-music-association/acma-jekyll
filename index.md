@@ -4,6 +4,7 @@ title: Australasian Computer Music Association
 feature_image: assets/images/acmc2019-concert-e1618799441533.jpg
 ---
 
+{:.info-box}
 The 2022 Australasian Computer Music Conference (ACMC) took place in **Te
 Whanganui-a-Tara, Aotearoa | Wellington, New Zealand** from **August** **31 -
 September 1**. See the conference website at
@@ -35,4 +36,13 @@ and all committee members are volunteers.
 
 ## Latest News
 
+{% for post in site.posts limit:3 %}
+### [{{post.title}}]({{ post.url | relative_url }})
+
+<h6 class="font-italic">{{ post.date | date_to_string }}</h6>
+
+{{ post.excerpt }}
+{% endfor %}
+
+[More news...]({% link news/index.html %})
 
