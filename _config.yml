@@ -19,7 +19,9 @@
 # in the templates via {{ site.myvariable }}.
 
 # Build settings
-remote_theme: daviddarnes/alembic@main
+remote_theme: cpmpercussion/alembic
+
+# daviddarnes/alembic@main
 plugins:
   - jekyll-feed
   - jekyll-remote-theme
@@ -159,5 +161,7 @@ fonts:
   preconnect_urls:
     - https://fonts.gstatic.com
   font_urls:
+    - https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;700&display=swap
     - https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap
+
 

@@ -20,7 +20,7 @@ $white: #ffffff;
 
 // Typography
 $bodytype: (
-  font-family: "Georgia, serif",
+  font-family: "Source Serif Pro, Georgia, serif",
   regular: 400,
   bold: 700,
   italic: italic,
@@ -28,7 +28,7 @@ $bodytype: (
 ) ;
 
 $headingtype: (
-  font-family: '"Merriweather", serif',
+  font-family: "Inter, Arial, sans",
   regular: 400,
   bold: 700,
   cap-height: 0.75
@@ -42,4 +42,4 @@ $monospacetype: (
 
 // TIP: Load custom fonts in _config.yaml
 
-// @import "alembic";
+@import "alembic";
