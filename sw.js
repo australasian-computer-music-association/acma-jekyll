@@ -1,8 +1,8 @@
-const version = '20230111173751';
+const version = '20230111230623';
 const cacheName = `static::${version}`;
 
 const buildContentBlob = () => {
-  return ["/news/2022/10/24/acmc-2022-wrap-up/","/news/2021/08/30/call-for-contributions-to-chroma/","/news/2021/04/23/acmc21/","/news/2019/12/31/acmc-2019-proceedings-available/","/news/2019/12/17/acmc-2020-inclusion/","/news/2018/11/29/acmc-2019/","/news/2018/04/11/acmc-2018/","/news/2017/09/30/acmc-2017-adelaide/","/news/2015/10/13/acmc-2015/","/news/2014/04/18/extension-for-acmc-2014-submissions/","/about/","/acma-list/","/chroma-archive/","/code-of-conduct/","/committee/","/competitions/","/conference/","/duties/","/hosting-acmc/","/news/","/","/links/","/membership/","/search/","/assets/styles.css","/manifest.json","/assets/search.json","/redirects.json","/feed.xml","/sitemap.xml","/robots.txt","/assets/styles.css.map","/assets/logos/acma-logo-square-black.svg", "/assets/default-offline-image.png", "/assets/scripts/fetch.js"
+  return ["/news/2022/10/24/acmc-2022-wrap-up/","/news/2021/08/30/call-for-contributions-to-chroma/","/news/2021/04/23/acmc21/","/news/2019/12/31/acmc-2019-proceedings-available/","/news/2019/12/17/acmc-2020-inclusion/","/news/2018/11/29/acmc-2019/","/news/2018/04/11/acmc-2018/","/news/2017/09/30/acmc-2017-adelaide/","/news/2015/10/13/acmc-2015/","/news/2014/04/18/extension-for-acmc-2014-submissions/","/about/","/acma-list/","/chroma/","/code-of-conduct/","/committee/","/competitions/","/conferences/","/duties/","/hosting-acmc/","/news/","/","/links/","/membership/","/search/","/assets/styles.css","/manifest.json","/assets/search.json","/redirects.json","/feed.xml","/sitemap.xml","/robots.txt","/assets/styles.css.map","/assets/logos/acma-logo-square-black.svg", "/assets/default-offline-image.png", "/assets/scripts/fetch.js"
   ]
 }
 
