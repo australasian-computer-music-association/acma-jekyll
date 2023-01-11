@@ -24,7 +24,7 @@ Sponsors are also subject to the anti-harassment policy. In particular, sponsors
 
 If a participant engages in harassing behaviour, the conference organisers may take any action they deem appropriate, including warning the offender or expulsion from the event with no refund.
 
-If you are being harassed, notice that someone else is being harassed, or have any other concerns, please contact a member of conference staff immediately. Event staff can be identified as they'll be wearing branded badges. If you are unable to contact event staff, you can also contact the [Australian Computer Music Association committee members](http://computermusic.org.au/committee/).
+If you are being harassed, notice that someone else is being harassed, or have any other concerns, please contact a member of conference staff immediately. Event staff can be identified as they'll be wearing branded badges. If you are unable to contact event staff, you can also contact the [Australian Computer Music Association committee members]({% link committee.md %}).
 
 Event staff will be happy to help participants contact hotel/venue security or local law enforcement, provide escorts, or otherwise assist those experiencing harassment to feel safe for the duration of the event. We value your attendance.
 
