@@ -4,7 +4,7 @@ created: 2013-03-31
 categories: 
   - news
 authors: 
-  - charlesmartin
+  - timopie
 ---
 
 11-17 August, Perth, Western Australia

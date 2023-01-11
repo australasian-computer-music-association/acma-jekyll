@@ -4,7 +4,7 @@ created: 2014-04-18
 categories: 
   - news
 authors: 
-  - charlesmartin
+  - timopie
 ---
 
 We have decided to extend the submissions deadline for ACMC 2014.

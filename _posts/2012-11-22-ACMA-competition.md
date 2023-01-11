@@ -4,7 +4,7 @@ created: 2012-11-22
 categories: 
   - news
 authors: 
-  - charlesmartin
+  - timopie
 ---
 
 **ACMA Composition Competition**

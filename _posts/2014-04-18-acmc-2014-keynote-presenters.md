@@ -4,7 +4,7 @@ created: 2014-04-18
 categories: 
   - news
 authors: 
-  - charlesmartin
+  - timopie
 ---
 
 We are proud to announce our keynote presenters for ACMC 2014:
