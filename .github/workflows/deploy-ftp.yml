@@ -22,12 +22,12 @@ jobs:
         with:
           branch: gh-pages # The branch the action should deploy to.
           folder: _site # The folder the action should deploy.
-    - name: 📂 Deploy files via ftp
-      uses: SamKirkland/FTP-Deploy-Action@4.3.0
-      with:
-        server: computermusic.org.au
-        username: ${{ secrets.ftp_username }}
-        password: ${{ secrets.ftp_password }}
-        local-dir: _site
-        server-dir: public_html/
-        dry-run: false
+      - name: 📂 Deploy files via ftp
+        uses: SamKirkland/FTP-Deploy-Action@4.3.0
+        with:
+          server: computermusic.org.au
+          username: ${{ secrets.ftp_username }}
+          password: ${{ secrets.ftp_password }}
+          local-dir: _site
+          server-dir: public_html/
+          dry-run: false
