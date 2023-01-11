@@ -26,6 +26,8 @@ Proceedings and further information from conferences are available via the links
 - [{{conf.title}}]({{ conf.url | relative_url }}) {{conf.location}}
 {% endfor %}
 
+{% comment %}
+
 ## Archived Conference List
 
 - 2022: [Te Whanganui-a-Tara, Aoteroa; Wellington, New Zealand](https://computermusic.org.au/conferences/acmc-2021/)
@@ -60,3 +62,4 @@ Proceedings and further information from conferences are available via the links
 - 1993: Sydney, University of Sydney
 
 
+{% endcomment %}
