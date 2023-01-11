@@ -4,29 +4,34 @@
   "short_name": "AustralasianComputerMusicAssociation",
   "theme_color": "#24292e",
   "background_color": "#ffffff",
-  "icons": [
-      {
-        "src": "/assets/logos/logo@16px.png",
-        "sizes": "16x16"
-      },
-      {
-        "src": "/assets/logos/logo@32px.png",
-        "sizes": "32x32"
-      },
-      {
-        "src": "/assets/logos/logo@180px.png",
-        "sizes": "180x180"
-      },
-      {
-        "src": "/assets/logos/logo@192px.png",
-        "sizes": "192x192"
-      },
-      {
-        "src": "/assets/logos/logo@512px.png",
-        "sizes": "512x512"
-      }
+  
+    "icons": [
       
-    ],
-  "start_url": "/",
+        {
+          "src": "/assets/logos/logo@16px.png",
+          "sizes": "16x16"
+        },
+      
+        {
+          "src": "/assets/logos/logo@32px.png",
+          "sizes": "32x32"
+        },
+      
+        {
+          "src": "/assets/logos/logo@180px.png",
+          "sizes": "180x180"
+        },
+      
+        {
+          "src": "/assets/logos/logo@192px.png",
+          "sizes": "192x192"
+        },
+      
+        {
+          "src": "/assets/logos/logo@512px.png",
+          "sizes": "512x512"
+        }
+      
+    ],"start_url": "/",
   "display": "standalone"
 }
