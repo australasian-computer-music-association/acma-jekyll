@@ -8,6 +8,6 @@ do
  -dNOPAUSE \
  -dQUIET \
  -dBATCH \
- -o "${filename}-sml.pdf" \
+ -o "${filename%.*}-sml.pdf" \
  ${filename}; 
 done
