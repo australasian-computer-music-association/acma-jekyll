@@ -9,7 +9,9 @@ permalink: /acma-list/
 
 The mailing list is the best way to keep in contact with the association and to communicate with our members.
 
-ACMA membership includes composers, performers, educators, researchers, computer scientists and others with an interest any aspect of the many forms of electronic music. Currently you do not need to be a member to subscribe to the list.
+ACMA membership includes composers, performers, educators, researchers, computer scientists and others with an interest any aspect of the many forms of electronic music. 
+
+Non-members may subscribe and post to the list but we require a real name in the subscription form. Subscriptions requests without a clear connection to computer music may be refused.
 
 To join, change your digest settings, or unsubscribe, click [here.](https://lists.computermusic.org.au/mailman/listinfo/acma-l)
 
