@@ -46,6 +46,12 @@ Some of the official duties of office bearers are listed [here.]({% link duties.
 
 The AGM is generally held during the course of each ACMC at which time the committee is elected and major decisions about the running of ACMA are made.
 
+**Newer Minutes**:
+
+[found here]({% link minutes.md %}).
+
+**Older Minutes**:
+
 - [AGM Minutes 2022]({% link assets/minutes/agm_minutes2022.pdf %})
 - [AGM Minutes 2021]({% link assets/minutes/agm_minutes2021.pdf %})
 - [AGM Minutes 2020]({% link assets/minutes/agm_minutes2020.pdf %})

@@ -72,6 +72,9 @@ collections:
   conferences:
     output: true
     permalink: /conferences/:path/
+  minutes:
+    output: true
+    permalink: /minutes/:path/
 
 # 6. Jekyll collections settings
 defaults:
