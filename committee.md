@@ -15,24 +15,25 @@ publications.
 - **President:** Mark Oliviero <president@computermusic.org.au>  
 - **Vice President:** Bridget Johnson <vicepresident@computermusic.org.au>  
 - **Treasurer:** Vincent Giles <treasurer@computermusic.org.au>  
-- **Secretary & Publications:** Charles Martin <secretary@computermusic.org.au>
+- **Secretary:** [Charles Martin](https://comp.anu.edu.au/people/charles-martin/)
+- **Publications:** [Donna Hewitt](https://www.une.edu.au/staff-profiles/hass/dhewitt4) and [Mike Callander](https://www.rmit.edu.au/contact/staff-contacts/academic-staff/c/callander-dr-mike)
 
 ### **Officers:**
 
-- Ben Swift (membership officer)
-- Sophie Rose (VIC rep)
-- Patrick Hartono (web/socials officer)
-- Viki Hallett (independent artists advocate)
-- Eve Klein (QLD rep)
-- Jim Murphy (Aotearoa/NZ rep)
-- Sze Tsang (WA rep)
-- Lindsay Vickery
+- Neil Steward
 - Jesse Austin-Stewart
-- Donna Hewitt
+- Yichen Wang
+- Nicole Carroll
+- Roger Alsop
+- Warren Burt
+- Andrew Brown
+- Jim Murphy (Aotearoa/NZ rep)
+- Sophie Rose (VIC rep)
 - Neil Steward
 - Alexis Weaver
-- Ichi Asato
-- Sigrid Miech
+- Viki Hallett (independent artists advocate)
+- Sze Tsang (WA rep)
+
 
 ## ACMA Constitution  
 
