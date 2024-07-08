@@ -1,24 +1,24 @@
 ---
-title: "Conferences"
-created: 2011-07-18
-authors: 
-  - charlesmartin
+title: "The Australasian Computer Music Conference (ACMC)"
 feature_image: /assets/images/acmc2019-vr.jpg
 permalink: /conferences/
 layout: page
 ---
-
-{:.info-box}
-We are always searching for potential hosts for ACMC. We have information for hosting on [this page.]({% link hosting-acmc.md %})
 
 Since 1993, the annual Australasian Computer Music Conference (ACMC) has been
 held in Australia or New Zealand. These conferences include research papers,
 artist talks, studio reports, concerts, workshops, and poster sessions, and
 proceedings have generally been published in full.
 
-[ACMC Code of Conduct]({% link code-of-conduct.md %})
+{% assign latest_conference = site.conferences | sort: 'date' | last %}
 
-Proceedings and further information from conferences are available via the links below.
+{:.info-box}
+
+The [**{{ latest_conference.date | date: "%Y" }}** Australasian Computer Music Conference (ACMC{{ latest_conference.date | date: "%Y" }})]({{ latest_conference.url }}), {{ latest_conference.theme }}, will take place on {{ latest_conference.dates }} at {{ latest_conference.location }}. See [this link]({{ latest_conference.url }}) for submission and attendance information.
+
+- We are always searching for potential hosts for ACMC. We have information for hosting on [this page.]({% link hosting-acmc.md %})
+- All of our conferences are subject to our [Code of Conduct]({% link code-of-conduct.md %})
+- Proceedings and further information from conferences are available via the links below.
 
 ## Conferences
 

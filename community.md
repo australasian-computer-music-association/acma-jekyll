@@ -1,8 +1,7 @@
 ---
-title: "Mailing List"
-created: 2011-07-20
+title: "Online Communities"
 layout: page
-permalink: /acma-list/
+permalink: /community/
 ---
 
 [acma-l](https://lists.computermusic.org.au/mailman/listinfo/acma-l) is a listserv discussion group for the Australasian Computer Music Association. It acts as a forum for discussion among participants throughout Australasia and beyond.
