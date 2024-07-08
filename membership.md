@@ -1,8 +1,5 @@
 ---
 title: "Membership"
-created: 2011-07-20
-authors: 
-  - charlesmartin
 layout: page
 ---
 
@@ -19,8 +16,6 @@ By becoming a member you will help support electronic, electro-acoustic and comp
 - Travel Grants for students / inclusivity / independent artists to the Conference
 
 **Membership lasts for 12 months**
-
-  
 
 Choose your membership type: full $30.00 student or no-low-income $10.00 institute $100.00 corporate $200.00 
 

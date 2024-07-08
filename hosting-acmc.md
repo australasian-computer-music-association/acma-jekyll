@@ -1,8 +1,5 @@
 ---
 title: "Hosting ACMC"
-created: 2017-10-04
-authors: 
-  - charlesmartin
 layout: page
 ---
 
@@ -12,7 +9,7 @@ ACMC is the annual gathering of the [Australasian Computer Music Association](ht
 
 We are **always looking for potential hosts for future conferences**. ACMC has traditionally taken place in Australia or New Zealand and has been held standalone or co-hosted with another event.
 
-The 2020 edition was the first fully online ACMC, and we suggest that future events could be hybrid online/in-person in the interest of inclusion and sustainability.
+The 2020 edition was the first fully online ACMC, and we suggest that future events could be either hybrid or online in the interest of inclusion and sustainability.
 
 If you are interested in hosting ACMC at your institution or organisation then please reach out to [conference@computermusic.org.au](mailto:conference@computermusic.org.au)
 
@@ -26,7 +23,7 @@ Hosting ACMC involves:
 
 - securing a conference location, and venues for concerts and talks
 - coordinating a call for participation for concerts and talks/papers (see [ACMC2020's call](https://acmc2020.com/submissions.html))
-- arranging for peer-review of submissions (we generally use [EasyChair](https://easychair.org))
+- arranging for peer-review of submissions (we generally use [CMT](https://cmt3.research.microsoft.com))
 - coordinating an online presence and hybrid attendance (see [Ben Swift's post](https://benswift.me/blog/2020/07/15/acmc2020-organising-my-first-virtual-conference/) for details)
 - managing ticket fees where applicable and payment for visiting artists or bursaries.
 
