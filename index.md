@@ -4,16 +4,17 @@ title: Australasian Computer Music Association
 feature_image: assets/images/acmc2019-concert-e1618799441533.jpg
 ---
 
+{% assign latest_conference = site.conferences | sort: 'date' | last %}
+
+<h2>Latest Conference: {{ latest_conference.title }}</h2>
+<p>Date: {{ latest_conference.date | date: "%B %d, %Y" }}</p>
+<p>{{ latest_conference.content }}</p>
+
 {:.info-box}
-The **2023** Australasian Computer Music Conference (ACMC) will take place from **October 9-11, 2023** hosted by [UNE Sydney](https://www.une.edu.au/campus-life/une-sydney). 
 
-### Info about ACMC 2023
+The **{{ latest_conference.date | date: "%Y" }}** Australasian Computer Music Conference (ACMC) will take place on {{ latest_conference.dates }} at {{ latest_conference.location }}. 
 
-- The Call for Submissions is here: <https://www.une.edu.au/acmc2023>
-- Link to the event on facebook: <https://fb.me/e/5XkIHhLcu>
-- Link to submission portal: <https://cmt3.research.microsoft.com/ACMC2023>
 
-**Deadline is July 1, 2023!**
 
 ## About ACMA
 
