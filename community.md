@@ -14,7 +14,7 @@ The Australasian Computer Music Association has various online communities where
 
 ## Mailing List
 
-ACMA has operates an [email mailing list](https://groups.google.com/g/acma-community) for announcements and discussion among participants throughout Australasia and beyond. The mailing list has low frequency (less than 1 email per day).
+ACMA operates an [email mailing list](https://groups.google.com/g/acma-community) for announcements and discussion among participants throughout Australasia and beyond. The mailing list has low frequency (less than 1 email per day).
 
 You can join the list by:
 
