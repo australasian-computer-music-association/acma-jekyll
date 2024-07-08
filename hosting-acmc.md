@@ -3,19 +3,19 @@ title: "Hosting ACMC"
 layout: page
 ---
 
-**N.B.: Now calling for hosts for ACMC 2023+!** 
+**N.B.: Now calling for hosts for ACMC 2025+!** 
 
 ACMC is the annual gathering of the [Australasian Computer Music Association](https://computermusic.org.au/), a place to show and discuss research and artistic progress in computer/electronic music. It's a festival of performances, installations, workshops, and tutorials that inspire, challenge, and showcase our community.
 
-We are **always looking for potential hosts for future conferences**. ACMC has traditionally taken place in Australia or New Zealand and has been held standalone or co-hosted with another event.
+We are **always looking for potential hosts for future conferences**. ACMC has traditionally taken place in Australia or New Zealand and can be held standalone or co-hosted with another event.
 
-The 2020 edition was the first fully online ACMC, and we suggest that future events could be either hybrid or online in the interest of inclusion and sustainability.
+The 2020 and 2021 editions were fully online and all conferences since then have included remote and in-person presentations and performances. Future events can be either hybrid or online in the interest of inclusion and sustainability.
 
-If you are interested in hosting ACMC at your institution or organisation then please reach out to [conference@computermusic.org.au](mailto:conference@computermusic.org.au)
+If you are interested in hosting ACMC at your institution or organisation then please reach out to members of the [committee]({% link committee.md %}).
 
 ### How to host ACMC
 
-ACMC is generally includes 50-100 performances and talks from contributors who are musicians, artists, scholars, students and researchers. We have a [guide to hosting ACMC online (link)](https://acma.gitbook.io/acmc-cookbook/v/main/).
+ACMC generally includes 50-100 performances and talks from contributors who are musicians, artists, scholars, students and researchers. We have a [guide to hosting ACMC online (link)](https://acma.gitbook.io/acmc-cookbook/v/main/).
 
 Although ACMC is often hosted by academic institutions, we want to highlight the diverse range of people who contribute to Australia’s computer/electronic music culture including those who are young/emerging, from regional/remote areas, who have a disability, who are First Nations People, who have low/no income, who are engaged in community music making, or who simply work outside of academia and mainstream institutions.
 

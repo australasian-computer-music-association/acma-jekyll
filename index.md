@@ -6,23 +6,11 @@ feature_image: assets/images/acmc2019-concert-e1618799441533.jpg
 
 {% assign latest_conference = site.conferences | sort: 'date' | last %}
 
-<h2>Latest Conference: {{ latest_conference.title }}</h2>
-<p>Date: {{ latest_conference.date | date: "%B %d, %Y" }}</p>
-<p>{{ latest_conference.content }}</p>
-
 {:.info-box}
 
-The **{{ latest_conference.date | date: "%Y" }}** Australasian Computer Music Conference (ACMC) will take place on {{ latest_conference.dates }} at {{ latest_conference.location }}. 
-
-
+The [**{{ latest_conference.date | date: "%Y" }}** Australasian Computer Music Conference (ACMC)]({{ latest_conference.url }}), {{ latest_conference.theme }}, will take place on {{ latest_conference.dates }} at {{ latest_conference.location }}. See [this link]({{ latest_conference.url }}) for submission and attendance information.
 
 ## About ACMA
-
-{% comment %}
-The 2022 Australasian Computer Music Conference (ACMC) took place in Te
-Whanganui-a-Tara, Aotearoa | Wellington, New Zealand from August 31 -
-September 1. See the conference website at [acmc2022.com](https://www.acmc2022.com)
-{% endcomment %}
 
 The [Australasian Computer Music
 Association]({% link about.md %}) is a forum for Australian and
@@ -59,4 +47,3 @@ and all committee members are volunteers.
 {% endfor %}
 
 [More news...]({% link news/index.html %})
-
