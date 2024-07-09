@@ -3,30 +3,37 @@ title: "Membership"
 layout: page
 ---
 
-**ACMA is a non-profit organisation which seeks to promote learning, research, composition and performance of electronic, electro-acoustic and computer music in the Australasian region.**
+Most of ACMA's [activities]({% link conferences.md %}) and [communities]({% link community.md %}) are open to everyone, whether you are a member or not. Some benefits are restricted to members only.
 
-By becoming a member you will help support electronic, electro-acoustic and computer music, as well as enjoy some member benefits including:
+### Membership Benefits
 
-- Collegiality
-- Support
-- Advice
-- Discounts on conferences and conference proceedings
-- Discounts on selected concerts
-- Discounts on selected CDs, albums, software and hardware
-- Travel Grants for students / inclusivity / independent artists to the Conference
+As a non-profit community organisation, ACMA _members_ have voting rights at the annual general meeting and elgibility to hold [committee positions]({% link committee.md %}).
+Members will also feel the warm glow of supporting the Australian and New Zealand computer music community. 
+From time to time, association members have been offered:
 
-**Membership lasts for 12 months**
+- grants and prizes for students / inclusivity / independent artists at ACMC
+- discounts on conferences
+- discounts on selected concerts
+- discounts on selected albums, software and hardware
 
-Choose your membership type: full $30.00 student or no-low-income $10.00 institute $100.00 corporate $200.00 
+### Membership Fees
 
-  ![](assets/images/pixel.gif)
+In general, registering for [ACMC]({% link conferences.md %}) automatically grants membership to ACMA for 12 months. 
+It is possible to join the association without registering for ACMC. Please contact the [secretary]({% link committee.md %}) to arrange this. Membership types are:
 
-ACMA CDs will soon be available online.
+- full $30.00 
+- student or no/low-income $10.00 
+- institute $200.00 (nominate up to ten individual members) 
+- corporate $500.00 (nominate up to ten individual members)
 
-ACMC proceedings are available in the Conference/Proceedings links
+All membership types are valid for 12 months.
 
-## Donations
+### What do we do with membership fees?
 
-ACMA is a non-profit organisation. Donations are welcome.
+Membership funds are administered by the treasurer of the Australasian Computer Music Association Incorporated and subject to oversight by the committee and members at our AGM. In general, fees are used for:
 
- ![](assets/images/pixel.gif)
+- website hosting and domain name fees
+- payments for invited artists and keynote speakers where appropriate
+- grants or scholarships to attend ACMC
+
+ACMA is a non-profit organisation and all funds are used for community purposes.
