@@ -32,23 +32,40 @@ Participation in the any of the above communities is subject to the [ACMA Code o
 
 Please report any issues with the mailing list to the [president or secretary]({% link community.md %}).
 
-
-{% comment %}
-
-[acma-l](https://lists.computermusic.org.au/mailman/listinfo/acma-l) is a listserv discussion group for the Australasian Computer Music Association. It acts as a forum for discussion 
-
-The mailing list is the best way to keep in contact with the association and to communicate with our members.
-
-ACMA membership includes composers, performers, educators, researchers, computer scientists and others with an interest any aspect of the many forms of electronic music. 
-
-Non-members may subscribe and post to the list but we require a real name in the subscription form. Subscriptions requests without a clear connection to computer music may be refused.
-
-To join, change your digest settings, or unsubscribe, click [here.](https://lists.computermusic.org.au/mailman/listinfo/acma-l)
-
-Members can post to **acma-l@lists.computermusic.org.au**
-
-{% endcomment %}
+### Mailing List History
 
 The former acma-l listserv was hosted by Waikato University September 1999 to June 2019. An archive of messages can be found here:
 
 [ACMA-Maillist-Archive\_2000-09\_2019-06.zip]({% link assets/archives/ACMA-Maillist-Archive_1999-09_2019-06.zip %})
+
+From 2019-2023 a new acma-l listserv was hosted with a commercial provider primarily to distribute calls for papers and meeting notifications.
+
+## Friends and Associates
+
+Here's a list of links to institutions and organisations that have been associated with the association in the past (e.g., by hosting ACMC).
+
+### Institutions and Organisations
+
+- [University of Auckland, School of Music](http://www.creative.auckland.ac.nz/uoa/music)
+- [Queensland University of Technology (Music)](http://www.creativeindustries.qut.edu.au/study/areas/music-sound/)
+- [University of Waikato, Music Department](http://www.waikato.ac.nz/humanities/music/)
+- [Australian Centre for the Arts & Technology](http://music.anu.edu.au/), Australian National University, Canberra, Australia
+- [Sydney Conservatorium of Music](http://sydney.edu.au/music/), University of Sydney, Sydney NSW, Australia
+- [School of Contemporary Arts (Music)](http://future.uws.edu.au/ug/creative_and_communication_arts/bachelor_of_music), University of Western Sydney, Sydney NSW, Australaia
+- [Victoria University of Wellington, School of Music](http://www.vuw.ac.nz/music/), Melbourne Vic, Australia
+- [School of Music-Conservatorium, Monash University](http://www.arts.monash.edu.au/music/), Melbourne Vic, Australia
+- [Box Hill Institute, Centre for Performing Arts](http://www.bhtafe.edu.au/courses/local/Pages/BAMAP.aspx), Melbourne Vic, Australia
+- [Clatterbox: Australian Experimental Instruments](http://clatterbox.net.au/)
+- [Western Australian Academy of Performing Arts](http://www.waapa.ecu.edu.au/), Edith Cowan University, Perth WA, Australia
+- [Australian Music Centre](http://www.amcoz.com.au/)
+- [Australia Council for the Arts](http://www.australiacouncil.gov.au/)
+- [National Facility for Research in Australian Music](http://nfram.anu.edu.au/)
+- [Music Council of Australia](http://www.mca.org.au/)
+- [Centre for New Zealand Music (SOUNZ)](http://www.sounz.org.nz/)
+- [Australian Sound Design Project](http://www.sounddesign.unimelb.edu.au/)
+- [Elder School of Music](http://www.music.adelaide.edu.au/), Adelaide University, Adelaide SA, Australia
+- [austraLYSIS](http://www.australysis.com/)
+
+### Concert Series:
+
+- [NoizeMaschin!!](https://www.noizemaschin.com/)
