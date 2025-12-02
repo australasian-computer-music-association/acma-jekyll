@@ -25,5 +25,5 @@ jobs:
           username: ${{ secrets.ftp_username }}
           password: ${{ secrets.ftp_password }}
           local-dir: _site/
-          server-dir: test/
-          dry-run: true
+          server-dir: ./
+          dry-run: false
