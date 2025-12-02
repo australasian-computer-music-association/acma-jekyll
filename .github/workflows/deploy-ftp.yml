@@ -18,7 +18,7 @@ jobs:
         run: |
           bundle exec jekyll build
       - name: 📂 Deploy files via ftp
-        uses: SamKirkland/FTP-Deploy-Action@4.3.6
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
           server: computermusic.org.au
           protocol: ftps
