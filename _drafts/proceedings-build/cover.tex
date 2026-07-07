@@ -1,0 +1,59 @@
+% ============================ COVER PAGE ============================
+% Light cover built around the official ElectroMUSE lead artwork.
+\begin{titlepage}
+\thispagestyle{empty}
+\begin{tikzpicture}[remember picture, overlay]
+  % official ElectroMUSE lead artwork, full width as a banner near the top
+  \node[anchor=north, inner sep=0pt] at ([yshift=-24mm]current page.north)
+    {\includegraphics[width=\paperwidth]{/Users/charles/src/acma-jekyll/assets/images/acmc2023-lead.jpg}};
+  % hairline rule beneath the artwork
+  \draw[coverrule, line width=0.4pt]
+    ([yshift=-104mm]current page.north west) -- ([yshift=-104mm]current page.north east);
+  % theme title
+  \node[anchor=north, text=covertitle, align=center] at ([yshift=-118mm]current page.north)
+    {\sffamily\bfseries\fontsize{50}{54}\selectfont ElectroMUSE};
+  % proceedings title
+  \node[anchor=north, text=covertitle, align=center, text width=175mm] at ([yshift=-142mm]current page.north)
+    {\sffamily\bfseries\fontsize{16}{20}\selectfont Proceedings of the Australasian Computer Music Conference 2023};
+  % host
+  \node[anchor=north, text=covermuted, align=center, text width=175mm] at ([yshift=-156mm]current page.north)
+    {\sffamily\fontsize{11.5}{15}\selectfont Hosted by the University of New England --- Sydney campus, Parramatta, NSW};
+  % dates
+  \node[anchor=north, text=covertitle, align=center] at ([yshift=-168mm]current page.north)
+    {\sffamily\bfseries\fontsize{13}{16}\selectfont 9--11 October 2023};
+  % ACMA logo, printed directly on the white cover
+  \node[anchor=south, inner sep=0pt] at ([yshift=30mm]current page.south)
+    {\includegraphics[width=62mm]{/Users/charles/src/acma-jekyll/assets/logos/acma-logo-black.png}};
+\end{tikzpicture}
+\end{titlepage}
+
+% ============================ IMPRINT PAGE ============================
+\thispagestyle{empty}
+\vspace*{68mm}
+{\raggedright
+{\large\bfseries Proceedings of the Australasian Computer Music Conference 2023}\par
+\vspace{2mm}
+Australasian Computer Music Conference 2023 --- \emph{ElectroMUSE}\par
+University of New England, Sydney campus, Parramatta, NSW\par
+9--11 October 2023\par
+\vspace{7mm}
+Published by the Australasian Computer Music Association\par
+\vspace{1mm}
+October 2023\qquad ISSN 1448-7780\par
+\vspace{5mm}
+All copyright remains with the authors. All correspondence with authors should be sent
+directly to the authors. General correspondence for ACMA should be sent to
+info@computermusic.org.au\par
+\vspace{5mm}
+Peer-reviewed full-text papers finalised for publication appear in \emph{Chroma}, the
+journal of the Australasian Computer Music Association:
+\url{https://journal.computermusic.org.au/chroma/issue/view/3}. Where a full paper is
+available, a link is provided beneath its abstract in these proceedings.\par
+\vspace{5mm}
+\emph{ACMA acknowledges the Traditional Custodians of the lands on which we gather to
+share, play and learn, and pays respect to Elders past and present, and to all Aboriginal
+and Torres Strait Islander peoples.}\par
+\vspace{7mm}
+\url{http://computermusic.org.au}\par
+}
+\clearpage
