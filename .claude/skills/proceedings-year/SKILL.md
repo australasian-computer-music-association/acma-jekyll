@@ -35,7 +35,8 @@ up to date, so a new session can carry on from the branch alone.
 - Find the **page offset**: compare printed page numbers in footers with PDF
   page numbers (`pdftotext -f N -l N`). Note if it changes partway through.
 - Read the front matter for: the volume title, editors, ISSN/ISBN, date,
-  publisher, review statements, and juries/committees. Quote review
+  publisher, copyright or licence statement, review statements, and
+  juries/committees. Quote review
   statements **verbatim**.
 - Check the text layer (`pdftotext` gives words, not empty strings or
   gibberish). 2014's papers volume has every letter shifted by 3, so decode it
@@ -46,8 +47,9 @@ up to date, so a new session can carry on from the branch alone.
 Add `year`, `start_date`/`end_date` (if known) and the `proceedings:` block.
 Include `reviewing` defaults per section, set **only** from what the volume
 states; use `""` for unknown (see the table in `docs/adding-proceedings.md`).
-Add the volume's `review_statement` (verbatim) and its `committees` (juries,
-committees and organisers, as listed in the volume).
+Add the volume's `review_statement` (verbatim), its `committees` (juries,
+committees and organisers, as listed in the volume) and its `copyright`
+statement (verbatim), where the volume has them.
 For a volume to split, add `source_pdf` and `page_offset`. Commit and push.
 
 ## 3. Draft the entries

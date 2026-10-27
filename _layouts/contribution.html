@@ -62,6 +62,10 @@ The citation tags for Google Scholar are in _includes/citation-meta.html.
   {%- endif %}
 
 
+  {%- if c_proc.copyright %}
+  <p class="meta">{{ c_proc.copyright }}</p>
+  {%- endif %}
+
   <h2>How to cite</h2>
   <p class="how-to-cite">{{ author_list }}. {{ page.year }}. “{{ page.title }}.” {% if page.type == "creative-work" %}{{ type_label }}{% if page.work.format %} ({{ page.work.format }}){% endif %}. {% endif %}In <cite>{{ c_proc.title }}</cite>{% if c_proc.editors %}, edited by {{ c_proc.editors | array_to_sentence_string: "and" }}{% endif %}{% if pages_text != "" %}, {{ pages_text | remove: "pp. " | remove: "p. " }}{% endif %}. {% if c_conf.location %}{{ c_conf.location }}: {% endif %}{{ c_proc.publisher }}. {{ page.url | absolute_url }}</p>
   {%- assign slug_parts = page.slug | split: "-" -%}

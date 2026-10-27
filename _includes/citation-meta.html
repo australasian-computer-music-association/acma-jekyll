@@ -57,6 +57,9 @@ whole volumes, or Scholar would make one record for a whole book.
   {%- if page.chroma %}
   "sameAs": {{ page.chroma | jsonify }},
   {%- endif %}
+  {%- if c_proc.copyright %}
+  "copyrightNotice": {{ c_proc.copyright | jsonify }},
+  {%- endif %}
   "isPartOf": {
     "@type": "Book",
     "name": {{ c_proc.title | jsonify }},

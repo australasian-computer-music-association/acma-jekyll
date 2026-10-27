@@ -69,6 +69,7 @@ proceedings:
   issn: "2206-5296"           # or isbn:
   published: 2026-11-28       # optional; the conference start date is used otherwise
   full_volume: /proceedings/ACMC2026-proceedings.pdf   # optional complete volume
+  copyright: "Copyright remains with the authors."     # optional; the volume's own statement, or a licence
   reviewing:                  # how each section was reviewed (see below)
     "Refereed Papers": full-paper
     "Abstracts": abstract
