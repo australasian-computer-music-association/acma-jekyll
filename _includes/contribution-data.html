@@ -25,4 +25,6 @@ reviewing: a key set on the entry wins, even "" (explicitly unknown). A blank
 {%- comment -%} The proceedings date if known, else the conference start (_plugins/contributions.rb sets page.date the same way). {%- endcomment -%}
 {%- assign c_date = c_proc.published | default: c_conf.start_date -%}
 {%- comment -%} Chroma holds the version of record for these; don't make a second Scholar record. {%- endcomment -%}
-{%- if page.chroma -%}{%- assign c_tagged = false -%}{%- else -%}{%- assign c_tagged = true -%}{%- endif -%}
+{%- comment -%} Scholar excludes "bare bibliographic data without abstracts", so an entry with no abstract or program note isn't tagged either. {%- endcomment -%}
+{%- assign c_body = page.content | strip_html | strip -%}
+{%- if page.chroma or c_body == "" -%}{%- assign c_tagged = false -%}{%- else -%}{%- assign c_tagged = true -%}{%- endif -%}

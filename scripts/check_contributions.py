@@ -121,8 +121,9 @@ def check(site_dir=None):
             err("`chroma` should be the article's full https link")
         if fm.get("keywords") is not None and not isinstance(fm["keywords"], list):
             err("`keywords` must be a list")
-        if not body.strip() and fm.get("type") != "creative-work":
-            warn("no abstract in the body")
+        if not body.strip():
+            warn("no abstract or program note: the page gets no Scholar tags "
+                 "(Scholar excludes bare bibliographic data)")
 
         titles[(year, str(fm.get("title", "")).lower())].append(rel)
 
@@ -142,7 +143,7 @@ def check(site_dir=None):
 
 def check_site(site_dir, errors):
     """Each built entry page has its Scholar tags (or none, if its paper is in Chroma)."""
-    for path, fm, _ in load_contributions():
+    for path, fm, body in load_contributions():
         slug = os.path.splitext(os.path.basename(path))[0]
         page = os.path.join(site_dir, "proceedings", year_folder(fm.get("year")), slug + ".html")
         rel = os.path.relpath(page, site_dir)
@@ -153,7 +154,9 @@ def check_site(site_dir, errors):
         tagged = 'name="citation_title"' in html
         if fm.get("chroma") and tagged:
             errors.append(f"{rel}: has citation tags but its paper is in Chroma")
-        if not fm.get("chroma"):
+        if not body.strip() and tagged:
+            errors.append(f"{rel}: has citation tags but no abstract or program note")
+        if not fm.get("chroma") and body.strip():
             for tag in ("citation_title", "citation_author", "citation_publication_date",
                         "citation_conference_title"):
                 if f'name="{tag}"' not in html:

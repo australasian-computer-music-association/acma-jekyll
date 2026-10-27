@@ -16,6 +16,13 @@ The citation tags for Google Scholar are in _includes/citation-meta.html.
   <p class="contribution-authors">{{ author_list }}</p>
   <p class="meta">In {{ proc_link }}{% if c_conf.location %}, {{ c_conf.location }}{% endif %}{% if pages_text != "" %}, {{ pages_text }}{% endif %}. {{ c_proc.publisher }}{% if c_proc.issn %}, ISSN {{ c_proc.issn }}{% endif %}{% if c_proc.isbn %}, ISBN {{ c_proc.isbn }}{% endif %}.</p>
 
+  {%- comment -%} Scholar wants the whole abstract readable without scrolling, so it comes first. {%- endcomment %}
+  {%- assign body = content | strip -%}
+  {%- if body != "" %}
+  <h2 class="abstract-heading">{% if page.type == "creative-work" %}Program note{% else %}Abstract{% endif %}</h2>
+  {{ body }}
+  {%- endif %}
+
   {%- if page.chroma %}
   <p class="info-box">The full paper is published in <em>Chroma</em>, the Journal of the Australasian Computer Music Association: <a href="{{ page.chroma }}">read it in Chroma →</a></p>
   {%- endif %}
@@ -37,11 +44,6 @@ The citation tags for Google Scholar are in _includes/citation-meta.html.
   </dl>
   {%- endif %}
 
-  {%- assign body = content | strip -%}
-  {%- if body != "" %}
-  <h2>{% if page.type == "creative-work" %}Program note{% else %}Abstract{% endif %}</h2>
-  {{ body }}
-  {%- endif %}
 
   {%- if page.research_statement %}
   <h2>Research statement</h2>
@@ -104,7 +106,7 @@ The citation tags for Google Scholar are in _includes/citation-meta.html.
 {%- if page.doi %}
   doi = {% raw %}{{% endraw %}{{ page.doi }}{% raw %}}{% endraw %},
 {%- endif %}
-  url = {% raw %}{{% endraw %}{{ page.url | absolute_url }}{% raw %}}{% endraw %}
+  url = {% raw %}{{% endraw %}{% if page.pdf %}{{ page.pdf | absolute_url }}{% else %}{{ page.url | absolute_url }}{% endif %}{% raw %}}{% endraw %}
 }</code></pre>
   </details>
 
