@@ -1,0 +1,73 @@
+{%- comment -%}
+Google Scholar (Highwire Press) citation tags and schema.org data for a
+contribution page. Only contributions get these: never conference pages or
+whole volumes, or Scholar would make one record for a whole book.
+{%- endcomment -%}
+{%- if page.collection == "contributions" -%}
+{%- include contribution-data.html -%}
+{%- if c_tagged %}
+<meta name="citation_title" content="{{ page.title | escape }}">
+{%- for author in page.authors %}
+<meta name="citation_author" content="{{ author | escape }}">
+{%- endfor %}
+<meta name="citation_publication_date" content="{% if c_proc.published %}{{ c_proc.published | date: '%Y/%m/%d' }}{% else %}{{ page.year }}{% endif %}">
+<meta name="citation_conference_title" content="{{ c_proc.title | escape }}">
+{%- if c_proc.publisher %}
+<meta name="citation_publisher" content="{{ c_proc.publisher | escape }}">
+{%- endif %}
+{%- if c_proc.issn %}
+<meta name="citation_issn" content="{{ c_proc.issn }}">
+{%- endif %}
+{%- if c_proc.isbn %}
+<meta name="citation_isbn" content="{{ c_proc.isbn }}">
+{%- endif %}
+{%- if c_first_page %}
+<meta name="citation_firstpage" content="{{ c_first_page }}">
+<meta name="citation_lastpage" content="{{ c_last_page }}">
+{%- endif %}
+{%- if page.pdf %}
+<meta name="citation_pdf_url" content="{{ page.pdf | absolute_url }}">
+{%- endif %}
+<meta name="citation_abstract_html_url" content="{{ page.url | absolute_url }}">
+{%- if page.keywords %}
+<meta name="citation_keywords" content="{{ page.keywords | join: '; ' | escape }}">
+{%- endif %}
+{%- if page.doi %}
+<meta name="citation_doi" content="{{ page.doi }}">
+{%- endif %}
+<meta name="citation_language" content="en">
+{%- endif %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": {% if page.type == "creative-work" %}{% if page.work.kind == "composition" %}"MusicComposition"{% else %}"CreativeWork"{% endif %}{% else %}"ScholarlyArticle"{% endif %},
+  "name": {{ page.title | jsonify }},
+  "url": {{ page.url | absolute_url | jsonify }},
+  "author": [{% for author in page.authors %}{"@type": "Person", "name": {{ author | jsonify }}}{% unless forloop.last %}, {% endunless %}{% endfor %}],
+  "datePublished": {{ c_date | date: "%Y-%m-%d" | jsonify }},
+  {%- if page.work.created %}
+  "dateCreated": {{ page.work.created | jsonify }},
+  {%- endif %}
+  {%- if page.keywords %}
+  "keywords": {{ page.keywords | join: ", " | jsonify }},
+  {%- endif %}
+  {%- if page.pdf %}
+  "encoding": {"@type": "MediaObject", "encodingFormat": "application/pdf", "contentUrl": {{ page.pdf | absolute_url | jsonify }}},
+  {%- endif %}
+  {%- if page.chroma %}
+  "sameAs": {{ page.chroma | jsonify }},
+  {%- endif %}
+  "isPartOf": {
+    "@type": "Book",
+    "name": {{ c_proc.title | jsonify }},
+    {%- if c_proc.issn %}
+    "issn": {{ c_proc.issn | jsonify }},
+    {%- endif %}
+    {%- if c_proc.editors %}
+    "editor": [{% for e in c_proc.editors %}{"@type": "Person", "name": {{ e | jsonify }}}{% unless forloop.last %}, {% endunless %}{% endfor %}],
+    {%- endif %}
+    "publisher": {"@type": "Organization", "name": {{ c_proc.publisher | default: site.title | jsonify }}}
+  }
+}
+</script>
+{%- endif -%}

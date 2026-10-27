@@ -103,3 +103,14 @@ body > footer a { color: inherit; }
   .logo img { height: 3rem; }
   .feature { min-height: 22vh; }
 }
+
+/* Proceedings: contribution lists and pages (_includes/contribution-list.html, _layouts/contribution.html) */
+.contribution-list { padding: 0; }
+.contribution-list li { list-style: none; margin-bottom: 0.75rem; }
+.contribution-list .meta { margin-top: 0; }
+.contribution-kind { margin: 0 0 0.25rem; text-transform: uppercase; letter-spacing: 0.04em; font-size: 0.8em; }
+.contribution-authors { font-size: 1.15em; margin-bottom: 0.25rem; }
+.work-details { display: grid; grid-template-columns: max-content 1fr; gap: 0.25rem 1rem; }
+.work-details dt { font-weight: 600; }
+.work-details dd { margin: 0; }
+.how-to-cite { font-size: 0.95em; }

@@ -1,0 +1,18 @@
+{%- comment -%}
+Lists a conference's contributions, grouped under each section heading in
+the order of the volume (by `order`). Use on a conference page, which must
+have `year:` in its front matter:  {% include contribution-list.html %}
+Section headings are <h2>; pass level=3 to nest them under another heading.
+{%- endcomment -%}
+{%- assign items = site.contributions | where: "year", page.year | sort: "order" -%}
+{%- assign groups = items | group_by: "section" -%}
+{%- for group in groups %}
+{%- assign h = include.level | default: 2 %}
+<h{{ h }} id="{{ group.name | slugify }}">{{ group.name }}</h{{ h }}>
+<ul class="contribution-list">
+  {%- for item in group.items %}
+  <li><a href="{{ item.url | relative_url }}">{{ item.title }}</a>{% if item.type == "creative-work" and item.work.created %} [{{ item.work.created }}]{% endif %}
+    <br><span class="meta">{{ item.authors | array_to_sentence_string: "and" }}{% if item.type == "creative-work" and item.work.format %} · {{ item.work.format }}{% endif %}{% if item.pdf %} · <a href="{{ item.pdf | relative_url }}">PDF</a>{% endif %}{% if item.chroma %} · <a href="{{ item.chroma }}">Full paper in Chroma</a>{% endif %}</span></li>
+  {%- endfor %}
+</ul>
+{%- endfor %}

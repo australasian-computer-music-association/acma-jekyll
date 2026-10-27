@@ -10,3 +10,4 @@ _site
 # This repo is the archive of ACMA conference history; keep PDFs even if a
 # global gitignore excludes them.
 !*.pdf
+__pycache__/

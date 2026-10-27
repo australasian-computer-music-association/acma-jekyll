@@ -1,0 +1,16 @@
+# Allowed values of `type` in _contributions entries, with how they are shown.
+# scripts/check_contributions.py reads this file too, so add new types here only.
+paper:
+  label: Paper
+abstract:
+  label: Abstract
+keynote:
+  label: Keynote
+artist-talk:
+  label: Artist talk
+studio-report:
+  label: Studio report
+poster:
+  label: Poster
+creative-work:
+  label: Creative work

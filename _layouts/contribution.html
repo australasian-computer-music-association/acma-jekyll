@@ -1,0 +1,115 @@
+---
+layout: default
+---
+{%- comment -%}
+One page per contribution (paper, abstract, creative work…) from _contributions.
+The citation tags for Google Scholar are in _includes/citation-meta.html.
+{%- endcomment -%}
+{%- include contribution-data.html -%}
+{%- assign type_label = site.data.contribution_types[page.type].label | default: page.type -%}
+{%- assign author_list = page.authors | array_to_sentence_string: "and" -%}
+{%- capture pages_text -%}{% if c_first_page %}{% if c_first_page == c_last_page %}p. {{ c_first_page }}{% else %}pp. {{ c_first_page }}–{{ c_last_page }}{% endif %}{% endif %}{%- endcapture -%}
+{%- capture proc_link -%}<a href="{{ c_conf.url | relative_url }}"><cite>{{ c_proc.title }}</cite></a>{%- endcapture -%}
+<article class="content contribution">
+  <p class="meta contribution-kind">{{ type_label }}{% if c_review_label %} · {{ c_review_label }}{% endif %}</p>
+  <h1>{{ page.title }}</h1>
+  <p class="contribution-authors">{{ author_list }}</p>
+  <p class="meta">In {{ proc_link }}{% if c_conf.location %}, {{ c_conf.location }}{% endif %}{% if pages_text != "" %}, {{ pages_text }}{% endif %}. {{ c_proc.publisher }}{% if c_proc.issn %}, ISSN {{ c_proc.issn }}{% endif %}{% if c_proc.isbn %}, ISBN {{ c_proc.isbn }}{% endif %}.</p>
+
+  {%- if page.chroma %}
+  <p class="info-box">The full paper is published in <em>Chroma</em>, the Journal of the Australasian Computer Music Association: <a href="{{ page.chroma }}">read it in Chroma →</a></p>
+  {%- endif %}
+
+  {%- if page.pdf or page.section_pdf %}
+  <p>
+    {%- if page.pdf %}<a role="button" href="{{ page.pdf | relative_url }}">Download PDF</a>{% endif %}
+    {%- if page.section_pdf %}{% if page.pdf %} {% endif %}<a href="{{ page.section_pdf | relative_url }}">Printed in the proceedings{% if pages_text != "" %}, {{ pages_text }}{% endif %} (PDF)</a>{% endif %}
+  </p>
+  {%- endif %}
+
+  {%- if page.type == "creative-work" and page.work %}
+  <dl class="work-details">
+    {%- if page.work.format %}<dt>Format</dt><dd>{{ page.work.format }}</dd>{% endif %}
+    {%- if page.work.duration %}<dt>Duration</dt><dd>{{ page.work.duration }}</dd>{% endif %}
+    {%- if page.work.created %}<dt>Created</dt><dd>{{ page.work.created }}</dd>{% endif %}
+    {%- if page.work.performers %}<dt>Performers</dt><dd>{{ page.work.performers | array_to_sentence_string: "and" }}</dd>{% endif %}
+    {%- if page.work.presented %}<dt>Presented</dt><dd>{{ page.work.presented.event }}{% if page.work.presented.venue %}, {{ page.work.presented.venue }}{% endif %}{% if page.work.presented.date %}, {{ page.work.presented.date | date: "%-d %B %Y" }}{% endif %}</dd>{% endif %}
+  </dl>
+  {%- endif %}
+
+  {%- assign body = content | strip -%}
+  {%- if body != "" %}
+  <h2>{% if page.type == "creative-work" %}Program note{% else %}Abstract{% endif %}</h2>
+  {{ body }}
+  {%- endif %}
+
+  {%- if page.research_statement %}
+  <h2>Research statement</h2>
+  {{ page.research_statement | markdownify }}
+  {%- endif %}
+
+  {%- if page.keywords %}
+  <p><strong>Keywords:</strong> {{ page.keywords | join: ", " }}</p>
+  {%- endif %}
+
+  {%- if page.media %}
+  <h2>Documentation</h2>
+  <ul>
+    {%- for m in page.media %}
+    <li><a href="{{ m.url }}">{{ m.label | default: m.kind | capitalize }}</a></li>
+    {%- endfor %}
+  </ul>
+  {%- endif %}
+
+  {%- assign review_statement = c_proc.review_statements[page.section] -%}
+  {%- if review_statement %}
+  <details>
+    <summary>About the review process</summary>
+    {{ review_statement | markdownify }}
+  </details>
+  {%- endif %}
+
+  <h2>How to cite</h2>
+  <p class="how-to-cite">{{ author_list }}. {{ page.year }}. “{{ page.title }}.” {% if page.type == "creative-work" %}{{ type_label }}{% if page.work.format %} ({{ page.work.format }}){% endif %}. {% endif %}In <cite>{{ c_proc.title }}</cite>{% if c_proc.editors %}, edited by {{ c_proc.editors | array_to_sentence_string: "and" }}{% endif %}{% if pages_text != "" %}, {{ pages_text | remove: "pp. " | remove: "p. " }}{% endif %}. {% if c_conf.location %}{{ c_conf.location }}: {% endif %}{{ c_proc.publisher }}. {{ page.url | absolute_url }}</p>
+  {%- assign slug_parts = page.slug | split: "-" -%}
+  {%- capture bib_key -%}{{ slug_parts[0] }}{{ page.year }}{{ slug_parts[1] }}{%- endcapture -%}
+  {%- capture bib_authors -%}{{ page.authors | join: " and " }}{%- endcapture -%}
+  {%- comment -%} Ruby's gsub reads "\&" as the whole match, so a literal \& needs "\\&". {%- endcomment -%}
+  {%- capture bib_title -%}{{ page.title | replace: "&", "\\&" | replace: "#", "\#" | replace: "%", "\%" | escape }}{%- endcapture -%}
+  {%- if page.pdf or page.section_pdf or page.pages -%}{%- assign bib_type = "inproceedings" -%}{%- else -%}{%- assign bib_type = "misc" -%}{%- endif %}
+  <details>
+    <summary>BibTeX</summary>
+<pre><code>@{{ bib_type }}{% raw %}{{% endraw %}{{ bib_key }},
+  author = {% raw %}{{% endraw %}{{ bib_authors }}{% raw %}}{% endraw %},
+  title = {% raw %}{{{% endraw %}{{ bib_title }}{% raw %}}}{% endraw %},
+{%- if bib_type == "inproceedings" %}
+  booktitle = {% raw %}{{% endraw %}{{ c_proc.title }}{% raw %}}{% endraw %},
+{%- if c_proc.editors %}
+  editor = {% raw %}{{% endraw %}{{ c_proc.editors | join: " and " }}{% raw %}}{% endraw %},
+{%- endif %}
+{%- if c_first_page %}
+  pages = {% raw %}{{% endraw %}{% if c_first_page == c_last_page %}{{ c_first_page }}{% else %}{{ c_first_page }}--{{ c_last_page }}{% endif %}{% raw %}}{% endraw %},
+{%- endif %}
+{%- else %}
+  howpublished = {% raw %}{{% endraw %}{{ c_conf.title }}{% raw %}}{% endraw %},
+{%- endif %}
+{%- if page.type == "creative-work" %}
+  note = {% raw %}{{% endraw %}Creative work{% if page.work.format %}: {{ page.work.format | replace: "&", "\\&" | escape }}{% endif %}{% raw %}}{% endraw %},
+{%- endif %}
+  year = {% raw %}{{% endraw %}{{ page.year }}{% raw %}}{% endraw %},
+  publisher = {% raw %}{{% endraw %}{{ c_proc.publisher }}{% raw %}}{% endraw %},
+{%- if c_conf.location %}
+  address = {% raw %}{{% endraw %}{{ c_conf.location }}{% raw %}}{% endraw %},
+{%- endif %}
+{%- if c_proc.issn %}
+  issn = {% raw %}{{% endraw %}{{ c_proc.issn }}{% raw %}}{% endraw %},
+{%- endif %}
+{%- if page.doi %}
+  doi = {% raw %}{{% endraw %}{{ page.doi }}{% raw %}}{% endraw %},
+{%- endif %}
+  url = {% raw %}{{% endraw %}{{ page.url | absolute_url }}{% raw %}}{% endraw %}
+}</code></pre>
+  </details>
+
+  <p><a href="{{ c_conf.url | relative_url }}">← All of {{ c_conf.title }}</a></p>
+</article>
