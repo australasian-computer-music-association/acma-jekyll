@@ -14,8 +14,10 @@ Today most volumes are one big PDF with a plain title list (or no list) on the c
 |---|---|
 | Storage | **One Markdown file per contribution** in a `_contributions` collection. Front matter holds the metadata. The body holds the abstract, or for a creative work its program note and optional research statement. Native Jekyll, no generator plugin. The collection is deliberately not called `_papers`, because papers and works sit side by side in it. |
 | What gets Scholar tags | **Everything**: papers, abstracts, keynotes, posters and creative works. Creative works get the same citation tags as papers. |
-| Review status | Every entry states how it was reviewed (peer-reviewed / juried / curated / invited). The default is set per conference and per type, can be overridden per entry, and is shown on the page. This is the evidence NTRO reporting asks for. |
+| Review status | A `reviewing` key records how an item was reviewed **only when the volume says so** (e.g. "fully refereed" → `full-paper`). Unknown is an empty string, and nothing is shown. Defaults are set per conference and per section, can be overridden per item, and are shown on the page with the volume's own review statement quoted. This is the evidence NTRO reporting asks for. See "Review terminology" below. |
+| Types and sections | `type` is a small fixed list, worked out from the volumes' own headings (consistent up to 2020). `section` keeps each volume's exact heading wording. |
 | Abstract whose full paper is in Chroma (2020+) | Own page, **no** Scholar tags, prominent link to the Chroma article, so citations collect on one record. |
+| Per-item PDFs | Only where an item was printed in a volume (papers, pre-2020). **2020+ items and creative works without a printed note get a landing page only.** |
 | Full-volume PDFs | **Kept** and linked as "Complete proceedings", with no tags. Split PDFs are added alongside them. |
 | Media (audio, video, scores) | Not stored in git. Linked from the entry to wherever it lives (archive.org, Vimeo/YouTube, Zenodo, an artist's site). |
 | DOIs | Not now. A `doi:` field is reserved. Note: DOIs matter more for NTROs than for papers, because university research offices often ask for one, so Zenodo should be revisited soon (see Later). |
@@ -49,13 +51,18 @@ proceedings:
   published: 2018-12-06      # publication date (falls back to year)
   pdf: /proceedings/ACMC2018-proceedings.zip   # full volume, kept
   page_offset: 0             # PDF page = printed page + offset (used by the splitter)
-  review:                    # default review statement per type; shown on each item page
-    paper: { status: peer-reviewed, note: "Double-blind peer review" }
-    abstract: { status: not-reviewed }
-    creative-work: { status: peer-reviewed, note: "Selected by peer review of submitted works" }
+  review_statement: >-      # quoted verbatim from the volume, shown on item pages
+    The paper refereeing process is conducted according to the specifications of the
+    Australian Government for the collection of Higher Education research data, and fully
+    refereed papers therefore meet Australian Government requirements for fully-refereed
+    research papers.
+  reviewing:                 # default per section heading; only what the volume states
+    "Refereed Papers": full-paper
+    "Non-refereed Abstracts": non-refereed
+    "Refereed Creative Works": refereed
 ```
 
-`year:` is the join key, which avoids the mixed `acmc-2007` / `acmc2018` filenames. Where a year's process is unknown, the default for creative works is `juried` ("Selected by the conference committee"). Years with known detail say so.
+`year:` is the join key, which avoids the mixed `acmc-2007` / `acmc2018` filenames.
 
 ### 2. `_contributions` collection: one file per contribution
 
@@ -69,13 +76,12 @@ title: "…"
 authors:             # creators: authors, composers, artists
   - Jesse Austin-Stewart
 year: 2018
-type: creative-work  # paper | abstract | keynote | poster | studio-report | creative-work
+type: creative-work  # paper | abstract | keynote | artist-talk | studio-report | poster | creative-work
 section: Refereed Creative Works   # heading on the conference page (the volume's own wording)
 order: 1             # position in the volume/programme
 pages: 3             # printed page range, if printed in a volume
 pdf:                 # per-item PDF, if any
-review:              # optional override of the conference default
-  status: peer-reviewed
+reviewing:           # optional override of the section default: full-paper | abstract | refereed | invited | non-refereed | "" (unknown)
 chroma:              # full paper in Chroma → no citation tags on this page
 doi:                 # reserved
 ---
@@ -107,7 +113,7 @@ New split PDFs go in `proceedings/acmc2018/<slug>.pdf`, next to their landing pa
 
 - `_layouts/contribution.html`: one layout for every type, with a creative-work block switched on by `type`.
   - `<head>`: Highwire `citation_*` tags (volume data pulled from the matching conference), plus schema.org JSON-LD: `ScholarlyArticle` for papers, and `MusicComposition` / `CreativeWork` for works, with the creators, date and the ACMC event where it was presented.
-  - Visible page: title, creators, **review statement** (e.g. "Peer-reviewed creative work"), the "In: *Proceedings of ACMC 2018*, Perth" line, the abstract or program note and research statement, the work's details (format, duration, performers, where and when presented), documentation links, a PDF link, a **"How to cite"** line and a copyable BibTeX entry, and a link back to the conference.
+  - Visible page: title, creators, **review status** (e.g. "Refereed creative work", with the volume's review statement on hover or underneath; nothing shown when unknown), the "In: *Proceedings of ACMC 2018*, Perth" line, the abstract or program note and research statement, the work's details (format, duration, performers, where and when presented), documentation links, a PDF link, a **"How to cite"** line and a copyable BibTeX entry, and a link back to the conference.
   - BibTeX: `@inproceedings` when the item is printed in the proceedings (works included, as NIME does), otherwise `@misc` with the event in `howpublished`.
   - If `chroma:` is set, the tags are skipped and the page says "Full paper in Chroma →".
 - `_includes/contribution-list.html`: conference pages replace their hand-typed lists with `{% include contribution-list.html %}`. It lists the year's entries grouped by `section` and sorted by `order`, with papers and works given the same treatment. The hand-written intro text on conference pages stays.
@@ -117,7 +123,7 @@ New split PDFs go in `proceedings/acmc2018/<slug>.pdf`, next to their landing pa
 
 | Script | Purpose |
 |---|---|
-| `check_contributions.py` | Validates every entry: required fields, `type`/`review.status`/`work.kind` enums, a conference exists for `year`, a review status resolves (either a conference default or an override), creative works have `work.format`, the `pdf` file exists, page ranges don't overlap, the slug is valid, and media URLs are well-formed. **Runs in CI before `jekyll build`**, so a bad entry fails the build instead of shipping. |
+| `check_contributions.py` | Validates every entry: required fields, `type`/`reviewing`/`work.kind` enums, a conference exists for `year`, every item's `section` is either known to the conference's `reviewing` map or has its own `reviewing` (an empty string counts, so "unknown" is always a deliberate choice), creative works have `work.format`, the `pdf` file exists, page ranges don't overlap, the slug is valid, and media URLs are well-formed. **Runs in CI before `jekyll build`**, so a bad entry fails the build instead of shipping. |
 | `split_proceedings.py <year>` | Reads `pages:` from that year's entries and `page_offset` from the conference, then writes the per-item PDFs and sets the PDF Title/Author metadata. The front matter is the single source of truth, so re-running gives the same output. |
 | `draft_contributions.py <year>` | Pulls a TOC, abstracts and program notes from a volume's or programme's text layer and writes **draft** entries for human review. Used for the back catalogue. |
 | `import_contributions.py <year> <file.csv>` | For chairs. Takes a CSV with columns `title, authors, type, section, order, abstract, pdf, chroma`, plus the work columns `kind, format, duration, performers, event, venue, date, media_url, research_statement`. Authors are separated by `;`. Writes the entries. This is the kind of export conference systems produce. |
@@ -127,7 +133,7 @@ New split PDFs go in `proceedings/acmc2018/<slug>.pdf`, next to their landing pa
 `docs/adding-proceedings.md` will cover:
 - the CSV template, how to run the import, where PDFs go, and how to check the result locally;
 - what to collect from artists at submission time: program note, research statement, format, duration, performers, documentation link (and ideally a licence for the documentation);
-- how to fill in the year's review statement.
+- how to fill in the year's review statement and `reviewing` map (state the process in the call and in the proceedings, so it can be recorded).
 
 Adding a year becomes: fill in the conference `proceedings:` block, import the CSV, drop in the PDFs, open a PR. CI catches mistakes.
 
@@ -147,11 +153,11 @@ Adding a year becomes: fill in the conference `proceedings:` block, import the C
 - [ ] 2000 · [ ] 2004 · [ ] 2007 · [ ] 2008 · [ ] 2009 · [ ] 2010 (needs OCR on some pages) · [ ] 2011
 
 **Phase 4: volumes with no list yet** (draft from TOC, then split)
-- [ ] 2014 (papers volume + talks/posters volume + 7 concert programmes) · [ ] 2015 · [ ] 2016 · [ ] 2017 · [ ] 2019 (+ programme booklet)
+- [ ] 2014 (papers volume + talks/posters volume + 7 concert programmes). **The papers PDF's text layer is garbled** (a font-encoding fault that shifts every letter by 3, e.g. "ZRUWK RI" = "worth of"). Decode it or OCR it before drafting. · [ ] 2015 · [ ] 2016 · [ ] 2017 · [ ] 2019 (+ programme booklet)
 
 **Phase 5: abstract-era years (2020+)**
 - [ ] 2021, 2022, 2024 from their volumes; 2020 from its CSV once `_drafts/found/` is back
-- Proposal: **no per-abstract PDF splits** for these years. The text is on the landing page, which is enough for Scholar, and the full volume stays linked. See open questions.
+- **No per-abstract PDF splits** for these years. The text is on the landing page, which is enough for Scholar, and the full volume stays linked.
 
 **Phase 6: creative works back catalogue**
 - [ ] Years whose works survive only outside the proceedings: concert lists in Chroma reports, archived conference sites and programmes. Each work gets an entry with at least title, creators, format and the concert it was in, even where no program note survives.
@@ -169,14 +175,47 @@ Adding a year becomes: fill in the conference `proceedings:` block, import the C
 - **Repo size:** keeping full volumes and adding split copies adds roughly 100 MB to `proceedings/` (currently 244 MB). This is acceptable for an archive repo, and FTP deploy only uploads changed files. Media stays out of git.
 - **Scholar timing:** Scholar recrawls slowly. Expect weeks to months before entries appear. Tags must be right the first time, which is why there are pilot years.
 - **Scholar and creative works:** Scholar decides for itself what it lists, and it favours entries with substantial text and a PDF. Creative works with a full program note, a research statement and (where printed) a PDF stand the best chance. Whatever Scholar does, each work still has a stable URL, a review statement, a "How to cite" line and tags Zotero can read, so it is citable either way. This is another reason for DOIs later.
-- **Review history:** the review process for creative works in old years (peer review vs. jury vs. committee) has to be confirmed year by year from calls for works and Chroma reports. Until a year is confirmed, the default is "selected by the conference committee".
+- **Review history:** recorded only where the volume (or the call for works) states it. Gaps stay as empty strings and can be filled later from Chroma reports and calls, without guessing.
 - **Creator names:** written as given in the volume ("Andrew R. Brown"). Keeping one spelling across years helps Scholar's author profiles, so the validator could warn on near-duplicates.
 - **Page boundaries:** a few old volumes may start items mid-page or share pages (common for program notes). These are flagged during review; the split rule is "starts on the item's first page", and items that share a page get no per-item PDF.
 
+## Review terminology found in the volumes
+
+From a text search of every volume (October 2026). These are **provisional** and are checked again per year when the year's entries are drafted.
+
+| `reviewing` | Shown as | Volume wording it maps from |
+|---|---|---|
+| `full-paper` | Peer reviewed (full paper) | "fully refereed", "peer review of full paper", "(REF)", "Refereed Papers" in years with a full-paper review statement |
+| `abstract` | Peer reviewed (abstract) | "peer review by abstract", "selected by abstract", "Refereed Abstracts" |
+| `refereed` | Refereed | "Refereed Creative Works", "Refereed Performance Works", "Refereed Artist Talks": refereed, with the basis not stated |
+| `invited` | Invited | keynotes, "Invited Speaker" |
+| `non-refereed` | Not refereed | "Non-refereed Papers", "Non-refereed Abstracts" |
+| `""` | (nothing) | no statement found |
+
+| Year | What the volume says |
+|---|---|
+| 2000 | Per-paper markers: "* peer review of full paper", "† peer review by abstract" |
+| 2001 | "Papers marked (REF) have been fully refereed. The others were selected by abstract." Also Artist Talks, Studio Reports |
+| 2002, 2004 | "Refereed Papers" and "Non-refereed Papers" sections |
+| 2005 | "Refereed Papers" |
+| 2007, 2014, 2017, 2018 | Government statement: "fully refereed papers therefore meet Australian Government requirements for fully-refereed research papers" (HERDC wording) |
+| 2008–2010 | "Refereed Papers"; 2010 also "Artist Talk" |
+| 2011 | No statement found yet; check the front matter by eye |
+| 2015, 2016 | "The peer review process applied to full papers … impartial and independent assessment … by independent, qualified experts". 2015: Refereed Full Papers, Studio Reports, Artist Talks. 2016: Refereed Papers, Creative Works, Artist Talks |
+| 2017 | Refereed Papers, Refereed Abstracts, Refereed Artist Talks, Refereed Performance Works |
+| 2018 | Refereed Papers, Refereed Creative Works. The front matter's contents list calls the abstracts "Non-refereed Abstracts", but the abstracts PDF itself is headed "Refereed Abstracts". **This needs a decision**, see below |
+| 2019 | Refereed Papers, Refereed Creative Works (program notes) |
+| 2021, 2024 | No statement found → `""` unless the call for papers says otherwise |
+| 2023 | Full papers peer reviewed (published in Chroma) |
+
 ## Open questions
 
-1. Abstract-era years: is the landing page enough, or do you also want one-page PDF splits per abstract? (Proposal: landing page only.)
-2. Creative works with no printed note: should a small per-work PDF be generated from the entry (note + details + review statement) to help Scholar? (Proposal: not at first; revisit with DOIs, since Zenodo needs a file anyway.)
-3. URL shape `/proceedings/acmc2018/<slug>/`: OK?
-4. Should `section` headings follow each volume's own TOC wording (e.g. "Refereed Papers", "Studio Reports") or a fixed vocabulary? (Proposal: the volume's own wording, with `type` as the fixed vocabulary.)
-5. Review vocabulary: are `peer-reviewed | juried | curated | invited | not-reviewed` the right terms for ACMC, and do you know which years used which process for creative works?
+1. 2018 abstracts: the contents page says "Non-refereed", but the abstracts PDF says "Refereed". Which is right? (Default until answered: `""`, unknown.)
+
+## Resolved
+
+- 2020+ items: landing page only, no per-abstract PDFs.
+- Creative works with no printed note: landing page only, no generated PDF.
+- URL shape `/proceedings/acmc2018/<slug>/`: confirmed.
+- Types: worked out from the volumes' headings (consistent up to 2020). `section` keeps each volume's wording.
+- Review vocabulary: taken from the volumes (above). A `reviewing` key is set only from clear statements, and is an empty string when unknown.
