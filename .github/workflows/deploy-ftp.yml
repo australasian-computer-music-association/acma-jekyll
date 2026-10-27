@@ -11,8 +11,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+      # Ruby series used for CI builds. Only the minor version is given, so the
+      # latest patch release is used automatically. If this step fails with
+      # "Unavailable version", bump this to a newer series (e.g. '4.1'), run
+      # `bundle update` locally on that Ruby, and commit Gemfile.lock.
+      # (.ruby-version is only used for local rbenv; keep it in the same series.)
       - uses: ruby/setup-ruby@v1
         with:
+          ruby-version: '4.0'
           bundler-cache: true
       - name: build
         run: |
