@@ -5,14 +5,12 @@ Please keep it up to date. Last audited: October 2026 (web and library search, 2
 
 ## Goal
 
-Every ACMC year should list its contributions one by one, each with its own
-PDF, instead of linking one big PDF. Google Scholar indexes papers, not
-volumes. It also wants **one landing page per paper** with `citation_title`,
-`citation_author`, `citation_publication_date`, `citation_conference_title`
-and `citation_pdf_url` meta tags. Nothing on the site sets these yet. The
-likely shape is a `_papers` collection (one front-matter file per paper), a
-layout that writes the meta tags, and conference pages that list their papers
-from the collection.
+Every ACMC year should list its contributions one by one (papers, abstracts
+and creative works), each with its own page and, where printed, its own PDF,
+instead of linking one big PDF. Google Scholar indexes papers, not volumes.
+This is now built: see `docs/scholar-plan.md` (issue #9) for the design and
+`docs/adding-proceedings.md` for how to add a year. A year is done when its
+entries are in `_contributions/ACMCYYYY-proceedings/`. 2018 was the first.
 
 Since about 2020, peer-reviewed long papers are no longer published in the
 conference proceedings. They go to the Chroma journal on its own OJS site
@@ -38,14 +36,14 @@ does). ACMC 2019 already accepted reviewed abstracts only.
 | 2008 | One PDF, 119 pp | Yes, plain titles | One big PDF |
 | 2009 | One PDF, 138 pp | Yes, plain titles (list looks short) | One big PDF |
 | 2010 | One PDF, 98 pp | Yes, plain titles (list looks short) | One big PDF |
-| 2011 | Nothing in the repo; full volume is a free ebook on Lulu | Yes, plain titles | **Missing**: download from Lulu |
+| 2011 | One PDF, 143 pp (`proceedings/ACMC2011-proceedings.pdf`) | Yes, plain titles | One big PDF |
 | 2012 | 4 papers found (`_drafts/found/acmc2011-2012/`) | No | **Missing**: paperback on Lulu; ask the editors for the PDF |
 | 2013 | Held with ICMC 2013 | No | ICMC 2013 is in the ICMC archive, 82 papers: <https://quod.lib.umich.edu/i/icmc/bbp2372.2013>. No separate ACMC track |
 | 2014 | Papers PDF (110 pp), talks/posters PDF (68 pp), 7 concert programmes | No | One big PDF ×2 |
 | 2015 | One PDF, 160 pp | No | One big PDF |
 | 2016 | One PDF, 121 pp, recovered from the Wayback Machine (`proceedings/ACMC2016-proceedings.pdf`) | No | One big PDF |
 | 2017 | One PDF, 79 pp | No | One big PDF |
-| 2018 | 15 paper PDFs, plus front matter, abstracts and creative works PDFs | Papers linked | ✅ Papers per item; abstracts still combined |
+| 2018 | 15 paper PDFs, plus front matter, abstracts and creative works PDFs | ✅ Entries: 15 papers, 4 abstracts, 24 creative works | ✅ Done (pilot year) |
 | 2019 | One PDF, 86 pp (reduced), programme booklet | No (page is still the call) | One big PDF; abstracts only |
 | 2020 | Link to the conference's GitHub Pages site; its repo has all 74 abstracts in `sitedata/papers.csv` (copy in `_drafts/found/acmc2020-data/`) | No | Abstracts only; list them from the CSV |
 | 2021 | One PDF, 30 pp | No | One big PDF; abstracts only |
@@ -85,10 +83,6 @@ from the site yet.
 
 **Quick to get (a browser login or an order):**
 
-- **2011:** the full 143-page volume is a free ebook on Lulu:
-  <https://www.lulu.com/shop/acma-inc/acmc-2011/ebook/product-1vkp8gwv.html>. Lulu needs a
-  login and a $0 checkout. Auckland ResearchSpace has a restricted record that may hold it:
-  <https://researchspace.auckland.ac.nz/handle/2292/16846>.
 - **2012:** *Interactive*, edited by Matt Hitchcock and Jodie Taylor, 180 pp., is a paperback
   on Lulu (no ebook):
   <https://www.lulu.com/shop/matt-hitchcock/acmc-2012-conference-proceedings/paperback/product-20230652.html>.
@@ -133,11 +127,6 @@ from the site yet.
 
 ## Plan
 
-1. Build the `_papers` collection and a layout with Scholar meta tags.
-2. Move the years already split per item (2001, 2005, 2006, 2018) into it.
-3. Split the single PDFs that already have title lists: 2000, 2004,
-   2007–2010 (for 2002, use the original per-paper files in `_drafts/found/`). Check each list against the PDF's table of contents first.
-4. Write title lists from the PDFs for 2014, 2015, 2016 and 2017, then split them.
-5. For 2019–2024, list each contribution with its abstract and link Chroma
-   articles where they exist.
-6. Follow up the leads above for 1993–1999, 2001, 2003, 2011 and 2012.
+The year-by-year plan and its order are in `docs/scholar-plan.md` (issue #9).
+Each year is done in its own PR, following the `proceedings-year` skill.
+Separately, follow up the leads above for 1993–1999, 2001, 2003 and 2012.

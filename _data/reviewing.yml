@@ -1,0 +1,13 @@
+# Allowed values of `reviewing`, with how they are shown on contribution pages.
+# Set a value only when the volume (or the call) states it; "" means unknown and
+# shows nothing. scripts/check_contributions.py reads this file too.
+full-paper:
+  label: Peer reviewed (full paper)
+abstract:
+  label: Peer reviewed (abstract)
+refereed:
+  label: Refereed
+invited:
+  label: Invited
+non-refereed:
+  label: Not refereed

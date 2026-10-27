@@ -55,6 +55,7 @@ exclude:
   - docs
   - scripts
   - README.md
+  - CLAUDE.md
 
 # 5. Collections
 collections:
@@ -68,6 +69,11 @@ collections:
   minutes:
     output: true
     permalink: /minutes/:path/
+  contributions: # one file per paper, abstract or creative work; see docs/adding-proceedings.md
+    output: true
+    # _contributions/ACMC2018-proceedings/x.md -> /proceedings/ACMC2018-proceedings/x.html,
+    # in the same folder as its PDF (Google Scholar's same-directory rule).
+    permalink: /proceedings/:path:output_ext
 
 # 6. Jekyll collections settings
 defaults:
@@ -96,6 +102,13 @@ defaults:
       layout: page
       seo:
         type: WebPage # not BlogPosting; _includes/event-schema.html adds Event data
+  -
+    scope:
+      path: _contributions
+    values:
+      layout: contribution
+      seo:
+        type: WebPage # _includes/citation-meta.html adds the scholarly metadata
 
 # 7. Site settings
 title: Australasian Computer Music Association

@@ -19,7 +19,7 @@ The [**{{ latest_conference.date | date: "%Y" }}** Australasian Computer Music C
 
 - We are always searching for potential hosts for ACMC. We have information for hosting on [this page.]({% link hosting-acmc.md %})
 - All of our conferences are subject to our [Code of Conduct]({% link code-of-conduct.md %})
-- Proceedings and further information from conferences are available via the links below.
+- Proceedings and further information from conferences are available via the links below. Papers, abstracts and creative works are also listed in [the proceedings index]({{ '/proceedings/' | relative_url }}) and [all creative works]({{ '/proceedings/creative-works/' | relative_url }}).
 
 ## Conferences
 

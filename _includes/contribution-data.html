@@ -1,0 +1,28 @@
+{%- comment -%}
+Looks up what a contribution page needs from its conference and _data, and
+assigns it to variables (c_conf, c_proc, c_reviewing, c_review_label,
+c_first_page, c_last_page, c_date, c_tagged). Used by citation-meta.html and
+_layouts/contribution.html, so both always agree.
+
+reviewing: a key set on the entry wins, even "" (explicitly unknown). A blank
+`reviewing:` falls back to the conference's default for the entry's section.
+{%- endcomment -%}
+{%- assign c_conf = site.conferences | where: "year", page.year | first -%}
+{%- assign c_proc = c_conf.proceedings -%}
+{%- if page.reviewing == nil -%}
+  {%- assign c_reviewing = c_proc.reviewing[page.section] -%}
+{%- else -%}
+  {%- assign c_reviewing = page.reviewing -%}
+{%- endif -%}
+{%- assign c_review_label = site.data.reviewing[c_reviewing].label -%}
+{%- assign c_first_page = nil -%}
+{%- assign c_last_page = nil -%}
+{%- if page.pages -%}
+  {%- assign c_page_parts = page.pages | append: "" | split: "-" -%}
+  {%- assign c_first_page = c_page_parts | first | strip -%}
+  {%- assign c_last_page = c_page_parts | last | strip -%}
+{%- endif -%}
+{%- comment -%} The proceedings date if known, else the conference start (_plugins/contributions.rb sets page.date the same way). {%- endcomment -%}
+{%- assign c_date = c_proc.published | default: c_conf.start_date -%}
+{%- comment -%} Chroma holds the version of record for these; don't make a second Scholar record. {%- endcomment -%}
+{%- if page.chroma -%}{%- assign c_tagged = false -%}{%- else -%}{%- assign c_tagged = true -%}{%- endif -%}
