@@ -58,7 +58,7 @@ The citation tags for Google Scholar are in _includes/citation-meta.html.
   <h2>Documentation</h2>
   <ul>
     {%- for m in page.media %}
-    <li><a href="{{ m.url }}">{{ m.label | default: m.kind | capitalize }}</a></li>
+    <li><a href="{{ m.url }}">{% if m.label %}{{ m.label }}{% else %}{{ m.kind | capitalize }}{% endif %}</a></li>
     {%- endfor %}
   </ul>
   {%- endif %}

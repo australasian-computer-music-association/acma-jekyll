@@ -26,7 +26,7 @@ does). ACMC 2019 already accepted reviewed abstracts only.
 |---|---|---|---|
 | 1993–1999 | A few papers (Mikropolyphonie, author copies); see "Before 2000" below | 1994 and 1999 paper lists from Chroma | **Mostly missing**; printed volumes in libraries |
 | 2000 | One PDF, 105 pp | Yes, plain titles | One big PDF |
-| 2001 | One PDF per item, converted from the original Word files | Yes, linked | ✅ Per item. Bandt & Paine survives as HTML on the archived Sound Design Project site; Doornbusch still missing |
+| 2001 | One PDF per item, converted from the original Word files | ✅ Entries: 15 papers, 7 artist talks, 4 studio reports | ✅ Done. Review status per paper from the contents page: 3 (REF) full paper, 12 selected by abstract. Bandt & Paine survives as HTML on the archived Sound Design Project site (entry links it, no PDF); Doornbusch still missing (entry has no PDF or abstract) |
 | 2002 | One PDF, 201 pp; also the original per-paper print-run files (`_drafts/found/ACMC2002-per-paper/`) | Yes, plain titles | Per-paper originals found; not yet linked |
 | 2003 | 2 PDFs (Weinberg keynote, Fraietta); 5 more found (`_drafts/found/acmc2001-2003/`) | Yes, about 30 titles, 2 linked | **Mostly missing**; NLA holds the printed volume |
 | 2004 | One PDF, 105 pp | Yes, plain titles | One big PDF |
