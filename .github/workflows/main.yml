@@ -20,6 +20,13 @@ jobs:
         with:
           ruby-version: '4.0'
           bundler-cache: true
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+      - name: Check _contributions entries
+        run: |
+          pip install pyyaml
+          python3 scripts/check_contributions.py
       - name: build
         run: |
           bundle exec jekyll build

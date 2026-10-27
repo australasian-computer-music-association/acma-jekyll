@@ -1,0 +1,29 @@
+name: Check proceedings and build
+
+# Runs on every pull request (the deploy workflows only run on main), so a
+# broken entry or template is caught before it is merged. Nothing is deployed.
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+      - name: Check _contributions entries
+        run: |
+          pip install pyyaml
+          python3 scripts/check_contributions.py
+      # Same Ruby series as the deploy workflows; see the note there.
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '4.0'
+          bundler-cache: true
+      - name: build
+        run: bundle exec jekyll build
+      - name: Check the built contribution pages
+        run: python3 scripts/check_contributions.py --site _site
