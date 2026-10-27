@@ -137,6 +137,32 @@ New split PDFs go in `proceedings/acmc2018/<slug>.pdf`, next to their landing pa
 
 Adding a year becomes: fill in the conference `proceedings:` block, import the CSV, drop in the PDFs, open a PR. CI catches mistakes.
 
+## Execution order
+
+Each year is a small, self-contained job that any fresh session can pick up from the repo alone, so the work can be paused, resumed or run in parallel to suit token quotas.
+
+**Step 1: architecture + 2018 pilot (one session, one PR)**
+- Build the collection, layout, list include, the two index pages and the four scripts.
+- Add a **PR build check**: a workflow that runs `check_contributions.py` and `jekyll build` on every PR, without deploying. The current workflows only run on pushes to `main`, so PRs get no CI today.
+- Write the **per-year runbook** as a repo skill (`.claude/skills/proceedings-year/SKILL.md`), plus a short `CLAUDE.md` with the conventions, so later sessions read the runbook instead of rediscovering the design.
+- Do 2018 by following the runbook, which tests the runbook as well as the templates.
+
+**Step 2: merge and check the live site** (tags, `sitemap.xml`, Zotero) before scaling up. The data model is what gets copied into hundreds of files, so it has to be right. Template fixes later are cheap.
+
+**Step 3: one session per year (or small batch), each its own branch and PR off `main`**
+- Prompt: "Do ACMC YYYY following the proceedings-year skill". The session drafts entries, then commits and pushes, then splits the PDFs, runs the check and build, and opens a PR.
+- It pushes after each step, so a session that runs out of quota can be resumed by a new one from the branch and the PR checklist.
+- Each PR touches only `_contributions/acmcYYYY/`, `proceedings/acmcYYYY/`, that year's conference file, and that year's row in `docs/proceedings-status.md`, so years don't conflict.
+- PR review checklist: the list matches the TOC, three PDFs spot-checked, and review statuses as the volume states them.
+- Keep **at most two year-PRs open at a time**, since review is the bottleneck.
+
+**Year order** (easiest first, so the runbook gets refined before the hard years):
+1. 2006, 2005, 2001, 2023 (already split / on the page)
+2. 2007, 2008, 2000, 2004, 2009, 2011, 2010 (title lists exist; 2010 needs OCR)
+3. 2015, 2016, 2017, 2019, 2014 (no lists; 2014 needs its text layer decoded)
+4. 2021, 2022, 2024, 2020 (2020 once its CSV is back)
+5. Creative works back catalogue
+
 ## Phases (one PR each, or one per year where marked)
 
 **Phase 1: infrastructure + pilots**
