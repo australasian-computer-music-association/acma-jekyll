@@ -1,0 +1,14 @@
+---
+layout: null
+sitemap: false
+---
+{%- assign docs = site.documents | where_exp: 'd', 'd.sitemap != false' -%}
+{%- assign pages = site.html_pages | where_exp: 'p', 'p.sitemap != false' | where_exp: 'p', 'p.title' -%}
+[
+{%- for doc in docs %}
+  {"title": {{ doc.title | jsonify }}, "url": {{ doc.url | relative_url | jsonify }}, "excerpt": {{ doc.excerpt | strip_html | strip_newlines | truncatewords: 30 | jsonify }}, "content": {{ doc.content | strip_html | jsonify }}},
+{%- endfor %}
+{%- for p in pages %}
+  {"title": {{ p.title | jsonify }}, "url": {{ p.url | relative_url | jsonify }}, "excerpt": {{ p.excerpt | default: p.content | strip_html | strip_newlines | truncatewords: 30 | jsonify }}, "content": {{ p.content | strip_html | jsonify }}}{% unless forloop.last %},{% endunless %}
+{%- endfor %}
+]

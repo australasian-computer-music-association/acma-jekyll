@@ -1,0 +1,105 @@
+/* ACMA site styles: small overrides on top of Pico CSS (assets/vendor/pico). */
+
+/* Colours. Selectors mirror Pico's so these win in both light and dark mode. */
+:root:not([data-theme=dark]),
+[data-theme=light] {
+  --pico-font-family-sans-serif: "Inter", system-ui, "Segoe UI", Roboto, sans-serif;
+  --pico-primary: #af6408;
+  --pico-primary-background: #af6408;
+  --pico-primary-underline: rgba(175, 100, 8, 0.5);
+  --pico-primary-hover: #8a4f07;
+  --pico-primary-hover-background: #8a4f07;
+  --pico-primary-hover-underline: var(--pico-primary-hover);
+  --pico-primary-focus: rgba(175, 100, 8, 0.35);
+  --pico-text-selection-color: rgba(175, 100, 8, 0.2);
+  --acma-tint: #f7ead9;
+}
+
+@media only screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --pico-font-family-sans-serif: "Inter", system-ui, "Segoe UI", Roboto, sans-serif;
+    --pico-primary: #eaa04a;
+    --pico-primary-background: #af6408;
+    --pico-primary-underline: rgba(234, 160, 74, 0.5);
+    --pico-primary-hover: #f4c48b;
+    --pico-primary-hover-background: #c87610;
+    --pico-primary-hover-underline: var(--pico-primary-hover);
+    --pico-primary-focus: rgba(234, 160, 74, 0.4);
+    --pico-text-selection-color: rgba(234, 160, 74, 0.3);
+    --acma-tint: rgba(175, 100, 8, 0.18);
+  }
+}
+
+/* Header and nav: let the links wrap on narrow screens instead of a menu toggle. */
+body > header { padding-block: 0.5rem; }
+body > header nav { flex-wrap: wrap; row-gap: 0.5rem; }
+body > header nav ul:last-child { flex-wrap: wrap; }
+.logo img { display: block; height: 4rem; width: auto; }
+body > header nav li { padding-block: 0.25rem; }
+body > header nav a { color: var(--pico-contrast); }
+body > header nav a:hover,
+body > header nav a[aria-current="page"] { color: var(--pico-primary); }
+
+/* Full-width banner from a page's feature_image. */
+.feature {
+  min-height: 35vh;
+  background: var(--pico-card-sectioning-background-color) center / cover no-repeat;
+}
+
+/* Readable, centred text column (and no Pico card styling on <article>). */
+.content {
+  max-width: 46rem;
+  padding: 0;
+  background: none;
+  box-shadow: none;
+  margin-inline: auto;
+  overflow-wrap: anywhere;
+}
+
+.meta {
+  color: var(--pico-muted-color);
+  font-size: 0.9em;
+  margin-top: calc(var(--pico-typography-spacing-vertical) * -0.5);
+}
+
+/* Callouts, used in Markdown as {:.info-box} */
+.callout-box,
+.info-box {
+  margin-block: var(--pico-typography-spacing-vertical);
+  padding: var(--pico-spacing);
+  border-top: 4px solid var(--pico-muted-border-color);
+  background: var(--pico-card-sectioning-background-color);
+}
+.info-box { border-color: var(--pico-primary-background); background: var(--acma-tint); }
+.callout-box > :last-child,
+.info-box > :last-child { margin-bottom: 0; }
+
+/* News list */
+.post-list { padding: 0; }
+.post-list li { list-style: none; padding-block: 1rem; border-bottom: 1px solid var(--pico-muted-border-color); }
+.post-list h2 { margin-bottom: 0.25rem; font-size: 1.35rem; }
+.post-list h2 a { text-decoration: none; }
+
+/* Search results */
+.search-results { padding: 0; }
+.search-results li { list-style: none; margin-bottom: 1rem; }
+.search-results p { margin: 0.25rem 0 0; color: var(--pico-muted-color); font-size: 0.95em; }
+
+/* Footer */
+body > footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  border-top: 1px solid var(--pico-muted-border-color);
+  color: var(--pico-muted-color);
+  font-size: 0.9em;
+}
+body > footer ul { display: flex; flex-wrap: wrap; gap: 0.25rem 1rem; margin: 0; padding: 0; }
+body > footer li { list-style: none; margin: 0; }
+body > footer a { color: inherit; }
+
+@media (max-width: 576px) {
+  .logo img { height: 3rem; }
+  .feature { min-height: 22vh; }
+}

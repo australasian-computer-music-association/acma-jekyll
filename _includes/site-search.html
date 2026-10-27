@@ -1,0 +1,24 @@
+<form role="search" onsubmit="return false">
+  <input id="search" type="search" placeholder="Search, e.g. proceedings" aria-label="Search term" autocomplete="off">
+</form>
+<ul class="search-results" id="search-results" aria-live="polite"></ul>
+<noscript>Please enable JavaScript to use the search form.</noscript>
+
+<script>
+(async () => {
+  const pages = await fetch('{{ "/assets/search.json" | relative_url }}').then(r => r.json());
+  const field = document.getElementById('search');
+  const results = document.getElementById('search-results');
+  const escape = s => s.replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
+
+  field.addEventListener('input', () => {
+    const term = field.value.trim().toLowerCase();
+    if (!term) { results.innerHTML = ''; return; }
+    const matches = pages.filter(p =>
+      p.title.toLowerCase().includes(term) || p.content.toLowerCase().includes(term));
+    results.innerHTML = matches.length
+      ? matches.map(p => `<li><a href="${p.url}">${escape(p.title)}</a><p>${escape(p.excerpt)}</p></li>`).join('')
+      : '<li>Sorry, nothing was found.</li>';
+  });
+})();
+</script>
