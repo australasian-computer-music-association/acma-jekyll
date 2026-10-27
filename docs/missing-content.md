@@ -50,7 +50,9 @@ Not copied, on purpose:
   the repo has the 11 MB reduced version.
 
 Already safe in the repo: Chroma 1–37, AGM minutes, constitution,
-mailing-list archive 1999–2019, ACMC 2000–2010 proceedings.
+mailing-list archive 1999–2019, ACMC 2000–2010 proceedings (except 2003,
+of which only two papers survive). For the year-by-year state of the
+proceedings and the plan for them, see `proceedings-status.md`.
 
 ## Other fixes
 
