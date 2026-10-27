@@ -13,7 +13,7 @@ the complete volume.
 - [All creative works]({{ '/proceedings/creative-works/' | relative_url }})
 - [All conferences]({% link conferences.md %})
 
-| Conference | Papers and abstracts | Creative works | Complete volume |
+| Conference | Papers & abstracts | Works | Volume |
 |---|---|---|---|
 {%- assign confs = site.conferences | sort: "date" | reverse %}
 {%- for conf in confs %}

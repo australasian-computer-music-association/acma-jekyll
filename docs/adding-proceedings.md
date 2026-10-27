@@ -182,6 +182,9 @@ Rules worth knowing:
   `python3 scripts/split_proceedings.py YYYY --fix-metadata`, so each PDF's
   built-in title and author are the item's own, not "Microsoft Word -
   draft.docx" or the editor's name.
+- **Abstracts matter**: Google Scholar excludes pages that show "bare
+  bibliographic data without abstracts". An entry with no abstract or
+  program note still gets its page, but no Scholar tags. Chase missing notes.
 - **Media** stays outside this repository; link to it.
 
 ## Splitting an old volume
