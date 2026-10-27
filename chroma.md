@@ -23,8 +23,8 @@ From 1989 to 2006, Chroma was the Newsletter of the Australasian Computer Music 
 - **Issue 10** [(PDF)]({% link chroma_pdf/Chroma10.pdf %}) - December 1992
 - **Issue 11** [(PDF)]({% link chroma_pdf/Chroma11.pdf %}) - February/March 1993
 - **Issue 12** [(PDF)]({% link chroma_pdf/Chroma12.pdf %}) - April/May 1993
-- **Issue 13** [(PDF)]({% link chroma_pdf/Chroma13.pdf %}) - August-November 1993
-- **Issue 14** [(PDF)]({% link chroma_pdf/Chroma14.pdf %}) - August-November 1994
+- **Issue 13** [(PDF)]({% link chroma_pdf/Chroma13.pdf %}) - June/July 1993
+- **Issue 14** [(PDF)]({% link chroma_pdf/Chroma14.pdf %}) - August-November 1993
 - **Issue 15** [(PDF)]({% link chroma_pdf/Chroma15.pdf %}) - February 1994
 - **Issue 16** [(PDF)]({% link chroma_pdf/Chroma16.pdf %}) - April 1994
 - **Issue 17** [(PDF)]({% link chroma_pdf/Chroma17.pdf %}) - June 1994  
@@ -35,8 +35,8 @@ From 1989 to 2006, Chroma was the Newsletter of the Australasian Computer Music 
 - **Issue 21** [(PDF)]({% link chroma_pdf/Chroma21.pdf %}) - December 1996
 - **Issue 22** [(PDF)]({% link chroma_pdf/Chroma22.pdf %}) - March 1997
 - **Issue 23** [(PDF)]({% link chroma_pdf/Chroma23.pdf %}) - June 1998
-- **Issue 24** [(PDF)]({% link chroma_pdf/Chroma24.pdf %}) - March? 1999
-- **Issue 25** [(PDF)]({% link chroma_pdf/Chroma25.pdf %}) - June? 1999
+- **Issue 24** [(PDF)]({% link chroma_pdf/Chroma24.pdf %}) - early 1999 (no date printed; written after 2 March 1999, before the July 1999 conference)
+- **Issue 25** [(PDF)]({% link chroma_pdf/Chroma25.pdf %}) - mid 1999 (no date printed; after May 1999, before the July 1999 conference)
 - **Issue 26-27** [(PDF)]({% link chroma_pdf/Chroma26-27.pdf %}) - March 2000
 - **Issue 28** [(PDF)]({% link chroma_pdf/Chroma28.pdf %}) - June 2000
 - **Issue 29**   [(PDF)]({% link chroma_pdf/Chroma29.pdf %}) - December 2000
@@ -46,6 +46,6 @@ From 1989 to 2006, Chroma was the Newsletter of the Australasian Computer Music 
 - **Issue 33** [(PDF)]({% link chroma_pdf/Chroma33.pdf %}) - March 2003  
     (This issue contains a full index of Chroma articles from issue 1 - 32, and an ACMA chronology from 1989-2003)
 - **Issue 34** [(PDF)]({% link chroma_pdf/Chroma34.pdf %}) - July 2003
-- **Issue 35** [(PDF)]({% link chroma_pdf/Chroma35.pdf %}) - January 2003
-- **Issue 36** [(PDF)]({% link chroma_pdf/Chroma36.pdf %}) - July 2005
+- **Issue 35** [(PDF)]({% link chroma_pdf/Chroma35.pdf %}) - January 2004 (printed as January 2003, but its contents date from late 2003 and early 2004)
+- **Issue 36** [(PDF)]({% link chroma_pdf/Chroma36.pdf %}) - July 2005 (printed as Issue Number 34)
 - **Issue 37** [(PDF)]({% link chroma_pdf/Chroma37.pdf %}) - March 2006
