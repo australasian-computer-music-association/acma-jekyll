@@ -101,6 +101,12 @@ Conference pages answer at both slug styles (`/conferences/acmc-2019/` and
 paths. News posts answer at the WordPress-era `/news/<slug>/`. These are set
 with `redirect_from` in each page's front matter.
 
+The build turns them into real 301 redirects in `.htaccess` (generated from
+`/.htaccess` in this repo), which the live LiteSpeed host reads. jekyll-redirect-from
+also writes HTML redirect pages, which act as a fallback (e.g. on GitHub Pages).
+The same `.htaccess` sends `http://` and `www.` to `https://computermusic.org.au`
+and uses the site's own 404 page.
+
 ## Note on git and PDFs
 
 If your global gitignore excludes `*.pdf`, this repo's `.gitignore` re-includes
