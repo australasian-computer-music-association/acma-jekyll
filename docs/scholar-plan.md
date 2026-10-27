@@ -58,7 +58,7 @@ proceedings:
     research papers.
   reviewing:                 # default per section heading; only what the volume states
     "Refereed Papers": full-paper
-    "Non-refereed Abstracts": ""   # contents page and abstracts PDF disagree: unknown for now
+    "Non-refereed Abstracts": non-refereed
     "Refereed Creative Works": refereed
 ```
 
@@ -203,14 +203,14 @@ From a text search of every volume (October 2026). These are **provisional** and
 | 2011 | No statement found yet; check the front matter by eye |
 | 2015, 2016 | "The peer review process applied to full papers … impartial and independent assessment … by independent, qualified experts". 2015: Refereed Full Papers, Studio Reports, Artist Talks. 2016: Refereed Papers, Creative Works, Artist Talks |
 | 2017 | Refereed Papers, Refereed Abstracts, Refereed Artist Talks, Refereed Performance Works |
-| 2018 | Refereed Papers, Refereed Creative Works. The front matter's contents list calls the abstracts "Non-refereed Abstracts", but the abstracts PDF itself is headed "Refereed Abstracts". **This needs a decision**, see below |
+| 2018 | Refereed Papers, Refereed Creative Works. Non-refereed Abstracts: the contents page says "Non-refereed", but the abstracts section's first page says "Refereed". **Judgement: the contents page is right**, and the section heading is the error |
 | 2019 | Refereed Papers, Refereed Creative Works (program notes) |
 | 2021, 2024 | No statement found → `""` unless the call for papers says otherwise |
 | 2023 | Full papers peer reviewed (published in Chroma) |
 
 ## Open questions
 
-1. 2018 abstracts: the contents page says "Non-refereed", but the abstracts PDF says "Refereed". Which is right? (Default until answered: `""`, unknown.)
+None at present.
 
 ## Resolved
 
@@ -219,3 +219,4 @@ From a text search of every volume (October 2026). These are **provisional** and
 - URL shape `/proceedings/acmc2018/<slug>/`: confirmed.
 - Types: worked out from the volumes' headings (consistent up to 2020). `section` keeps each volume's wording.
 - Review vocabulary: taken from the volumes (above). A `reviewing` key is set only from clear statements, and is an empty string when unknown.
+- 2018 abstracts: `non-refereed`, following the contents page. The entries' YAML carries a comment noting that the section heading says "Refereed".
