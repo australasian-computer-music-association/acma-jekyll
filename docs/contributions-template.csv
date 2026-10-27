@@ -1,0 +1,3 @@
+title,authors,type,section,pages,pdf,section_pdf,abstract,keywords,reviewing,chroma,kind,format,duration,created,performers,event,venue,date,media,research_statement
+An Example Paper,First Author;Second Author,paper,Refereed Papers,1-8,/proceedings/acmc2026/author-example-paper.pdf,,"The abstract, in one cell.",keyword one;keyword two,,,,,,,,,,,,
+An Example Work,Composer Name,creative-work,Creative Works,,,,"The program note.",,,,composition,clarinet and live electronics,8:00,2026,Performer Name,Concert 2,Riverside Theatres,2026-12-02,video|https://example.org/video|Performance video,"Background, contribution and significance."

@@ -35,6 +35,17 @@ From Scholar's inclusion guidelines, which this design follows:
 - [ ] A plain HTML browse path from the home page to every item page: home → `/proceedings/` → year → item. All item pages in `sitemap.xml` (jekyll-sitemap does this automatically for collections).
 - [ ] No citation tags on volume-level pages (conference pages, full-volume PDFs), so Scholar doesn't make one record for a whole book.
 
+## As built (step 1)
+
+Step 1 changed a few details from the design below. `docs/adding-proceedings.md` is the authoritative field reference.
+
+- Conference `proceedings:` block: `full_volume` (the complete volume, kept) and, for volumes to be split, `source_pdf` and `page_offset`. Review statements are per section (`review_statements:`), because 2018 had separate paper and music juries. Entries take their date from `proceedings.published`, or else the conference's `start_date`, which is now required.
+- Entries: `section_pdf` for items printed on shared pages (abstracts, program notes), linked but not tagged as the item's PDF; `keywords` (from "KW:" lines); `research_statement` as a front-matter field rather than a body section; `pdf_pages` to override the page offset for one item.
+- Three scripts, not four: abstract drafting is `import_contributions.py --extract-abstracts`, rather than a separate `draft_contributions.py`.
+- One small plugin, `_plugins/contribution_dates.rb`. Without it, jekyll-seo-tag would give every entry the build time as its publication date.
+- Allowed `type` and `reviewing` values live in `_data/contribution_types.yml` and `_data/reviewing.yml`, which the templates and the checker both read.
+- 2018's ISSN is 2206-5296, not 1448-7780: check each volume's own ISSN or ISBN.
+
 ## Architecture
 
 ### 1. Conference = volume metadata
