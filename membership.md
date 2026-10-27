@@ -19,7 +19,9 @@ From time to time, association members have been offered:
 
 ### Membership Fees
 
-In general, registering for [ACMC]({% link conferences.md %}) automatically grants membership to ACMA for 12 months. 
+In general, registering for [ACMC]({% link conferences.md %}) grants membership to ACMA.
+If you have registered for ACMC2026, please [let us know with this form](https://docs.google.com/forms/d/e/1FAIpQLSdoV2hylQQa5BxwK02QMegQyZL-VI5X1UGu4Tv8Fr1bQpSs4g/viewform) so we can add you to the register of members. Your membership will run until 31 December 2027. See our [privacy statement]({% link privacy.md %}) for how we handle your details.
+
 It is possible to join the association without registering for ACMC. Please contact the [secretary]({% link committee.md %}) to arrange this. Membership types are:
 
 - full $30.00 
