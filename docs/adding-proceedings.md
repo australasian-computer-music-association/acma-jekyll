@@ -110,7 +110,7 @@ Columns (only `title`, `authors`, `type` and `section` are required):
 |---|---|
 | `title` | as printed, in title case |
 | `authors` | separated by `;`, e.g. `Cat Hope;Stuart James` |
-| `type` | `paper`, `abstract`, `keynote`, `artist-talk`, `studio-report`, `poster` or `creative-work` |
+| `type` | `paper`, `abstract`, `keynote`, `artist-talk`, `studio-report`, `poster`, `workshop` or `creative-work` |
 | `section` | the heading it appears under, e.g. `Refereed Papers` |
 | `pages` | printed page range, e.g. `7-13` |
 | `pdf` | this item's own PDF: a file on your computer (copied in), or `split` to cut it from the volume |
