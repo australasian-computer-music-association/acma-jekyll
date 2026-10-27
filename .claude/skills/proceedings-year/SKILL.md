@@ -74,10 +74,15 @@ For a volume to split, add `source_pdf` and `page_offset`. Commit and push.
 - **Read every drafted abstract** against the PDF. Fix cropped author lines,
   words that lost their hyphens at line ends (`computeraided` →
   `computer-aided`), and en dashes lost from the text layer. Keep the authors'
-  own typos as printed.
+  own typos as printed. Then run `python3 scripts/check_contributions.py`
+  and clear its body warnings: a body that starts in lower case or with an
+  institution is header text left over from the PDF, and a sentence split
+  across two paragraphs is a page break.
 - Creative works: program note in the body, `work.format` (required),
   `work.created`, `keywords` from "KW:" lines, and `work.kind` where it's
-  clear.
+  clear. The note starts after the **whole** header block (title,
+  instrumentation, affiliation). An instrumentation line can wrap onto a
+  second line (ACMC 2018, *Noise in the Clouds*), so don't count lines.
 - Commit and push.
 
 ## 4. Split the PDFs (volumes only)

@@ -166,13 +166,25 @@ def extract_abstract(pdf, page=1):
     return ""
 
 
+# A paragraph that stops without closing punctuation and is followed by one
+# starting in lower case is one sentence broken by a page or column break.
+SENTENCE_END = re.compile(r"[.!?:;)\]\"'’”…]$")
+
+
+def broken_sentence(para, next_para):
+    return not SENTENCE_END.search(para.rstrip()) and next_para[:1].islower()
+
+
 def tidy_paragraphs(text):
-    """Join wrapped lines into paragraphs; mend words split across lines."""
+    """Join wrapped lines into paragraphs; mend words split across lines and
+    sentences split across pages."""
     paras = []
     for block in re.split(r"\n\s*\n", text):
         lines = [l.strip() for l in block.splitlines() if l.strip()]
         if not lines:
             continue
+        if paras and broken_sentence(paras[-1], lines[0]):
+            lines.insert(0, paras.pop())
         joined = lines[0]
         for line in lines[1:]:
             if joined.endswith("-") and line[:1].islower():
