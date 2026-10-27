@@ -12,5 +12,7 @@ studio-report:
   label: Studio report
 poster:
   label: Poster
+workshop:
+  label: Workshop
 creative-work:
   label: Creative work
