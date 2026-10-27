@@ -20,7 +20,7 @@ Today most volumes are one big PDF with a plain title list (or no list) on the c
 | Per-item PDFs | Only where an item was printed in a volume (papers, pre-2020). **2020+ items and creative works without a printed note get a landing page only.** |
 | Full-volume PDFs | **Kept** and linked as "Complete proceedings", with no tags. Split PDFs are added alongside them. |
 | Media (audio, video, scores) | Not stored in git. Linked from the entry to wherever it lives (archive.org, Vimeo/YouTube, Zenodo, an artist's site). |
-| DOIs | Not now. A `doi:` field is reserved. Note: DOIs matter more for NTROs than for papers, because university research offices often ask for one, so Zenodo should be revisited soon (see Later). |
+| DOIs | **Deferred; see how things go first.** The landing page on this site is the version of record. Zenodo DOIs resolve to Zenodo's copy rather than to that page, which has confused matters for NIME, so Zenodo is not the plan. If DOIs are wanted later, the likely route is minting ACMA's own (e.g. Crossref or DataCite membership, with the cost budgeted) so that each DOI resolves to the landing page. A `doi:` field is reserved so nothing has to change structurally. |
 | Data entry for old volumes | Claude drafts from each PDF's text layer and concert programmes, and the maintainer reviews it in a PR. |
 | `_drafts/found/` (2002 per-paper files, 2003/2012 papers, 2020 CSV) | Left out for now. Those files are on another machine and come in a later phase. |
 
@@ -167,14 +167,15 @@ Adding a year becomes: fill in the conference `proceedings:` block, import the C
 
 **Later**
 - [ ] 2002 per-paper originals, 2003, 2012 and the 1990s finds from `_drafts/found/`
-- [ ] DOIs via a Zenodo community. This is a high priority for creative works, because Zenodo supports audio, video and other resource types and gives NTROs the persistent identifier research offices ask for. It also gives documentation a durable home
+- [ ] Revisit DOIs once the pages have been live for a while. If they're wanted, mint ACMA's own DOIs pointing at the landing pages (costs to be budgeted), not Zenodo
+- [ ] Long-term preservation, in case the association or GitHub goes away. Current hosting is fine for now. Options for later include a periodic Internet Archive capture or a deposit with a library (e.g. the NLA's web archive, which already holds *Mikropolyphonie*)
 - [ ] After launch: check Search Console for indexing; if pages still aren't in Scholar after a few months, use Scholar's publisher support form
 
 ## Notes and risks
 
 - **Repo size:** keeping full volumes and adding split copies adds roughly 100 MB to `proceedings/` (currently 244 MB). This is acceptable for an archive repo, and FTP deploy only uploads changed files. Media stays out of git.
 - **Scholar timing:** Scholar recrawls slowly. Expect weeks to months before entries appear. Tags must be right the first time, which is why there are pilot years.
-- **Scholar and creative works:** Scholar decides for itself what it lists, and it favours entries with substantial text and a PDF. Creative works with a full program note, a research statement and (where printed) a PDF stand the best chance. Whatever Scholar does, each work still has a stable URL, a review statement, a "How to cite" line and tags Zotero can read, so it is citable either way. This is another reason for DOIs later.
+- **Scholar and creative works:** Scholar decides for itself what it lists, and it favours entries with substantial text and a PDF. Creative works with a full program note, a research statement and (where printed) a PDF stand the best chance. Whatever Scholar does, each work still has a stable URL, a review statement, a "How to cite" line and tags Zotero can read, so it is citable either way.
 - **Review history:** recorded only where the volume (or the call for works) states it. Gaps stay as empty strings and can be filled later from Chroma reports and calls, without guessing.
 - **Creator names:** written as given in the volume ("Andrew R. Brown"). Keeping one spelling across years helps Scholar's author profiles, so the validator could warn on near-duplicates.
 - **Page boundaries:** a few old volumes may start items mid-page or share pages (common for program notes). These are flagged during review; the split rule is "starts on the item's first page", and items that share a page get no per-item PDF.
