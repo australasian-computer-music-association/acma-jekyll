@@ -30,7 +30,7 @@ does). ACMC 2019 already accepted reviewed abstracts only.
 | 2002 | One PDF, 201 pp; also the original per-paper print-run files (`_drafts/found/ACMC2002-per-paper/`) | Yes, plain titles | Per-paper originals found; not yet linked |
 | 2003 | 2 PDFs (Weinberg keynote, Fraietta); 5 more found (`_drafts/found/acmc2001-2003/`) | Yes, about 30 titles, 2 linked | **Mostly missing**; NLA holds the printed volume |
 | 2004 | One PDF, 105 pp | Yes, plain titles | One big PDF |
-| 2005 | 47 PDFs | Yes, linked | ✅ Per item |
+| 2005 | 47 PDFs (44 items + front matter), concert programme, workshops | ✅ Entries: 2 keynotes, 1 invited speaker, 24 papers, 4 artist talks, 6 studio reports, 4 posters, 5 workshops, 36 creative works (32 concert works, 4 installations) | ✅ Done. Review status per paper from the contents page: 15 full paper, 9 abstract |
 | 2006 | 55 PDFs (52 items; 3 duplicates) | ✅ Entries: 2 keynotes, 1 invited speaker, 29 papers, 5 posters, 4 studio reports, 7 artist talks, 4 workshops | ✅ Done. No front matter survives, so review status is unknown except for keynotes |
 | 2007 | One PDF, 134 pp | Yes, plain titles | One big PDF |
 | 2008 | One PDF, 119 pp | Yes, plain titles | One big PDF |
