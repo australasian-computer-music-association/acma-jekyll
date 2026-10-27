@@ -19,8 +19,8 @@ import re
 import sys
 from collections import defaultdict
 
-from contributions import (ROOT, load_conferences, load_contributions, load_data, parse_pages,
-                           site_path, year_dir_url, year_folder)
+from contributions import (ROOT, broken_sentence, load_conferences, load_contributions, load_data,
+                           parse_pages, site_path, year_dir_url, year_folder)
 
 REQUIRED = ["title", "authors", "year", "type", "section", "order"]
 WORK_KINDS = {"composition", "performance", "installation", "audiovisual",
@@ -29,6 +29,29 @@ MEDIA_KINDS = {"audio", "video", "score", "documentation", "website"}
 SLUG = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
 KNOWN_KEYS = set(REQUIRED) | {"pages", "pdf", "section_pdf", "reviewing", "chroma", "doi",
                               "keywords", "work", "media", "research_statement", "pdf_pages"}
+AFFILIATION = re.compile(r"\b(University|Universität|Université|Universidad|Conservatorium|"
+                         r"Conservatory|Institute|College|Polytechnic)\b")
+
+
+def body_problems(body):
+    """Signs that an extracted abstract or program note picked up PDF layout:
+    the end of the header block above it, or a sentence split at a page break."""
+    text = re.sub(r"\{[%{].*?[%}]\}", "", body).strip()
+    if not text:
+        return []
+    problems = []
+    opening = " ".join(text.split()[:12])
+    if text[:1].islower():
+        problems.append(f"starts in lower case (“{opening} …”): header text left over from the PDF?")
+    elif AFFILIATION.search(opening):
+        problems.append(f"names an institution in its first words (“{opening} …”): "
+                        "the author's affiliation left over from the PDF?")
+    paras = [p.strip() for p in re.split(r"\n\s*\n", text) if p.strip()]
+    for a, b in zip(paras, paras[1:]):
+        if broken_sentence(a, b):
+            problems.append(f"sentence split across paragraphs at “…{' '.join(a.split()[-3:])} / "
+                            f"{' '.join(b.split()[:3])}…”: a page break in the PDF?")
+    return problems
 
 
 def check(site_dir=None):
@@ -121,6 +144,8 @@ def check(site_dir=None):
             err("`chroma` should be the article's full https link")
         if fm.get("keywords") is not None and not isinstance(fm["keywords"], list):
             err("`keywords` must be a list")
+        for problem in body_problems(body):
+            warn(problem)
         if not body.strip():
             warn("no abstract or program note: the page gets no Scholar tags "
                  "(Scholar excludes bare bibliographic data)")
