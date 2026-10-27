@@ -7,7 +7,7 @@ description: Add one ACMC year's proceedings to the site as per-item _contributi
 
 You are doing one year of the plan in `docs/scholar-plan.md` (issue #9). The
 field reference is `docs/adding-proceedings.md`. Read both before starting.
-2018 (`_contributions/acmc2018/`, `_conferences/acmc2018.md`) is the worked
+2018 (`_contributions/ACMC2018-proceedings/`, `_conferences/acmc2018.md`) is the worked
 example; copy its patterns.
 
 The work must be resumable. Push after every step, and keep the PR checklist
@@ -18,7 +18,7 @@ up to date, so a new session can carry on from the branch alone.
 - Branch: `acmcYYYY-contributions` off `main`. If it already exists, check it
   out, read its PR (if any) and the commits, and continue from the first
   unticked step.
-- Only touch `_contributions/acmcYYYY/`, `proceedings/acmcYYYY/`, that year's
+- Only touch `_contributions/ACMCYYYY-proceedings/`, `proceedings/ACMCYYYY-proceedings/`, that year's
   `_conferences/` file, and that year's row in `docs/proceedings-status.md`.
   Other years' PRs run in parallel. Template or script changes go in their
   own PR, unless they're tiny fixes the year needs; say so in the PR.
@@ -58,15 +58,16 @@ For a volume to split, add `source_pdf` and `page_offset`. Commit and push.
   per item in volume order. Use **the title as printed on the item's own first
   page** (the contents page often differs), in title case, and authors as
   printed there. Sections use the volume's own heading wording.
-- An item's own PDF always lives **in its page's folder**:
-  `/proceedings/acmcYYYY/<slug>/<slug>.pdf`. Google Scholar wants
-  `citation_pdf_url` in the same directory as the page, and the checker
-  enforces this. In the CSV, put `split` in the `pdf` column for items to cut
-  from the volume. Items that share pages (abstracts, program notes) get
-  `section_pdf`, not `pdf`.
-- Items **already split** into their own files (2001, 2005, 2006): `git mv`
-  each one into its entry's folder, set `pdf_moved_from:` to the old site
-  path (the `.htaccess` template turns it into a 301 redirect), then run
+- Entries go in `_contributions/ACMCYYYY-proceedings/` and are published as
+  `/proceedings/ACMCYYYY-proceedings/<slug>.html`, in the **same folder as
+  their PDFs**. Google Scholar wants `citation_pdf_url` in the same directory
+  as the page, and the checker enforces this. In the CSV, put `split` in the
+  `pdf` column for items to cut from the volume (they become `<slug>.pdf`).
+  Items that share pages (abstracts, program notes) get `section_pdf`, not
+  `pdf`.
+- Items **already split** into their own files (2001, 2003, 2005, 2006) are
+  already in `proceedings/ACMCYYYY-proceedings/`: point `pdf` at the existing
+  file and **don't move or rename it**. Then run
   `python3 scripts/split_proceedings.py YYYY --fix-metadata` to put the right
   title and authors inside the PDFs. 2018 is the worked example.
 - `python3 scripts/import_contributions.py YYYY file.csv --extract-abstracts`

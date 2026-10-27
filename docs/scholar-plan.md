@@ -42,9 +42,9 @@ Step 1 changed a few details from the design below. `docs/adding-proceedings.md`
 - Conference `proceedings:` block: `full_volume` (the complete volume, kept) and, for volumes to be split, `source_pdf` and `page_offset`. The volume's review statement (`review_statement`) and its juries and committees (`committees`) are shown once, on the conference page, as a journal lists its editorial board. Entry pages show only a short review marker that links there. Entries take their date from `proceedings.published`, or else the conference's `start_date`, which is now required.
 - Entries: `section_pdf` for items printed on shared pages (abstracts, program notes), linked but not tagged as the item's PDF; `keywords` (from "KW:" lines); `research_statement` as a front-matter field rather than a body section; `pdf_pages` to override the page offset for one item.
 - Three scripts, not four: abstract drafting is `import_contributions.py --extract-abstracts`, rather than a separate `draft_contributions.py`.
-- One small plugin, `_plugins/contribution_dates.rb`. Without it, jekyll-seo-tag would give every entry the build time as its publication date.
+- One small plugin, `_plugins/contributions.rb`. Without it, jekyll-seo-tag would give every entry the build time as its publication date.
 - Allowed `type` and `reviewing` values live in `_data/contribution_types.yml` and `_data/reviewing.yml`, which the templates and the checker both read.
-- **PDF location (fixed after an audit):** Google Scholar's guidelines require `citation_pdf_url` to be in the same subdirectory as the abstract page. Each item's PDF therefore lives inside its page's folder, `/proceedings/acmcYYYY/<slug>/<slug>.pdf`, not in `/proceedings/acmcYYYY/<slug>.pdf` as first planned. Already-published per-item PDFs (2018, and later 2001, 2005, 2006) are moved there with a 301 redirect from their old address (`pdf_moved_from`), and their embedded PDF metadata (often "Microsoft Word - …" or the editor as author) is rewritten to the item's own title and authors. Whole volumes and multi-item PDFs (`proceedings/ACMC*`) are kept out of the sitemap, because Scholar can't index several papers in one PDF.
+- **PDF location (fixed after an audit):** Google Scholar's guidelines require `citation_pdf_url` to be in the same subdirectory as the abstract page. Entry pages are therefore `.html` files in the same flat folder as their PDFs: `_contributions/ACMC2018-proceedings/<slug>.md` is published as `/proceedings/ACMC2018-proceedings/<slug>.html`, next to the existing `01Connell.pdf` etc. Already-published per-item PDFs (2018, and later 2001, 2003, 2005, 2006) keep their names and addresses; new splits are `<slug>.pdf` in the same folder. Their embedded PDF metadata (often "Microsoft Word - …", or the editor as author) is rewritten to the item's own title and authors. PDFs and zips that aren't an entry's own PDF (whole volumes, front matter, section PDFs) are kept out of the sitemap, because Scholar can't index several papers in one PDF.
 - 2018's ISSN is 2206-5296, not 1448-7780: check each volume's own ISSN or ISBN.
 
 ## Architecture
@@ -78,7 +78,7 @@ proceedings:
 
 ### 2. `_contributions` collection: one file per contribution
 
-Path: `_contributions/acmc2018/<slug>.md`. URL: `/proceedings/acmc2018/<slug>/`. The slug is the first creator's surname plus the first words of the title, lower-case ASCII, and never changes once published.
+Path: `_contributions/ACMC2018-proceedings/<slug>.md`. URL: `/proceedings/ACMC2018-proceedings/<slug>.html` (see "As built"). The slug is the first creator's surname plus the first words of the title, lower-case ASCII, and never changes once published.
 
 Fields shared by every entry:
 
@@ -119,7 +119,7 @@ media:                     # documentation, hosted elsewhere
 
 Body: an **abstract** for papers. For creative works, a **Program note** section and an optional **Research statement** section (background, contribution, significance: the three headings NTRO reporting uses). Old years will mostly have the program note only, and new years can ask artists for both.
 
-Each item's own PDF goes in its page's folder, `proceedings/acmc2018/<slug>/<slug>.pdf` (see "As built"). Files already split (2001, 2005, 2006, 2018 papers) are moved there with a 301 redirect from the old address.
+Each item's own PDF sits in the same folder as its page, `proceedings/ACMC2018-proceedings/` (see "As built"). Files already split (2001, 2003, 2005, 2006, 2018 papers) stay where they are.
 
 ### 3. Templates
 
@@ -164,7 +164,7 @@ Each year is a small, self-contained job that any fresh session can pick up from
 **Step 3: one session per year (or small batch), each its own branch and PR off `main`**
 - Prompt: "Do ACMC YYYY following the proceedings-year skill". The session drafts entries, then commits and pushes, then splits the PDFs, runs the check and build, and opens a PR.
 - It pushes after each step, so a session that runs out of quota can be resumed by a new one from the branch and the PR checklist.
-- Each PR touches only `_contributions/acmcYYYY/`, `proceedings/acmcYYYY/`, that year's conference file, and that year's row in `docs/proceedings-status.md`, so years don't conflict.
+- Each PR touches only `_contributions/ACMCYYYY-proceedings/`, `proceedings/ACMCYYYY-proceedings/`, that year's conference file, and that year's row in `docs/proceedings-status.md`, so years don't conflict.
 - PR review checklist: the list matches the TOC, three PDFs spot-checked, and review statuses as the volume states them.
 - Keep **at most two year-PRs open at a time**, since review is the bottleneck.
 
@@ -255,7 +255,7 @@ None at present.
 
 - 2020+ items: landing page only, no per-abstract PDFs.
 - Creative works with no printed note: landing page only, no generated PDF.
-- URL shape `/proceedings/acmc2018/<slug>/`: confirmed.
+- URL shape: confirmed, then changed to `/proceedings/ACMC2018-proceedings/<slug>.html` so pages sit next to their PDFs.
 - Types: worked out from the volumes' headings (consistent up to 2020). `section` keeps each volume's wording.
 - Review vocabulary: taken from the volumes (above). A `reviewing` key is set only from clear statements, and is an empty string when unknown.
 - 2018 abstracts: `non-refereed`, following the contents page. The entries' YAML carries a comment noting that the section heading says "Refereed".

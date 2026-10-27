@@ -51,7 +51,7 @@ def load_contributions(year=None):
     if not os.path.isdir(CONTRIBUTIONS):
         return entries
     for folder in sorted(os.listdir(CONTRIBUTIONS)):
-        if year is not None and folder != f"acmc{year}":
+        if year is not None and folder != year_folder(year):
             continue
         d = os.path.join(CONTRIBUTIONS, folder)
         if not os.path.isdir(d):
@@ -86,10 +86,21 @@ def parse_pages(pages):
     return int(parts[0]), int(parts[-1])
 
 
-def item_pdf_url(year, slug):
-    """Where an item's own PDF lives: inside its page's folder, because Google
+def year_folder(year):
+    """A year's folder, both in _contributions/ (the entries) and in
+    proceedings/ (their PDFs). Entry x.md is published as
+    /proceedings/ACMCYYYY-proceedings/x.html, next to its PDF, because Google
     Scholar wants citation_pdf_url in the same directory as the page."""
-    return f"/proceedings/acmc{year}/{slug}/{slug}.pdf"
+    return f"ACMC{year}-proceedings"
+
+
+def year_dir_url(year):
+    return f"/proceedings/{year_folder(year)}"
+
+
+def item_pdf_url(year, slug):
+    """The default name for an item's own PDF (new splits and imports)."""
+    return f"{year_dir_url(year)}/{slug}.pdf"
 
 
 def write_pdf(reader_or_path, out, fm, proc, pages=None):

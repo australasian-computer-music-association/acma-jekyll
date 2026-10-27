@@ -30,10 +30,3 @@ RewriteRule ^ https://computermusic.org.au%{REQUEST_URI} [R=301,L]
 RewriteRule ^{{ path | replace: ".", "\." }}/?$ {{ item.url }} [R=301,L]
 {% endfor -%}
 {% endfor -%}
-# Per-item PDFs moved into their entry's folder (Scholar wants each PDF in the
-# same directory as its page), from pdf_moved_from in each _contributions entry.
-{% for item in site.contributions -%}
-{% if item.pdf_moved_from -%}
-RewriteRule ^{{ item.pdf_moved_from | remove_first: "/" | replace: ".", "\." }}$ {{ item.pdf }} [R=301,L]
-{% endif -%}
-{% endfor -%}

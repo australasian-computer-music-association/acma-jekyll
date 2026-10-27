@@ -5,7 +5,7 @@ with a citation and the tags Google Scholar reads. This guide is for conference
 chairs and the committee. The design behind it is in `docs/scholar-plan.md`
 (issue #9).
 
-Each contribution is one Markdown file in `_contributions/acmcYYYY/`. You
+Each contribution is one Markdown file in `_contributions/ACMCYYYY-proceedings/`. You
 don't usually write these by hand. Fill in a spreadsheet, export it as CSV, and
 a script writes the files.
 
@@ -163,25 +163,23 @@ The program note (or, for papers, the abstract) goes here, in Markdown.
 Rules worth knowing:
 
 - **File names are permanent.** The file name becomes the page's URL
-  (`/proceedings/acmc2018/hope-their-lives-are/`), so don't rename a published
-  entry.
+  (`/proceedings/ACMC2018-proceedings/hope-their-lives-are.html`), so don't
+  rename a published entry.
 - **`reviewing`**: a blank `reviewing:` (or no key) uses the conference default
   for the section; `reviewing: ""` means "explicitly unknown".
 - **`chroma`**: if the full paper is in Chroma, set this. The page then links
   there and carries no Scholar tags, so citations collect on the journal
   version.
 - **PDFs**: an item's own `pdf` must hold only that item and start on its
-  first page. It always lives in the item's folder,
-  `/proceedings/acmcYYYY/<slug>/<slug>.pdf`, because Google Scholar only
-  accepts a PDF in the same directory as its page. The checker enforces this.
-  Items that share pages with others use `section_pdf` instead, and their
-  page is enough for Scholar. Whole volumes and multi-item PDFs go under
-  `proceedings/ACMCYYYY-…`, which is kept out of the sitemap.
-- **Moving a PDF**: if an item's PDF was already published elsewhere, move it
-  into the item's folder and set `pdf_moved_from:` to its old path, e.g.
-  `/proceedings/ACMC2018-proceedings/01Connell.pdf`. That old address then
-  redirects (301) to the new one. Then run
-  `python3 scripts/split_proceedings.py YYYY --fix-metadata`, so the PDF's
+  first page. It lives in the year's folder, `/proceedings/ACMCYYYY-proceedings/`,
+  next to the item's page, because Google Scholar only accepts a PDF in the
+  same directory as its page. The checker enforces this. PDFs that were
+  already there keep their names (e.g. `01Connell.pdf`); new ones are named
+  `<slug>.pdf`. Items that share pages with others use `section_pdf` instead,
+  and their page is enough for Scholar. Whole volumes and multi-item PDFs are
+  kept out of the sitemap automatically.
+- **PDF metadata**: for PDFs supplied already split, run
+  `python3 scripts/split_proceedings.py YYYY --fix-metadata`, so each PDF's
   built-in title and author are the item's own, not "Microsoft Word -
   draft.docx" or the editor's name.
 - **Media** stays outside this repository; link to it.

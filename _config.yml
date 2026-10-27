@@ -71,7 +71,9 @@ collections:
     permalink: /minutes/:path/
   contributions: # one file per paper, abstract or creative work; see docs/adding-proceedings.md
     output: true
-    permalink: /proceedings/:path/
+    # _contributions/ACMC2018-proceedings/x.md -> /proceedings/ACMC2018-proceedings/x.html,
+    # in the same folder as its PDF (Google Scholar's same-directory rule).
+    permalink: /proceedings/:path:output_ext
 
 # 6. Jekyll collections settings
 defaults:
@@ -100,11 +102,6 @@ defaults:
       layout: page
       seo:
         type: WebPage # not BlogPosting; _includes/event-schema.html adds Event data
-  -
-    scope:
-      path: "proceedings/ACMC*" # whole volumes, zips, programmes and section PDFs
-    values:
-      sitemap: false # Scholar can't index several papers in one PDF; per-item PDFs (proceedings/acmcYYYY/) stay in
   -
     scope:
       path: _contributions

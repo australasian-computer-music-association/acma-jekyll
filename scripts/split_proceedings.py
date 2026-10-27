@@ -8,9 +8,9 @@ Usage:
     python3 scripts/split_proceedings.py 2007 --force    # rewrite existing PDFs
     python3 scripts/split_proceedings.py 2018 --fix-metadata  # only set titles/authors
 
-The entries are the single source of truth. Each entry whose `pdf` is its
-own folder's /proceedings/acmcYYYY/<slug>/<slug>.pdf and which has `pages` is
-cut from the conference's `proceedings.source_pdf`: PDF page = printed page +
+The entries are the single source of truth. Each entry with `pages` whose
+`pdf` (normally /proceedings/ACMCYYYY-proceedings/<slug>.pdf) doesn't exist
+yet is cut from the conference's `proceedings.source_pdf`: PDF page = printed page +
 `proceedings.page_offset`. If the offset changes partway through a volume
 (unnumbered inserts), set `pdf_pages: 12-18` on the entry to give its PDF
 pages directly. Each output PDF gets the item's title and authors as metadata.
@@ -29,8 +29,8 @@ import sys
 
 from pypdf import PdfReader
 
-from contributions import (item_pdf_url, load_conferences, load_contributions, parse_pages,
-                           site_path, write_pdf)
+from contributions import (load_conferences, load_contributions, parse_pages, site_path,
+                           write_pdf, year_dir_url)
 
 
 def main():
@@ -65,8 +65,7 @@ def main():
     made = 0
     for path, fm, _ in load_contributions(args.year):
         pdf = fm.get("pdf") or ""
-        slug = os.path.splitext(os.path.basename(path))[0]
-        if pdf != item_pdf_url(args.year, slug):
+        if os.path.dirname(pdf) != year_dir_url(args.year):
             continue
         span = parse_pages(fm.get("pdf_pages"))
         if not span:

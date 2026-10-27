@@ -10,7 +10,7 @@ and creative works), each with its own page and, where printed, its own PDF,
 instead of linking one big PDF. Google Scholar indexes papers, not volumes.
 This is now built: see `docs/scholar-plan.md` (issue #9) for the design and
 `docs/adding-proceedings.md` for how to add a year. A year is done when its
-entries are in `_contributions/acmcYYYY/`. 2018 was the first.
+entries are in `_contributions/ACMCYYYY-proceedings/`. 2018 was the first.
 
 Since about 2020, peer-reviewed long papers are no longer published in the
 conference proceedings. They go to the Chroma journal on its own OJS site

@@ -19,8 +19,8 @@ import re
 import sys
 from collections import defaultdict
 
-from contributions import (ROOT, item_pdf_url, load_conferences, load_contributions, load_data,
-                           parse_pages, site_path)
+from contributions import (ROOT, load_conferences, load_contributions, load_data, parse_pages,
+                           site_path, year_dir_url, year_folder)
 
 REQUIRED = ["title", "authors", "year", "type", "section", "order"]
 WORK_KINDS = {"composition", "performance", "installation", "audiovisual",
@@ -28,8 +28,7 @@ WORK_KINDS = {"composition", "performance", "installation", "audiovisual",
 MEDIA_KINDS = {"audio", "video", "score", "documentation", "website"}
 SLUG = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
 KNOWN_KEYS = set(REQUIRED) | {"pages", "pdf", "section_pdf", "reviewing", "chroma", "doi",
-                              "keywords", "work", "media", "research_statement", "pdf_pages",
-                              "pdf_moved_from"}
+                              "keywords", "work", "media", "research_statement", "pdf_pages"}
 
 
 def check(site_dir=None):
@@ -54,7 +53,7 @@ def check(site_dir=None):
         year = fm.get("year")
         folder = os.path.basename(os.path.dirname(path))
         slug = os.path.splitext(os.path.basename(path))[0]
-        if folder != f"acmc{year}":
+        if folder != year_folder(year):
             err(f"is in {folder}/ but has year {year}")
         if not SLUG.match(slug):
             err(f"file name `{slug}` must be lower-case letters, digits and single hyphens")
@@ -100,15 +99,8 @@ def check(site_dir=None):
                 elif not os.path.isfile(site_path(url)):
                     err(f"`{key}` file not found: {url}")
         # Scholar wants citation_pdf_url in the same directory as the page.
-        if fm.get("pdf") and fm["pdf"] != item_pdf_url(year, slug):
-            err(f"`pdf` must be {item_pdf_url(year, slug)} (in the entry's own folder); "
-                "if you move an existing PDF there, record its old path in `pdf_moved_from`")
-        moved = fm.get("pdf_moved_from")
-        if moved:
-            if not str(moved).startswith("/"):
-                err("`pdf_moved_from` should be the old site path, starting with /")
-            elif os.path.exists(site_path(moved)):
-                err(f"`pdf_moved_from` {moved} still exists; the old copy should be gone so the redirect works")
+        if fm.get("pdf") and os.path.dirname(str(fm["pdf"])) != year_dir_url(year):
+            err(f"`pdf` must be in {year_dir_url(year)}/, the same folder as the entry's page")
         if fm.get("pdf") and pages:
             own_pdf_pages[year].append((pages, rel))
 
@@ -152,7 +144,7 @@ def check_site(site_dir, errors):
     """Each built entry page has its Scholar tags (or none, if its paper is in Chroma)."""
     for path, fm, _ in load_contributions():
         slug = os.path.splitext(os.path.basename(path))[0]
-        page = os.path.join(site_dir, "proceedings", f"acmc{fm.get('year')}", slug, "index.html")
+        page = os.path.join(site_dir, "proceedings", year_folder(fm.get("year")), slug + ".html")
         rel = os.path.relpath(page, site_dir)
         if not os.path.isfile(page):
             errors.append(f"{rel}: not built")

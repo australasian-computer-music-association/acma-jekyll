@@ -41,7 +41,7 @@ import shutil
 import sys
 
 from contributions import (CONTRIBUTIONS, dump_entry, extract_abstract, item_pdf_url,
-                           load_conferences, make_slug, parse_pages, site_path)
+                           load_conferences, make_slug, parse_pages, site_path, year_folder)
 
 
 def split_list(value):
@@ -106,7 +106,7 @@ def main():
 
     with open(args.csv, newline="", encoding="utf-8-sig") as f:
         rows = list(csv.DictReader(f))
-    folder = os.path.join(CONTRIBUTIONS, f"acmc{args.year}")
+    folder = os.path.join(CONTRIBUTIONS, year_folder(args.year))
     used = set()
     written = skipped = 0
     for i, row in enumerate(rows, start=1):
@@ -121,7 +121,7 @@ def main():
         used.add(slug)
         path = os.path.join(folder, slug + ".md")
 
-        # An item's own PDF always lives in its page's folder (Scholar's rule).
+        # An item's own PDF lives in the same folder as its page (Scholar's rule).
         source = (row.get("pdf") or "").strip()
         if source:
             fm["pdf"] = item_pdf_url(args.year, slug)

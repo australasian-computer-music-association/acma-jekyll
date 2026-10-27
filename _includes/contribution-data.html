@@ -22,7 +22,7 @@ reviewing: a key set on the entry wins, even "" (explicitly unknown). A blank
   {%- assign c_first_page = c_page_parts | first | strip -%}
   {%- assign c_last_page = c_page_parts | last | strip -%}
 {%- endif -%}
-{%- comment -%} The proceedings date if known, else the conference start (_plugins/contribution_dates.rb sets page.date the same way). {%- endcomment -%}
+{%- comment -%} The proceedings date if known, else the conference start (_plugins/contributions.rb sets page.date the same way). {%- endcomment -%}
 {%- assign c_date = c_proc.published | default: c_conf.start_date -%}
 {%- comment -%} Chroma holds the version of record for these; don't make a second Scholar record. {%- endcomment -%}
 {%- if page.chroma -%}{%- assign c_tagged = false -%}{%- else -%}{%- assign c_tagged = true -%}{%- endif -%}
