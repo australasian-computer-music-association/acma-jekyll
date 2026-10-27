@@ -11,7 +11,7 @@ The citation tags for Google Scholar are in _includes/citation-meta.html.
 {%- capture pages_text -%}{% if c_first_page %}{% if c_first_page == c_last_page %}p. {{ c_first_page }}{% else %}pp. {{ c_first_page }}–{{ c_last_page }}{% endif %}{% endif %}{%- endcapture -%}
 {%- capture proc_link -%}<a href="{{ c_conf.url | relative_url }}"><cite>{{ c_proc.title }}</cite></a>{%- endcapture -%}
 <article class="content contribution">
-  <p class="meta contribution-kind">{{ type_label }}{% if c_review_label %} · {{ c_review_label }}{% endif %}</p>
+  <p class="meta contribution-kind">{{ type_label }}{% if c_review_label %} · {% if c_proc.review_statement or c_proc.committees %}<a href="{{ c_conf.url | relative_url }}#review-process">{{ c_review_label }}</a>{% else %}{{ c_review_label }}{% endif %}{% endif %}</p>
   <h1>{{ page.title }}</h1>
   <p class="contribution-authors">{{ author_list }}</p>
   <p class="meta">In {{ proc_link }}{% if c_conf.location %}, {{ c_conf.location }}{% endif %}{% if pages_text != "" %}, {{ pages_text }}{% endif %}. {{ c_proc.publisher }}{% if c_proc.issn %}, ISSN {{ c_proc.issn }}{% endif %}{% if c_proc.isbn %}, ISBN {{ c_proc.isbn }}{% endif %}.</p>
@@ -61,13 +61,6 @@ The citation tags for Google Scholar are in _includes/citation-meta.html.
   </ul>
   {%- endif %}
 
-  {%- assign review_statement = c_proc.review_statements[page.section] -%}
-  {%- if review_statement %}
-  <details>
-    <summary>About the review process</summary>
-    {{ review_statement | markdownify }}
-  </details>
-  {%- endif %}
 
   <h2>How to cite</h2>
   <p class="how-to-cite">{{ author_list }}. {{ page.year }}. “{{ page.title }}.” {% if page.type == "creative-work" %}{{ type_label }}{% if page.work.format %} ({{ page.work.format }}){% endif %}. {% endif %}In <cite>{{ c_proc.title }}</cite>{% if c_proc.editors %}, edited by {{ c_proc.editors | array_to_sentence_string: "and" }}{% endif %}{% if pages_text != "" %}, {{ pages_text | remove: "pp. " | remove: "p. " }}{% endif %}. {% if c_conf.location %}{{ c_conf.location }}: {% endif %}{{ c_proc.publisher }}. {{ page.url | absolute_url }}</p>

@@ -25,7 +25,8 @@ a script writes the files.
    ```
 
 5. On the conference page, put `{% include contribution-list.html %}` where
-   the list should appear.
+   the list should appear, and `{% include proceedings-review.html %}` for the
+   review statement and committees.
 6. Preview with `bundle exec jekyll serve`, then open a pull request. CI checks
    every entry again.
 
@@ -72,9 +73,13 @@ proceedings:
     "Refereed Papers": full-paper
     "Abstracts": abstract
     "Creative Works": refereed
-  review_statements:          # optional text shown on each item's page, per section
-    "Refereed Papers": >-
-      Full papers were double-blind peer reviewed by at least two reviewers.
+  review_statement: >-        # optional: how review worked, as stated in the volume
+    Full papers were double-blind peer reviewed by at least two reviewers.
+  committees:                 # optional: juries and committees, as listed in the volume
+    - name: Paper Committee
+      members: [Name One, Name Two]
+    - name: Music Jury
+      members: [Name Three, Name Four]
 ```
 
 `reviewing` values are in `_data/reviewing.yml`:
@@ -89,6 +94,11 @@ proceedings:
 | `""` | (nothing shown) | unknown |
 
 Only record what was actually stated. Leaving a status unknown is fine.
+
+Each entry's page shows only a short marker, such as "Peer reviewed (full
+paper)". Put `{% include proceedings-review.html %}` on the conference page
+to show the review statement and committees there, once for the whole
+volume, as a journal lists its editorial board. The markers link to it.
 
 ## The CSV
 

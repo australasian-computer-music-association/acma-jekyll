@@ -1,0 +1,16 @@
+{%- comment -%}
+The volume's review statement and its committees/juries, from the conference's
+`proceedings.review_statement` and `proceedings.committees`. Put it on the
+conference page; contribution pages link here (#review-process) rather than
+repeating it.  {% include proceedings-review.html %}
+{%- endcomment -%}
+{%- assign proc = page.proceedings -%}
+{%- if proc.review_statement or proc.committees %}
+<h2 id="review-process">Review process and committees</h2>
+{%- if proc.review_statement %}
+<blockquote>{{ proc.review_statement | markdownify }}</blockquote>
+{%- endif %}
+{%- for committee in proc.committees %}
+<p><strong>{{ committee.name }}:</strong> {{ committee.members | join: ", " }}</p>
+{%- endfor %}
+{%- endif %}

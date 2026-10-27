@@ -114,3 +114,4 @@ body > footer a { color: inherit; }
 .work-details dt { font-weight: 600; }
 .work-details dd { margin: 0; }
 .how-to-cite { font-size: 0.95em; }
+.content blockquote > :last-child { margin-bottom: 0; }

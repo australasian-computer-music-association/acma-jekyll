@@ -46,6 +46,8 @@ up to date, so a new session can carry on from the branch alone.
 Add `year`, `start_date`/`end_date` (if known) and the `proceedings:` block.
 Include `reviewing` defaults per section, set **only** from what the volume
 states; use `""` for unknown (see the table in `docs/adding-proceedings.md`).
+Add the volume's `review_statement` (verbatim) and its `committees` (juries,
+committees and organisers, as listed in the volume).
 For a volume to split, add `source_pdf` and `page_offset`. Commit and push.
 
 ## 3. Draft the entries
@@ -81,7 +83,8 @@ For a volume to split, add `source_pdf` and `page_offset`. Commit and push.
 ## 5. Conference page
 
 Replace the hand-typed lists with `{% include contribution-list.html %}` (or
-`level=3` under a "Proceedings" heading), keeping the intro, links to the
+`level=3` under a "Proceedings" heading), followed by
+`{% include proceedings-review.html %}`, keeping the intro, links to the
 complete volume and any call text. Remove links that the entries now cover.
 
 ## 6. Check

@@ -39,7 +39,7 @@ From Scholar's inclusion guidelines, which this design follows:
 
 Step 1 changed a few details from the design below. `docs/adding-proceedings.md` is the authoritative field reference.
 
-- Conference `proceedings:` block: `full_volume` (the complete volume, kept) and, for volumes to be split, `source_pdf` and `page_offset`. Review statements are per section (`review_statements:`), because 2018 had separate paper and music juries. Entries take their date from `proceedings.published`, or else the conference's `start_date`, which is now required.
+- Conference `proceedings:` block: `full_volume` (the complete volume, kept) and, for volumes to be split, `source_pdf` and `page_offset`. The volume's review statement (`review_statement`) and its juries and committees (`committees`) are shown once, on the conference page, as a journal lists its editorial board. Entry pages show only a short review marker that links there. Entries take their date from `proceedings.published`, or else the conference's `start_date`, which is now required.
 - Entries: `section_pdf` for items printed on shared pages (abstracts, program notes), linked but not tagged as the item's PDF; `keywords` (from "KW:" lines); `research_statement` as a front-matter field rather than a body section; `pdf_pages` to override the page offset for one item.
 - Three scripts, not four: abstract drafting is `import_contributions.py --extract-abstracts`, rather than a separate `draft_contributions.py`.
 - One small plugin, `_plugins/contribution_dates.rb`. Without it, jekyll-seo-tag would give every entry the build time as its publication date.
