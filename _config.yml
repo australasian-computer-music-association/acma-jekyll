@@ -102,6 +102,11 @@ defaults:
         type: WebPage # not BlogPosting; _includes/event-schema.html adds Event data
   -
     scope:
+      path: "proceedings/ACMC*" # whole volumes, zips, programmes and section PDFs
+    values:
+      sitemap: false # Scholar can't index several papers in one PDF; per-item PDFs (proceedings/acmcYYYY/) stay in
+  -
+    scope:
       path: _contributions
     values:
       layout: contribution

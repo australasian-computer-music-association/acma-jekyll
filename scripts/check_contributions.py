@@ -19,7 +19,7 @@ import re
 import sys
 from collections import defaultdict
 
-from contributions import (ROOT, load_conferences, load_contributions, load_data,
+from contributions import (ROOT, item_pdf_url, load_conferences, load_contributions, load_data,
                            parse_pages, site_path)
 
 REQUIRED = ["title", "authors", "year", "type", "section", "order"]
@@ -28,7 +28,8 @@ WORK_KINDS = {"composition", "performance", "installation", "audiovisual",
 MEDIA_KINDS = {"audio", "video", "score", "documentation", "website"}
 SLUG = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
 KNOWN_KEYS = set(REQUIRED) | {"pages", "pdf", "section_pdf", "reviewing", "chroma", "doi",
-                              "keywords", "work", "media", "research_statement", "pdf_pages"}
+                              "keywords", "work", "media", "research_statement", "pdf_pages",
+                              "pdf_moved_from"}
 
 
 def check(site_dir=None):
@@ -98,6 +99,16 @@ def check(site_dir=None):
                     err(f"`{key}` should be a site path starting with /")
                 elif not os.path.isfile(site_path(url)):
                     err(f"`{key}` file not found: {url}")
+        # Scholar wants citation_pdf_url in the same directory as the page.
+        if fm.get("pdf") and fm["pdf"] != item_pdf_url(year, slug):
+            err(f"`pdf` must be {item_pdf_url(year, slug)} (in the entry's own folder); "
+                "if you move an existing PDF there, record its old path in `pdf_moved_from`")
+        moved = fm.get("pdf_moved_from")
+        if moved:
+            if not str(moved).startswith("/"):
+                err("`pdf_moved_from` should be the old site path, starting with /")
+            elif os.path.exists(site_path(moved)):
+                err(f"`pdf_moved_from` {moved} still exists; the old copy should be gone so the redirect works")
         if fm.get("pdf") and pages:
             own_pdf_pages[year].append((pages, rel))
 

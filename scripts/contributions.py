@@ -86,6 +86,30 @@ def parse_pages(pages):
     return int(parts[0]), int(parts[-1])
 
 
+def item_pdf_url(year, slug):
+    """Where an item's own PDF lives: inside its page's folder, because Google
+    Scholar wants citation_pdf_url in the same directory as the page."""
+    return f"/proceedings/acmc{year}/{slug}/{slug}.pdf"
+
+
+def write_pdf(reader_or_path, out, fm, proc, pages=None):
+    """Write a PDF (all pages, or a range of a volume) with the item's own title
+    and authors in its metadata, so Scholar doesn't credit e.g. the editor."""
+    from pypdf import PdfReader, PdfWriter
+    reader = reader_or_path if not isinstance(reader_or_path, str) else PdfReader(reader_or_path)
+    writer = PdfWriter()
+    for n in (range(pages[0] - 1, pages[1]) if pages else range(len(reader.pages))):
+        writer.add_page(reader.pages[n])
+    writer.add_metadata({
+        "/Title": fm.get("title", ""),
+        "/Author": "; ".join(fm.get("authors") or []),
+        "/Subject": proc.get("title", ""),
+    })
+    os.makedirs(os.path.dirname(out), exist_ok=True)
+    with open(out, "wb") as f:
+        writer.write(f)
+
+
 def site_path(url):
     """A site URL path like /proceedings/x.pdf -> the file in the repo."""
     return os.path.join(ROOT, url.lstrip("/"))

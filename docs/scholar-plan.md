@@ -31,7 +31,7 @@ From Scholar's inclusion guidelines, which this design follows:
 - [ ] One URL per item, with the title and creators visible on the page and the full abstract or program note (or full text) readable without login or JavaScript.
 - [ ] Highwire Press tags in `<head>`: `citation_title`, `citation_author` (one per creator), `citation_publication_date`, `citation_conference_title`, plus `citation_pdf_url`, `citation_firstpage`/`citation_lastpage`, `citation_publisher` and `citation_issn`/`citation_isbn` where known. Zotero and Mendeley read the same tags, so a creative work becomes one-click citable even if Scholar is slow to list it.
 - [ ] Each PDF holds **one** item and starts on that item's first page, with title and creators at the top. A text layer is needed (it already exists for almost all volumes; 2002 and 2010 have some image-only pages to OCR). Keep PDFs under about 5 MB where possible.
-- [ ] PDFs on the same site, ideally in the same directory as the landing page.
+- [ ] Each PDF in the same directory as its landing page: Scholar requires `citation_pdf_url` to be in the same subdirectory as the abstract page.
 - [ ] A plain HTML browse path from the home page to every item page: home → `/proceedings/` → year → item. All item pages in `sitemap.xml` (jekyll-sitemap does this automatically for collections).
 - [ ] No citation tags on volume-level pages (conference pages, full-volume PDFs), so Scholar doesn't make one record for a whole book.
 
@@ -44,6 +44,7 @@ Step 1 changed a few details from the design below. `docs/adding-proceedings.md`
 - Three scripts, not four: abstract drafting is `import_contributions.py --extract-abstracts`, rather than a separate `draft_contributions.py`.
 - One small plugin, `_plugins/contribution_dates.rb`. Without it, jekyll-seo-tag would give every entry the build time as its publication date.
 - Allowed `type` and `reviewing` values live in `_data/contribution_types.yml` and `_data/reviewing.yml`, which the templates and the checker both read.
+- **PDF location (fixed after an audit):** Google Scholar's guidelines require `citation_pdf_url` to be in the same subdirectory as the abstract page. Each item's PDF therefore lives inside its page's folder, `/proceedings/acmcYYYY/<slug>/<slug>.pdf`, not in `/proceedings/acmcYYYY/<slug>.pdf` as first planned. Already-published per-item PDFs (2018, and later 2001, 2005, 2006) are moved there with a 301 redirect from their old address (`pdf_moved_from`), and their embedded PDF metadata (often "Microsoft Word - …" or the editor as author) is rewritten to the item's own title and authors. Whole volumes and multi-item PDFs (`proceedings/ACMC*`) are kept out of the sitemap, because Scholar can't index several papers in one PDF.
 - 2018's ISSN is 2206-5296, not 1448-7780: check each volume's own ISSN or ISBN.
 
 ## Architecture
@@ -118,7 +119,7 @@ media:                     # documentation, hosted elsewhere
 
 Body: an **abstract** for papers. For creative works, a **Program note** section and an optional **Research statement** section (background, contribution, significance: the three headings NTRO reporting uses). Old years will mostly have the program note only, and new years can ask artists for both.
 
-New split PDFs go in `proceedings/acmc2018/<slug>.pdf`, next to their landing page. The files already split (2001, 2005, 2006, 2018 papers) **stay where they are**. Their `pdf:` just points at the existing path, so no URLs break.
+Each item's own PDF goes in its page's folder, `proceedings/acmc2018/<slug>/<slug>.pdf` (see "As built"). Files already split (2001, 2005, 2006, 2018 papers) are moved there with a 301 redirect from the old address.
 
 ### 3. Templates
 

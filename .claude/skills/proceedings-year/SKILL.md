@@ -58,11 +58,17 @@ For a volume to split, add `source_pdf` and `page_offset`. Commit and push.
   per item in volume order. Use **the title as printed on the item's own first
   page** (the contents page often differs), in title case, and authors as
   printed there. Sections use the volume's own heading wording.
-- For items to split, set `pdf` to `/proceedings/acmcYYYY/<slug>.pdf`. Run the
-  import once without `pdf` to see the generated slugs, or give a `slug`
-  column. For items already split into their own files, point `pdf` at the
-  existing file and **don't move it**. Items that share pages (abstracts,
-  program notes) get `section_pdf`, not `pdf`.
+- An item's own PDF always lives **in its page's folder**:
+  `/proceedings/acmcYYYY/<slug>/<slug>.pdf`. Google Scholar wants
+  `citation_pdf_url` in the same directory as the page, and the checker
+  enforces this. In the CSV, put `split` in the `pdf` column for items to cut
+  from the volume. Items that share pages (abstracts, program notes) get
+  `section_pdf`, not `pdf`.
+- Items **already split** into their own files (2001, 2005, 2006): `git mv`
+  each one into its entry's folder, set `pdf_moved_from:` to the old site
+  path (the `.htaccess` template turns it into a 301 redirect), then run
+  `python3 scripts/split_proceedings.py YYYY --fix-metadata` to put the right
+  title and authors inside the PDFs. 2018 is the worked example.
 - `python3 scripts/import_contributions.py YYYY file.csv --extract-abstracts`
 - **Read every drafted abstract** against the PDF. Fix cropped author lines,
   words that lost their hyphens at line ends (`computeraided` →
@@ -74,6 +80,8 @@ For a volume to split, add `source_pdf` and `page_offset`. Commit and push.
 - Commit and push.
 
 ## 4. Split the PDFs (volumes only)
+
+The splitter writes each item's title and authors into its PDF's metadata.
 
 - `python3 scripts/split_proceedings.py YYYY --dry-run`, then without
   `--dry-run`.

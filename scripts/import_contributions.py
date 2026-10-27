@@ -14,7 +14,9 @@ One row per contribution, in programme or volume order (that order becomes
     type                    see _data/contribution_types.yml
     section                 heading as printed, e.g. "Refereed Papers"
     pages                   printed page range, e.g. 7-13
-    pdf                     this item's own PDF, e.g. /proceedings/acmc2007/x.pdf
+    pdf                     this item's own PDF: a file on your computer (copied into
+                            the entry's folder), or "split" to cut it from the volume
+                            with split_proceedings.py
     section_pdf             a PDF holding this item with others
     abstract                the abstract, or a creative work's program note
     keywords                separated by ";"
@@ -35,10 +37,11 @@ See docs/adding-proceedings.md for the whole process.
 import argparse
 import csv
 import os
+import shutil
 import sys
 
-from contributions import (CONTRIBUTIONS, dump_entry, extract_abstract, load_conferences,
-                           make_slug, parse_pages, site_path)
+from contributions import (CONTRIBUTIONS, dump_entry, extract_abstract, item_pdf_url,
+                           load_conferences, make_slug, parse_pages, site_path)
 
 
 def split_list(value):
@@ -57,7 +60,7 @@ def row_to_entry(row, year, order):
     }
     if g("pages"):
         fm["pages"] = g("pages")
-    for key in ("pdf", "section_pdf", "chroma"):
+    for key in ("section_pdf", "chroma"):
         if g(key):
             fm[key] = g(key)
     if g("reviewing"):
@@ -117,6 +120,16 @@ def main():
             slug, n = f"{base}-{n}", n + 1
         used.add(slug)
         path = os.path.join(folder, slug + ".md")
+
+        # An item's own PDF always lives in its page's folder (Scholar's rule).
+        source = (row.get("pdf") or "").strip()
+        if source:
+            fm["pdf"] = item_pdf_url(args.year, slug)
+            if source.lower() != "split" and not args.dry_run:
+                if not os.path.isfile(source):
+                    sys.exit(f"row {i}: PDF not found: {source}")
+                os.makedirs(os.path.dirname(site_path(fm["pdf"])), exist_ok=True)
+                shutil.copyfile(source, site_path(fm["pdf"]))
 
         if args.extract_abstracts and not body:
             pdf, page = None, 1

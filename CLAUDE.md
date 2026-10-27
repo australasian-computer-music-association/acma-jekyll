@@ -21,8 +21,13 @@ and CSS live in this repo (Pico CSS plus `assets/css/main.css`).
 
 ## Conventions
 
-- Slugs (file names) are permanent URLs: never rename published entries or
-  move existing PDFs. Add redirects in `.htaccess` if something must move.
+- Slugs (file names) are permanent URLs: never rename published entries.
+- An item's own PDF lives in its page's folder,
+  `proceedings/acmcYYYY/<slug>/<slug>.pdf` (Scholar's same-directory rule).
+  Move an existing PDF only with `pdf_moved_from:` set on the entry, which
+  generates a 301 in `.htaccess`.
+- Whole volumes and multi-item PDFs live under `proceedings/ACMC*`, which is
+  kept out of the sitemap. Only per-item PDFs carry `citation_pdf_url`.
 - Record review status only from what a volume states; `""` means unknown.
 - Creative works are first-class research outputs: give them the same care as
   papers.

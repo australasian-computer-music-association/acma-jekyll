@@ -15,7 +15,8 @@ a script writes the files.
    see [The conference page](#the-conference-page).
 2. Fill in the CSV template (`docs/contributions-template.csv`), one row per
    paper, abstract or creative work, in programme order.
-3. Put each item's PDF, if it has one, in `proceedings/acmcYYYY/`.
+3. In the CSV's `pdf` column, give the path to each item's PDF on your
+   computer. The import copies it into the item's own folder.
 4. Run:
 
    ```sh
@@ -112,7 +113,7 @@ Columns (only `title`, `authors`, `type` and `section` are required):
 | `type` | `paper`, `abstract`, `keynote`, `artist-talk`, `studio-report`, `poster` or `creative-work` |
 | `section` | the heading it appears under, e.g. `Refereed Papers` |
 | `pages` | printed page range, e.g. `7-13` |
-| `pdf` | this item's own PDF, e.g. `/proceedings/acmc2026/hope-their-lives.pdf` |
+| `pdf` | this item's own PDF: a file on your computer (copied in), or `split` to cut it from the volume |
 | `section_pdf` | a PDF that holds this item with others (e.g. all program notes) |
 | `abstract` | the abstract, or a creative work's program note |
 | `keywords` | separated by `;` |
@@ -170,16 +171,27 @@ Rules worth knowing:
   there and carries no Scholar tags, so citations collect on the journal
   version.
 - **PDFs**: an item's own `pdf` must hold only that item and start on its
-  first page. Items that share pages with others use `section_pdf` instead,
-  and their page is enough for Scholar.
+  first page. It always lives in the item's folder,
+  `/proceedings/acmcYYYY/<slug>/<slug>.pdf`, because Google Scholar only
+  accepts a PDF in the same directory as its page. The checker enforces this.
+  Items that share pages with others use `section_pdf` instead, and their
+  page is enough for Scholar. Whole volumes and multi-item PDFs go under
+  `proceedings/ACMCYYYY-…`, which is kept out of the sitemap.
+- **Moving a PDF**: if an item's PDF was already published elsewhere, move it
+  into the item's folder and set `pdf_moved_from:` to its old path, e.g.
+  `/proceedings/ACMC2018-proceedings/01Connell.pdf`. That old address then
+  redirects (301) to the new one. Then run
+  `python3 scripts/split_proceedings.py YYYY --fix-metadata`, so the PDF's
+  built-in title and author are the item's own, not "Microsoft Word -
+  draft.docx" or the editor's name.
 - **Media** stays outside this repository; link to it.
 
 ## Splitting an old volume
 
 For a year with one big PDF, set `proceedings.source_pdf` and
 `proceedings.page_offset` (PDF page number minus printed page number) on the
-conference page. Give each entry `pages` and a `pdf` path under
-`/proceedings/acmcYYYY/`, then run:
+conference page. Give each entry `pages`, and `split` in the CSV's `pdf`
+column (which sets `pdf` to the entry's own folder), then run:
 
 ```sh
 python3 scripts/split_proceedings.py YYYY --dry-run   # check the ranges
