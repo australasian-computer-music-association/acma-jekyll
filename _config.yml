@@ -46,6 +46,10 @@ permalink: pretty  # Permalink style (/YYYY/MM/DD/page-name/)
 excerpt_separator: <!-- more --> # Marks end of excerpt in posts
 timezone: Australia/Canberra # Timezone for blog posts and alike
 
+# Dotfiles Jekyll should still publish
+include:
+  - .htaccess
+
 # Not part of the website (Jekyll's default excludes still apply)
 exclude:
   - docs
