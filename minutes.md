@@ -3,6 +3,7 @@ title: "Meeting Minutes"
 feature_image: /assets/images/acmc2019-vr.jpg
 permalink: /minutes/
 layout: page
+description: "Minutes of Australasian Computer Music Association meetings, including annual general meetings."
 ---
 
 This page contains links to minutes of ACMA meetings including Annual General Meetings. In general, the association's AGM is scheduled during each year's ACMC conference and is open to ACMA members.

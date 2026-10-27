@@ -5,9 +5,11 @@ categories:
   - news
 authors: 
   - charlesmartin
+redirect_from:
+  - /news/acmc-2020-inclusion/
 ---
 
-![](assets/images/header-banner-1920-1024x478.jpg)
+![ACMC 2020 banner](/assets/images/header-banner-1920-1024x478.jpg)
 
 We’re excited to announce that the Australasian Computer Music Conference will take place at the Australian National University, Canberra, from July 8-11, 2020.
 

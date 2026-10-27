@@ -1,6 +1,7 @@
 ---
 title: Duties of Office Bearers
 layout: page
+description: "Duties of the office bearers of the Australasian Computer Music Association committee."
 ---
 
 ## Treasurer

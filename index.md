@@ -2,6 +2,7 @@
 layout: page
 title: Australasian Computer Music Association
 feature_image: assets/images/acmc2019-concert-e1618799441533.jpg
+description: "Composers, performers, researchers and technologists making music with computers in Australia and New Zealand since 1989. Home of ACMC and Chroma."
 ---
 
 {% assign latest_conference = site.conferences | sort: 'date' | last %}
@@ -26,7 +27,7 @@ _[Chroma](https://journal.computermusic.org.au/chroma)_ is our peer-reviewed
 Journal, and was relaunched in 2021. [Submissions are now
 open](https://journal.computermusic.org.au/chroma).
 
-[Membership]({% link membership.md %}}) of the Australasian
+[Membership]({% link membership.md %}) of the Australasian
 Computer Music Association is available for individuals and organisations, and
 is included in conference registration. Membership fees assist with our
 publishing costs and pay for conference scholarships and awards.
@@ -41,7 +42,7 @@ and all committee members are volunteers.
 {% for post in site.posts limit:3 %}
 ### [{{post.title}}]({{ post.url | relative_url }})
 
-<h6 class="font-italic">{{ post.date | date_to_string }}</h6>
+<p class="meta">{{ post.date | date: "%-d %B %Y" }}</p>
 
 {{ post.excerpt }}
 {% endfor %}

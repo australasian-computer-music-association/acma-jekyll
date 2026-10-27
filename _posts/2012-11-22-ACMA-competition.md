@@ -5,6 +5,8 @@ categories:
   - news
 authors: 
   - timopie
+redirect_from:
+  - /news/ACMA-competition/
 ---
 
 **ACMA Composition Competition**
@@ -23,6 +25,6 @@ The top submissions (up to 10, depending on running time) will be published in t
 
 **All Composers whose submissions are published on the CD will also receive a free copy of the CD.**
 
-This competition is open to all member of ACMA.  If you are not a member of ACMA, you can join here:  [http://computermusic.org.au/membership](http://computermusic.org.au/membership/ "ACMA Membership Page"). All works must be composed within the last two years. Maximum duration is 10 minutes.
+This competition is open to all member of ACMA.  If you are not a member of ACMA, you can join here:  [http://computermusic.org.au/membership](/membership/ "ACMA Membership Page"). All works must be composed within the last two years. Maximum duration is 10 minutes.
 
-More information here:  [http://computermusic.org.au/competitions/](http://computermusic.org.au/competitions/ "ACMA Competitions Page")
+More information here:  [http://computermusic.org.au/competitions/](/competitions/ "ACMA Competitions Page")

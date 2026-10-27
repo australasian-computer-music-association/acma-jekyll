@@ -2,6 +2,7 @@
 title: "Online Communities"
 layout: page
 permalink: /community/
+description: "Where to find the Australasian Computer Music Association online: social media, mailing lists and related organisations."
 ---
 
 The Australasian Computer Music Association has various online communities where you get inspiration and share your work with the computer music community. These are also good platforms to hear about calls for submissions to [ACMC]({% link conferences.md %}) and other events.
@@ -47,25 +48,25 @@ Here's a list of links to institutions and organisations that have been associat
 ### Institutions and Organisations
 
 - [University of Auckland, School of Music](http://www.creative.auckland.ac.nz/uoa/music)
-- [Queensland University of Technology (Music)](http://www.creativeindustries.qut.edu.au/study/areas/music-sound/)
-- [University of Waikato, Music Department](http://www.waikato.ac.nz/humanities/music/)
+- Queensland University of Technology (Music)<!-- dead link removed 2026 (no useful archive): http://www.creativeindustries.qut.edu.au/study/areas/music-sound/ -->
+- University of Waikato, Music Department<!-- dead link removed 2026 (no useful archive): http://www.waikato.ac.nz/humanities/music/ -->
 - [Australian Centre for the Arts & Technology](http://music.anu.edu.au/), Australian National University, Canberra, Australia
 - [Sydney Conservatorium of Music](http://sydney.edu.au/music/), University of Sydney, Sydney NSW, Australia
-- [School of Contemporary Arts (Music)](http://future.uws.edu.au/ug/creative_and_communication_arts/bachelor_of_music), University of Western Sydney, Sydney NSW, Australaia
+- School of Contemporary Arts (Music)<!-- dead link removed 2026 (no useful archive): http://future.uws.edu.au/ug/creative_and_communication_arts/bachelor_of_music -->, University of Western Sydney, Sydney NSW, Australaia
 - [Victoria University of Wellington, School of Music](http://www.vuw.ac.nz/music/), Melbourne Vic, Australia
 - [School of Music-Conservatorium, Monash University](http://www.arts.monash.edu.au/music/), Melbourne Vic, Australia
 - [Box Hill Institute, Centre for Performing Arts](http://www.bhtafe.edu.au/courses/local/Pages/BAMAP.aspx), Melbourne Vic, Australia
-- [Clatterbox: Australian Experimental Instruments](http://clatterbox.net.au/)
+- [Clatterbox: Australian Experimental Instruments](https://web.archive.org/web/20160119183146/http://www.clatterbox.net.au/) (archived copy)<!-- original link, dead by 2026: http://clatterbox.net.au/ -->
 - [Western Australian Academy of Performing Arts](http://www.waapa.ecu.edu.au/), Edith Cowan University, Perth WA, Australia
-- [Australian Music Centre](http://www.amcoz.com.au/)
+- [Australian Music Centre](https://www.australianmusiccentre.com.au/)
 - [Australia Council for the Arts](http://www.australiacouncil.gov.au/)
-- [National Facility for Research in Australian Music](http://nfram.anu.edu.au/)
+- [National Facility for Research in Australian Music](https://web.archive.org/web/20160227023543/http://nfram.anu.edu.au/) (archived copy)<!-- original link, dead by 2026: http://nfram.anu.edu.au/ -->
 - [Music Council of Australia](http://www.mca.org.au/)
 - [Centre for New Zealand Music (SOUNZ)](http://www.sounz.org.nz/)
-- [Australian Sound Design Project](http://www.sounddesign.unimelb.edu.au/)
+- [Australian Sound Design Project](https://web.archive.org/web/20160116061624/http://www.sounddesign.unimelb.edu.au/) (archived copy)<!-- original link, dead by 2026: http://www.sounddesign.unimelb.edu.au/ -->
 - [Elder School of Music](http://www.music.adelaide.edu.au/), Adelaide University, Adelaide SA, Australia
 - [austraLYSIS](http://www.australysis.com/)
 
 ### Concert Series:
 
-- [NoizeMaschin!!](https://www.noizemaschin.com/)
+- [NoizeMaschin!!](https://web.archive.org/web/20160606033635/http://www.noizemaschin.com/) (archived copy)<!-- original link, dead by 2026: https://www.noizemaschin.com/ -->

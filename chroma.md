@@ -3,6 +3,7 @@ title: "Chroma"
 
 layout: page
 permalink: /chroma/
+description: "Chroma, the Journal of the Australasian Computer Music Association, plus the full archive of the Chroma newsletter from 1989 to 2006."
 ---
 
 _Chroma_ is the [Journal of the Australasian Computer Music Association](https://journal.computermusic.org.au/chroma). Submission and issues are available on the [journal website](https://journal.computermusic.org.au/chroma). 

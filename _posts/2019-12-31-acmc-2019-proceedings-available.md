@@ -5,6 +5,8 @@ categories:
   - news
 authors: 
   - skotmc
+redirect_from:
+  - /news/acmc-2019-proceedings-available/
 ---
 
-The proceedings of the ACMC 2019 can now be downloaded from the [ACMC 2019 conference page](http://computermusic.org.au/conferences/acmc-2019/). 63 MB, pdf.
+The proceedings of the ACMC 2019 can now be downloaded from the [ACMC 2019 conference page](/conferences/acmc2019/). 63 MB, pdf.

@@ -5,11 +5,13 @@ categories:
   - news
 authors: 
   - timopie
+redirect_from:
+  - /news/acmc-2014-keynote-presenters/
 ---
 
 We are proud to announce our keynote presenters for ACMC 2014:
 
-[![Barry Conyngham](assets/images/Barry_Conyngham.jpg "Barry Conyngham")](http://computermusic.org.au/media/2014/04/Barry_Conyngham.jpg)**Professor Barry Conyngham A.M.**
+![Barry Conyngham](/assets/images/Barry_Conyngham.jpg "Barry Conyngham")<!-- dead link to full-size original (WordPress-era upload, lost): http://computermusic.org.au/media/2014/04/Barry_Conyngham.jpg -->**Professor Barry Conyngham A.M.**
 
 Australian composer Barry Conyngham A.M. (Order of Australia), MA (Hons) Syd., DMus Melb., studied with Peter Sculthorpe and Toru Takemitsu.
 
@@ -23,7 +25,7 @@ He has been involved with a number of arts organisations including the World Mus
 
  
 
-[![DJSpooky](assets/images/DJSpooky-222x300.jpeg "DJSpooky")](http://computermusic.org.au/media/2014/04/DJSpooky.jpeg)**Paul D. Miller (aka DJ SPOOKY That Subliminal Kid)**
+![DJSpooky](/assets/images/DJSpooky-222x300.jpeg "DJSpooky")<!-- dead link to full-size original (WordPress-era upload, lost): http://computermusic.org.au/media/2014/04/DJSpooky.jpeg -->**Paul D. Miller (aka DJ SPOOKY That Subliminal Kid)**
 
 Born in 1970 in Washington D.C., Paul D. Miller is an artist, writer, and musician working in New York. Miller is best known under the moniker of his "constructed persona" as "DJ Spooky That Subliminal Kid.”
 
@@ -37,4 +39,4 @@ Miller's award-winning book "Rhythm Science" was published by MIT Press 2004, an
 
  
 
-See [http://conference.computermusic.org.au](http://conference.computermusic.org.au "http://conference.computermusic.org.au") for more information
+See [http://conference.computermusic.org.au](https://web.archive.org/web/20150226012857/http://conference.acma.asn.au/ "http://conference.computermusic.org.au") (archived copy)<!-- original link, dead by 2026: http://conference.computermusic.org.au --> for more information

@@ -4,6 +4,7 @@ created: 2011-07-20
 authors: 
   - charlesmartin
 layout: page
+description: "The volunteer committee of the Australasian Computer Music Association and how to contact its office bearers."
 ---
 
 The Australasian Computer Music Association committee is responsible for

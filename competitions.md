@@ -4,6 +4,7 @@ created: 2011-07-20
 authors: 
   - charlesmartin
 layout: page
+description: "Composition competitions run by the Australasian Computer Music Association."
 ---
 
 No competitions active at present.  
@@ -31,13 +32,13 @@ The top submissions (up to 10, depending on running time) will be published in t
 
 **Submission Criteria:**
 
-- All participants must be a member of the Australasian Computer Music Association. If you are not a member of ACMA, you can join here:  [http://computermusic.org.au/membership/](http://computermusic.org.au/membership/ "ACMA Membership Page")
+- All participants must be a member of the Australasian Computer Music Association. If you are not a member of ACMA, you can join here:  [http://computermusic.org.au/membership/](/membership/ "ACMA Membership Page")
 - Only one work will be accepted per participant.
 - All works must be composed within the last two years.
 - The maximum duration of the musical work must not be more than 10 minutes.
 - The deadline for submissions is February 5, 2013. Late or incomplete submissions will not be considered.
 - A complete and eligible submission must include the following:
-    - [A Completed Contract](assets/ACMAcompetition.pdf)
+    - [A Completed Contract](/assets/minutes/ACMAcompetition.pdf)
     - Audio File
 
 **Audio Format:**
@@ -52,7 +53,7 @@ The top submissions (up to 10, depending on running time) will be published in t
 
 **Who is supporting this project:**
 
-This project is supported primarily by the **[Australasian Computer Music Association (ACMA)](http://computermusic.org.au)** membership dues. It is also supported by the **[Australian Music Centre (AMC)](http://www.australianmusiccentre.com.au)**.
+This project is supported primarily by the **[Australasian Computer Music Association (ACMA)](/)** membership dues. It is also supported by the **[Australian Music Centre (AMC)](http://www.australianmusiccentre.com.au)**.
 
 Judging will take place using a double blind strategy.
 
@@ -69,7 +70,7 @@ Please place both the audio file and contract PDF in a single zip file and uploa
 
 **For more information see:**
 
-- [http://acma.asn.au/competitions](http://computermusic.org.au/competitions)
+- [http://acma.asn.au/competitions](/competitions/)
 - [http://www.facebook.com/acma89](http://www.facebook.com/acma89)
 - [http://twitter.com/acma89](http://twitter.com/acma89)
 - or email [info@computermusic.org.au](mailto:info@computermusic.org.au)

@@ -6,3 +6,7 @@ _site
 .jekyll-metadata
 /vendor
 
+
+# This repo is the archive of ACMA conference history; keep PDFs even if a
+# global gitignore excludes them.
+!*.pdf

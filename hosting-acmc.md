@@ -1,6 +1,7 @@
 ---
 title: "Hosting ACMC"
 layout: page
+description: "How to host a future Australasian Computer Music Conference (ACMC): what's involved and how to get in touch with the committee."
 ---
 
 **N.B.: Now calling for hosts for ACMC 2025+!** 
