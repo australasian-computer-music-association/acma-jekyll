@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% seo %}
+  {% feed_meta %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="{{ '/assets/vendor/pico/pico.min.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+  {% for icon in site.favicons %}
+  <link rel="icon" type="image/png" sizes="{{ icon[0] }}x{{ icon[0] }}" href="{{ icon[1] | relative_url }}">
+  {% endfor %}
+  <link rel="apple-touch-icon" href="{{ site.favicons[180] | relative_url }}">
+</head>
+<body class="layout-{{ page.layout }}">
+  <header class="container">
+    <nav aria-label="Main">
+      <ul>
+        <li>
+          <a class="logo" href="{{ '/' | relative_url }}">
+            <picture>
+              <source srcset="{{ '/assets/logos/acma-logo-square-white.svg' | relative_url }}" media="(prefers-color-scheme: dark)">
+              <img src="{{ site.logo | relative_url }}" alt="{{ site.title }}">
+            </picture>
+          </a>
+        </li>
+      </ul>
+      <ul>
+        {% for item in site.navigation_header %}
+        <li><a href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </header>
+
+  {% if page.feature_image %}
+  <div class="feature" style="background-image: url('{{ page.feature_image | relative_url }}')"></div>
+  {% endif %}
+
+  <main class="container">
+    {{ content }}
+  </main>
+
+  <footer class="container">
+    <small>&copy; {{ site.title }} {{ site.time | date: '%Y' }}</small>
+    <ul>
+      {% for link in site.social_links %}
+      <li><a href="{{ link[1] | relative_url }}">{{ link[0] }}</a></li>
+      {% endfor %}
+    </ul>
+  </footer>
+</body>
+</html>
