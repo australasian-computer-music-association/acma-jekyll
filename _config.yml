@@ -29,7 +29,10 @@ plugins:
 # jekyll-seo-tag settings
 twitter:
   username: acma89
-author: acma89
+author:
+  type: Organization
+  name: Australasian Computer Music Association
+  twitter: acma89
 social:
   name: Australasian Computer Music Association
   links:
@@ -42,6 +45,12 @@ social:
 permalink: pretty  # Permalink style (/YYYY/MM/DD/page-name/)
 excerpt_separator: <!-- more --> # Marks end of excerpt in posts
 timezone: Australia/Canberra # Timezone for blog posts and alike
+
+# Not part of the website (Jekyll's default excludes still apply)
+exclude:
+  - docs
+  - scripts
+  - README.md
 
 # 5. Collections
 collections:
@@ -63,6 +72,7 @@ defaults:
       path: ""
     values:
       image: "assets/images/acmc2019-concert-e1618799441533.jpg" # Default image for sharing
+      seo_description_max_words: 24 # Keep auto-generated meta descriptions short
   -
     scope:
       path: ""
@@ -80,17 +90,20 @@ defaults:
       path: _conferences
     values:
       layout: page
+      seo:
+        type: WebPage # not BlogPosting; _includes/event-schema.html adds Event data
 
 # 7. Site settings
 title: Australasian Computer Music Association
 email: info@computermusic.org.au
-description: >- # this means to ignore newlines until "baseurl:"
-  The Australasian Computer Music Association was founded in 1989. The organisation provides a forum for new compositions, information sharing, and research about music technology and computer music, principally throughout Australia and New Zealand. The Australasian Computer Music Association is a community of composers, performers, teachers and technologists who have an interest in, are making, or supporting music making with computers.
+tagline: Computer music since 1989 # used in the home page <title>
+description: >- # default meta description (aim for under 160 characters)
+  A community of composers, performers, researchers and technologists making music with computers in Australia and New Zealand. Home of ACMC and Chroma.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://computermusic.org.au" # the base hostname & protocol for your site, e.g. http://example.com
 encoding: "UTF-8" # Make sure the encoding is right
-lang: en-GB # Set the site language
-logo: "/assets/logos/acma-logo-square-black.svg" # Site logo, also used in jekyll-seo-tag
+lang: en-AU # Site language (Australian English)
+logo: "/assets/logos/acma-logo-square-black.png" # Used by jekyll-seo-tag (search engines want a raster logo); the header uses the SVG
 repo: "https://github.com/australasian-computer-music-association/acma-jekyll"
 
 # 8. Site favicons. Syntax is 'size: path'

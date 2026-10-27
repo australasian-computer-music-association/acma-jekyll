@@ -3,6 +3,7 @@ title: "The Australasian Computer Music Conference (ACMC)"
 feature_image: /assets/images/acmc2019-vr.jpg
 permalink: /conferences/
 layout: page
+description: "The Australasian Computer Music Conference (ACMC), held annually in Australia or New Zealand since 1993, with programmes and proceedings from every year."
 ---
 
 Since 1993, the annual Australasian Computer Music Conference (ACMC) has been

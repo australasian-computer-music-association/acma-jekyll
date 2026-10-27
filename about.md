@@ -3,6 +3,7 @@ title: "About"
 created: 2011-07-19
 layout: page
 permalink: /about/
+description: "About the Australasian Computer Music Association (ACMA), a non-profit community for computer music in Australia and New Zealand, founded in 1989."
 ---
 
 The Australasian Computer Music Association was founded in 1989. The organisation provides a forum for new compositions, information sharing, and research about music technology and computer music, principally throughout Australia and New Zealand. The Australasian Computer Music Association is a community of composers, performers, teachers and technologists who have an interest in, are making, or supporting music making with computers.

@@ -1,0 +1,34 @@
+{%- comment -%}
+Schema.org Event data for conference pages, so search engines can show the
+conference as an event. Add start_date and end_date (YYYY-MM-DD) to a
+conference's front matter to switch it on.
+{%- endcomment -%}
+{%- if page.collection == "conferences" and page.start_date -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": {{ page.title | prepend: "Australasian Computer Music Conference: " | jsonify }},
+  {%- if page.description %}
+  "description": {{ page.description | jsonify }},
+  {%- endif %}
+  "url": {{ page.url | absolute_url | jsonify }},
+  "startDate": {{ page.start_date | date: "%Y-%m-%d" | jsonify }},
+  "endDate": {{ page.end_date | default: page.start_date | date: "%Y-%m-%d" | jsonify }},
+  "eventStatus": "https://schema.org/EventScheduled",
+  {%- if page.feature_image %}
+  "image": [{{ page.feature_image | absolute_url | jsonify }}],
+  {%- endif %}
+  "location": {
+    "@type": "Place",
+    "name": {{ page.location | jsonify }},
+    "address": {{ page.location | jsonify }}
+  },
+  "organizer": {
+    "@type": "Organization",
+    "name": {{ site.title | jsonify }},
+    "url": {{ site.url | jsonify }}
+  }
+}
+</script>
+{%- endif -%}

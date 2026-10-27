@@ -5,6 +5,8 @@ categories:
   - news
 authors: 
   - timopie
+redirect_from:
+  - /news/acmc-icmc-idea/
 ---
 
 11-17 August, Perth, Western Australia
@@ -19,4 +21,4 @@ More information here:
 
 [http://icmc2013.com.au/](http://icmc2013.com.au/ "http://icmc2013.com.au/")
 
-![perth-city-sunset](assets/images/perth-city-sunset-870x230.jpg "perth-city-sunset")
+<!-- image lost (not in the repo or the Internet Archive): /assets/images/perth-city-sunset-870x230.jpg, alt "perth-city-sunset" -->

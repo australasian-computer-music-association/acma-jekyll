@@ -4,6 +4,7 @@ created: 2020-02-03
 authors: 
   - charlesmartin
 layout: page
+description: "The code of conduct that applies to all Australasian Computer Music Association events, including the annual ACMC conference."
 ---
 
 This code of conduct is applicable to all events run by the Australasian Computer Music Association, including ACMC. All attendees, sponsors, and volunteers at our conferences and events are required to agree with this code of conduct. Organisers will enforce this code throughout events. We expect cooperation from all participants to help ensure a safe environment for everybody.  

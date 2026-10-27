@@ -4,6 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {% seo %}
+  {% if page.noindex %}<meta name="robots" content="noindex">{% endif %}
+  {% include event-schema.html %}
   {% feed_meta %}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,7 +25,7 @@
           <a class="logo" href="{{ '/' | relative_url }}">
             <picture>
               <source srcset="{{ '/assets/logos/acma-logo-square-white.svg' | relative_url }}" media="(prefers-color-scheme: dark)">
-              <img src="{{ site.logo | relative_url }}" alt="{{ site.title }}">
+              <img src="{{ '/assets/logos/acma-logo-square-black.svg' | relative_url }}" alt="{{ site.title }}">
             </picture>
           </a>
         </li>

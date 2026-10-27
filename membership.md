@@ -1,6 +1,7 @@
 ---
 title: "Membership"
 layout: page
+description: "Join the Australasian Computer Music Association: membership benefits, voting rights and how to become a member."
 ---
 
 Most of ACMA's [activities]({% link conferences.md %}) and [communities]({% link community.md %}) are open to everyone, whether you are a member or not. Some benefits are restricted to members only.
