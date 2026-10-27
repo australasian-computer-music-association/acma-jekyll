@@ -58,7 +58,7 @@ proceedings:
     research papers.
   reviewing:                 # default per section heading; only what the volume states
     "Refereed Papers": full-paper
-    "Non-refereed Abstracts": non-refereed
+    "Non-refereed Abstracts": ""   # contents page and abstracts PDF disagree: unknown for now
     "Refereed Creative Works": refereed
 ```
 
