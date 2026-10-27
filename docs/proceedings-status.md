@@ -38,7 +38,7 @@ does). ACMC 2019 already accepted reviewed abstracts only.
 | 2008 | One PDF, 119 pp | Yes, plain titles | One big PDF |
 | 2009 | One PDF, 138 pp | Yes, plain titles (list looks short) | One big PDF |
 | 2010 | One PDF, 98 pp | Yes, plain titles (list looks short) | One big PDF |
-| 2011 | Nothing in the repo; full volume is a free ebook on Lulu | Yes, plain titles | **Missing**: download from Lulu |
+| 2011 | One PDF, 143 pp, from ACMA's free Lulu ebook (added in PR #8); text layer is garbled, so it needs OCR | Yes, plain titles | One big PDF |
 | 2012 | 4 papers found (`_drafts/found/acmc2011-2012/`) | No | **Missing**: paperback on Lulu; ask the editors for the PDF |
 | 2013 | Held with ICMC 2013 | No | ICMC 2013 is in the ICMC archive, 82 papers: <https://quod.lib.umich.edu/i/icmc/bbp2372.2013>. No separate ACMC track |
 | 2014 | Papers PDF (110 pp), talks/posters PDF (68 pp), 7 concert programmes | No | One big PDF ×2 |
@@ -85,10 +85,8 @@ from the site yet.
 
 **Quick to get (a browser login or an order):**
 
-- **2011:** the full 143-page volume is a free ebook on Lulu:
-  <https://www.lulu.com/shop/acma-inc/acmc-2011/ebook/product-1vkp8gwv.html>. Lulu needs a
-  login and a $0 checkout. Auckland ResearchSpace has a restricted record that may hold it:
-  <https://researchspace.auckland.ac.nz/handle/2292/16846>.
+- **2011:** done. The volume came from ACMA's free ebook on Lulu
+  (<https://www.lulu.com/shop/acma-inc/acmc-2011/ebook/product-1vkp8gwv.html>).
 - **2012:** *Interactive*, edited by Matt Hitchcock and Jodie Taylor, 180 pp., is a paperback
   on Lulu (no ebook):
   <https://www.lulu.com/shop/matt-hitchcock/acmc-2012-conference-proceedings/paperback/product-20230652.html>.
@@ -138,6 +136,7 @@ from the site yet.
 3. Split the single PDFs that already have title lists: 2000, 2004,
    2007–2010 (for 2002, use the original per-paper files in `_drafts/found/`). Check each list against the PDF's table of contents first.
 4. Write title lists from the PDFs for 2014, 2015, 2016 and 2017, then split them.
+   Split 2011 too (it already has a title list); OCR its pages first.
 5. For 2019–2024, list each contribution with its abstract and link Chroma
    articles where they exist.
-6. Follow up the leads above for 1993–1999, 2001, 2003, 2011 and 2012.
+6. Follow up the leads above for 1993–1999, 2001, 2003 and 2012.
