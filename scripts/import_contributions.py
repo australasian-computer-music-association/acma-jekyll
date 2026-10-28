@@ -24,6 +24,7 @@ One row per contribution, in programme or volume order (that order becomes
     chroma                  link to the full paper in Chroma
     kind, format, duration, created, performers (";"), event, venue, date,
     research_statement      creative works only
+    bio                     the authors' or artists' biographies, as printed
     media                   "kind|url|label" items separated by ";"
     slug                    to override the generated file name
 
@@ -87,6 +88,8 @@ def row_to_entry(row, year, order):
         fm["media"] = media
     if g("research_statement"):
         fm["research_statement"] = g("research_statement")
+    if g("bio"):
+        fm["bio"] = g("bio").replace("\\n", "\n")
     return fm, g("abstract").replace("\\n", "\n")
 
 

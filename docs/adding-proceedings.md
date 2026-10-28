@@ -126,6 +126,7 @@ Columns (only `title`, `authors`, `type` and `section` are required):
 | `event`, `venue`, `date` | creative works: where ACMC presented it, e.g. `Concert 2`, `Riverside Theatres`, `2026-12-02` |
 | `media` | documentation links: `kind\|url\|label` items separated by `;`, e.g. `video\|https://vimeo.com/123\|Performance video` |
 | `research_statement` | creative works: the research statement |
+| `bio` | the authors' or artists' biographies, where the volume prints them |
 | `slug` | only to override the generated file name |
 
 The row order becomes the order on the conference page.

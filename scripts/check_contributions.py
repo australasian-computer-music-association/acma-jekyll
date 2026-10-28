@@ -28,7 +28,7 @@ WORK_KINDS = {"composition", "performance", "installation", "audiovisual",
 MEDIA_KINDS = {"audio", "video", "score", "documentation", "website"}
 SLUG = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
 KNOWN_KEYS = set(REQUIRED) | {"pages", "pdf", "section_pdf", "reviewing", "chroma", "doi",
-                              "keywords", "work", "media", "research_statement", "pdf_pages"}
+                              "keywords", "work", "media", "research_statement", "bio", "pdf_pages"}
 AFFILIATION = re.compile(r"\b(University|Universität|Université|Universidad|Conservatorium|"
                          r"Conservatory|Institute|College|Polytechnic)\b")
 
