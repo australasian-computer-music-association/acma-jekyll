@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Begin Jekyll SEO tag v2.9.1 -->
+<title>Whisper, a Web App for Audience Participation and Multichannel Diffusion | Australasian Computer Music Association</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Whisper, a Web App for Audience Participation and Multichannel Diffusion" />
+<meta name="author" content="Treya Nash" />
+<meta property="og:locale" content="en_AU" />
+<meta name="description" content="This paper presents a whispering-gallery-inspired web app called Whisper, designed for collaborative performance between audience cell phones and a performer. The audience record themselves…" />
+<meta name="twitter:description" property="og:description" content="This paper presents a whispering-gallery-inspired web app called Whisper, designed for collaborative performance between audience cell phones and a performer. The audience record themselves…" />
+<link rel="canonical" href="https://computermusic.org.au/proceedings/ACMC2023-proceedings/nash-whisper-web-app.html" />
+<meta property="og:url" content="https://computermusic.org.au/proceedings/ACMC2023-proceedings/nash-whisper-web-app.html" />
+<meta property="og:site_name" content="Australasian Computer Music Association" />
+<meta property="og:image" content="https://computermusic.org.au/proceedings/ACMC2023-proceedings/assets/images/acmc2019-concert-e1618799441533.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-10-09T00:00:00+11:00" />
+<meta property="article:modified_time" content="2023-10-09T00:00:00+11:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://computermusic.org.au/proceedings/ACMC2023-proceedings/assets/images/acmc2019-concert-e1618799441533.jpg" />
+<meta name="twitter:title" content="Whisper, a Web App for Audience Participation and Multichannel Diffusion" />
+<meta name="twitter:site" content="@acma89" />
+<meta name="twitter:creator" content="@Treya Nash" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Treya Nash"},"dateModified":"2023-10-09T00:00:00+11:00","datePublished":"2023-10-09T00:00:00+11:00","description":"This paper presents a whispering-gallery-inspired web app called Whisper, designed for collaborative performance between audience cell phones and a performer. The audience record themselves…","headline":"Whisper, a Web App for Audience Participation and Multichannel Diffusion","image":"https://computermusic.org.au/proceedings/ACMC2023-proceedings/assets/images/acmc2019-concert-e1618799441533.jpg","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://computermusic.org.au/assets/logos/acma-logo-square-black.png"},"name":"Treya Nash"},"url":"https://computermusic.org.au/proceedings/ACMC2023-proceedings/nash-whisper-web-app.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+  
+  
+  
+<meta name="citation_title" content="Whisper, a Web App for Audience Participation and Multichannel Diffusion">
+<meta name="citation_author" content="Treya Nash">
+<meta name="citation_publication_date" content="2023">
+<meta name="citation_conference_title" content="Proceedings of the Australasian Computer Music Conference 2023">
+<meta name="citation_publisher" content="Australasian Computer Music Association">
+<meta name="citation_issn" content="1448-7780">
+<meta name="citation_firstpage" content="6">
+<meta name="citation_lastpage" content="6">
+<meta name="citation_abstract_html_url" content="https://computermusic.org.au/proceedings/ACMC2023-proceedings/nash-whisper-web-app.html">
+<meta name="citation_language" content="en">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "name": "Whisper, a Web App for Audience Participation and Multichannel Diffusion",
+  "url": "https://computermusic.org.au/proceedings/ACMC2023-proceedings/nash-whisper-web-app.html",
+  "author": [{"@type": "Person", "name": "Treya Nash"}],
+  "datePublished": "2023-10-09",
+  "copyrightNotice": "All copyright remains with the authors.",
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Proceedings of the Australasian Computer Music Conference 2023",
+    "issn": "1448-7780",
+    "publisher": {"@type": "Organization", "name": "Australasian Computer Music Association"}
+  }
+}
+</script>
+  <link type="application/atom+xml" rel="alternate" href="https://computermusic.org.au/feed.xml" title="Australasian Computer Music Association" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="/assets/vendor/pico/pico.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/logos/logo@16.png">
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/logos/logo@32.png">
+  
+  <link rel="icon" type="image/png" sizes="180x180" href="/assets/logos/logo@180.png">
+  
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/logos/logo@192.png">
+  
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/logos/logo@512.png">
+  
+  <link rel="apple-touch-icon" href="/assets/logos/logo@180.png">
+</head>
+<body class="layout-contribution">
+  <header class="container">
+    <nav aria-label="Main">
+      <ul>
+        <li>
+          <a class="logo" href="/">
+            <picture>
+              <source srcset="/assets/logos/acma-logo-square-white.svg" media="(prefers-color-scheme: dark)">
+              <img src="/assets/logos/acma-logo-square-black.svg" alt="Australasian Computer Music Association">
+            </picture>
+          </a>
+        </li>
+      </ul>
+      <ul>
+        
+        <li><a href="/about/">About</a></li>
+        
+        <li><a href="/news/">News</a></li>
+        
+        <li><a href="/chroma/">Chroma</a></li>
+        
+        <li><a href="/conferences/">Conference</a></li>
+        
+        <li><a href="/community/">Community</a></li>
+        
+        <li><a href="/committee/">Committee</a></li>
+        
+        <li><a href="/membership/">Membership</a></li>
+        
+        <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </nav>
+  </header>
+
+  
+
+  <main class="container">
+    <article class="content contribution">
+  <p class="meta contribution-kind">Abstract</p>
+  <h1>Whisper, a Web App for Audience Participation and Multichannel Diffusion</h1>
+  <p class="contribution-authors">Treya Nash</p>
+  <p class="meta">In <a href="/conferences/acmc2023/"><cite>Proceedings of the Australasian Computer Music Conference 2023</cite></a>, University of New England, Sydney campus, Parramatta, NSW, p. 6. Australasian Computer Music Association, ISSN 1448-7780.</p>
+  <h2 class="abstract-heading">Abstract</h2>
+  <p>This paper presents a whispering-gallery-inspired web app called <em>Whisper</em>, designed for collaborative performance between audience cell phones and a performer. The audience record themselves whispering into their cellphones, then upload their audio samples to a server. A performer controls a separate webpage through which they diffuse the samples into multichannel space, using the JSAmbisonics library. The piece is intended to engage the audience and give them agency through the use of their voice and the choice of whether to upload or delete their recording. The soundworld of the piece is designed to create a highly intimate and immersive experience which plays with the intelligibility of speech. In the first section, audience members record themselves whispering lines of a poem. In the second section, audience members choose what they whisper, which is then obscured through granular processing using tone.js. The Whisper framework is designed to be adaptable for use in future performance pieces.</p>
+  <p><a href="/proceedings/ACMC2023-proceedings.pdf">Printed in the proceedings, p. 6 (PDF)</a>
+  </p>
+  <h2>About the author</h2>
+  <p>Treya Nash is an English composer and creative coder based in Baton Rouge, Louisiana. Her areas of focus include chamber music, distributed performance, and electronic opera. Her work has been performed internationally by many renowned ensembles. She is currently pursuing her PhD at Louisiana State University, with Mara Gibson, Jesse Allison, and Steven David Beck. She has previously studied with Paul Koonce, Mark Engebretson, and Alejandro Rutty, and worked as Program Director for Charlotte New Music.</p>
+
+  <p class="meta">All copyright remains with the authors.</p>
+
+  <h2>How to cite</h2>
+  <p class="how-to-cite">Treya Nash. 2023. “Whisper, a Web App for Audience Participation and Multichannel Diffusion.” In <cite>Proceedings of the Australasian Computer Music Conference 2023</cite>, 6. University of New England, Sydney campus, Parramatta, NSW: Australasian Computer Music Association. https://computermusic.org.au/proceedings/ACMC2023-proceedings/nash-whisper-web-app.html</p>
+  <details>
+    <summary>BibTeX</summary>
+<pre><code>@inproceedings{nash2023whisper,
+  author = {Treya Nash},
+  title = {{Whisper, a Web App for Audience Participation and Multichannel Diffusion}},
+  booktitle = {Proceedings of the Australasian Computer Music Conference 2023},
+  pages = {6},
+  year = {2023},
+  publisher = {Australasian Computer Music Association},
+  address = {University of New England, Sydney campus, Parramatta, NSW},
+  issn = {1448-7780},
+  url = {https://computermusic.org.au/proceedings/ACMC2023-proceedings/nash-whisper-web-app.html}
+}</code></pre>
+  </details>
+
+  <p><a href="/conferences/acmc2023/">← All of ACMC 2023</a></p>
+</article>
+
+  </main>
+
+  <footer class="container">
+    <small>&copy; Australasian Computer Music Association 2026</small>
+    <ul>
+      
+      <li><a href="https://twitter.com/acma89">Twitter</a></li>
+      
+      <li><a href="https://www.facebook.com/acma89">Facebook</a></li>
+      
+      <li><a href="https://www.instagram.com/aus_computer_music">Instagram</a></li>
+      
+      <li><a href="https://github.com/australasian-computer-music-association">GitHub</a></li>
+      
+      <li><a href="/feed.xml">RSS</a></li>
+      
+      <li><a href="/privacy/">Privacy</a></li>
+    </ul>
+  </footer>
+</body>
+</html>
