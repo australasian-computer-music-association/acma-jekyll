@@ -1,7 +1,7 @@
 ---
 title: Programmable Composition
 authors:
-- Alistair Riddell # as on the abstract; the contents page has "Alastair Riddell"
+- Alistair Riddell # his own spelling, as on the abstract; the contents page misprints "Alastair"
 year: 2000
 type: abstract
 section: Abstracts
