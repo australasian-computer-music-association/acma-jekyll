@@ -63,6 +63,11 @@ The citation tags for Google Scholar are in _includes/citation-meta.html.
   </ul>
   {%- endif %}
 
+  {%- if page.bio %}
+  <h2>About the {% if page.type == "creative-work" %}artist{% else %}author{% endif %}{% if page.authors.size > 1 %}s{% endif %}</h2>
+  {{ page.bio | markdownify }}
+  {%- endif %}
+
 
   {%- if c_proc.copyright %}
   <p class="meta">{{ c_proc.copyright }}</p>

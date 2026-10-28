@@ -195,9 +195,17 @@ def tidy_paragraphs(text):
     return "\n\n".join(paras)
 
 
+class _EntryDumper(yaml.SafeDumper):
+    """Writes multi-paragraph strings (e.g. `bio`) as readable literal blocks."""
+
+
+_EntryDumper.add_representer(str, lambda dumper, s: dumper.represent_scalar(
+    "tag:yaml.org,2002:str", s, style="|" if "\n" in s else None))
+
+
 def dump_entry(path, fm, body):
     """Write an entry: YAML front matter in a fixed key order, then the body."""
-    text = yaml.safe_dump(fm, sort_keys=False, allow_unicode=True, width=1000)
+    text = yaml.dump(fm, Dumper=_EntryDumper, sort_keys=False, allow_unicode=True, width=1000)
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
         f.write("---\n" + text + "---\n")

@@ -48,7 +48,7 @@ does). ACMC 2019 already accepted reviewed abstracts only.
 | 2020 | Link to the conference's GitHub Pages site; its repo has all 74 abstracts in `sitedata/papers.csv` (copy in `_drafts/found/acmc2020-data/`) | No | Abstracts only; list them from the CSV |
 | 2021 | One PDF, 30 pp | No | One big PDF; abstracts only |
 | 2022 | No PDF; full papers in Chroma 39(1) | Concerts only | **Partial**: no abstracts |
-| 2023 | One PDF, 46 pp (built in `_drafts/proceedings-build/`) | Yes, with abstracts | Abstracts on the page; 6 full papers link to Chroma 39(2) |
+| 2023 | One PDF, 46 pp (built in `_drafts/proceedings-build/` from the conference page) | ✅ Entries: 2 keynotes, 6 papers (full text in Chroma 39(2)), 17 abstracts, 3 artist talks, 1 workshop, 80 creative works (65 concert works, 11 installations, 2 works from piece-and-paper sessions, 2 performances), with biographies | ✅ Done. The volume states no review process except that peer-reviewed full papers are in Chroma: those 6 are full paper, keynotes invited, the rest unknown |
 | 2024 | One PDF, 90 pp | No | One big PDF; abstracts only |
 
 ## Before 2000
