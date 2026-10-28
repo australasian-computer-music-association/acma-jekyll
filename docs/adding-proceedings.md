@@ -120,11 +120,11 @@ Columns (only `title`, `authors`, `type` and `section` are required):
 | `reviewing` | only to override the section default; `unknown` for "" |
 | `chroma` | link to the full paper in Chroma, if published there |
 | `kind` | creative works: `composition`, `performance`, `installation`, `audiovisual`, `improvisation`, `sound-art` or `other` |
-| `format` | creative works: instrumentation or medium (**required** for creative works) |
+| `format` | creative works: instrumentation or medium. Ask every artist for it; for old years, leave it empty if no source records it (never a placeholder like "not recorded") |
 | `duration`, `created` | creative works: e.g. `8:30`, `2026` |
 | `performers` | creative works, separated by `;` |
 | `event`, `venue`, `date` | creative works: where ACMC presented it, e.g. `Concert 2`, `Riverside Theatres`, `2026-12-02` |
-| `media` | documentation links: `kind\|url\|label` items separated by `;`, e.g. `video\|https://vimeo.com/123\|Performance video` |
+| `media` | documentation links: `kind\|url\|label` items separated by `;`, e.g. `video\|https://vimeo.com/123\|Performance video`. Kinds: `audio`, `video`, `score`, `documentation`, `review`, `website`. A file in this repo is linked by its site path, e.g. `/proceedings/ACMC2007-proceedings/ACMC07_Schedule.pdf` |
 | `research_statement` | creative works: the research statement |
 | `bio` | the authors' or artists' biographies, where the volume prints them |
 | `slug` | only to override the generated file name |
@@ -186,7 +186,10 @@ Rules worth knowing:
 - **Abstracts matter**: Google Scholar excludes pages that show "bare
   bibliographic data without abstracts". An entry with no abstract or
   program note still gets its page, but no Scholar tags. Chase missing notes.
-- **Media** stays outside this repository; link to it.
+- **Media**: recordings and videos stay outside this repository; link to
+  them. Documents already in the repo (a concert programme, a schedule) can be
+  linked by site path, which the checker checks exists. A published review of
+  the concert is `kind: review`.
 
 ## Splitting an old volume
 
@@ -205,8 +208,48 @@ If the offset changes partway through (unnumbered inserts), set
 outputs.
 
 `import_contributions.py --extract-abstracts` drafts empty abstracts from the
-PDFs. Always read the drafts: two-column layouts, cropped author blocks and
-words split across lines need fixing by hand.
+PDFs. It starts after an "Abstract" heading; items that print their text under
+the section's name instead (artist talks, posters, studio reports) need
+`--abstract-heading "abstract|artist talk|poster|studio report"`. It stops at
+the introduction, keywords, the page number or the item's title, drops
+running headers and figure captions, and guesses paragraph breaks from short
+lines. Always read the drafts: two-column layouts, cropped author blocks,
+paragraph breaks and words split across lines need fixing by hand.
+
+## OCR
+
+Install with `brew install ocrmypdf` (it brings tesseract). Check each
+volume's text layer first: `pdftotext -f N -l N volume.pdf -` should give
+readable words. There are three cases:
+
+- **Image-only pages** (2002, 2010): nothing comes out. Add a text layer
+  without touching the pages that have one, and commit the result in place of
+  the volume before splitting, so the split PDFs are searchable too:
+
+  ```sh
+  ocrmypdf --skip-text -O 1 volume.pdf volume-ocr.pdf
+  ```
+
+- **Garbled text** (2014's papers volume shifts every letter by 3): OCR a
+  copy into a scratch folder and draft from that. Don't commit it: forced OCR
+  turns every page into an image, so a born-digital PDF grows 10–40 times
+  (2007's 7-page Burt keynote: 390 KB to 3.9 MB with `-O 3`).
+
+  ```sh
+  ocrmypdf --force-ocr -O 3 volume.pdf /tmp/scratch/volume-ocr.pdf
+  pdftotext -f N -l N /tmp/scratch/volume-ocr.pdf -
+  ```
+
+  To draft abstracts from it, point `proceedings.source_pdf` at the OCR copy
+  only while running the import, or paste the text into the CSV's `abstract`
+  column.
+
+- **Messy but readable text** (2007's Burt keynote: "th a t", "graph ics"):
+  leave the published PDF alone and fix the abstract by hand. Scholar copes
+  with this, and the page's abstract is what it indexes first.
+
+Scanned pages often need `--rotate-pages` or `--deskew`. Check the OCR text
+of names, titles and numbers against the page image.
 
 ## Checks
 

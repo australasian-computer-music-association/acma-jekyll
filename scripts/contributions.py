@@ -141,29 +141,78 @@ def page_text(pdf, page, column=None):
     return subprocess.run(args, capture_output=True, text=True).stdout
 
 
-ABSTRACT_START = re.compile(r"^\s*abstract\s*[.:—-]?\s*$", re.I)
+ABSTRACT_HEADING = r"abstract"
 ABSTRACT_END = re.compile(
     r"^\s*((1|I)\.?\s*)?(introduction|background)\b|^\s*1\.?\s*$|^\s*(keywords|index terms)\b", re.I)
+PAGE_NUMBER = re.compile(r"^\s*\d{1,4}\s*$")
+CAPTION = re.compile(r"^\s*(figure|fig\.|table)\s*\d+", re.I)
 
 
-def extract_abstract(pdf, page=1):
-    """Best-effort abstract from a two- or one-column first page. Check by eye."""
+def running_lines(pdf, page):
+    """Lines printed on both this page and the next (or previous) one: running
+    headers and footers, which pdftotext puts in the middle of the text."""
+    here = set(l.strip() for l in page_text(pdf, page).splitlines() if l.strip())
+    other = page_text(pdf, page + 1) or (page_text(pdf, page - 1) if page > 1 else "")
+    return here & set(l.strip() for l in other.splitlines() if l.strip())
+
+
+def _letters(text):
+    return re.sub(r"[^a-z0-9]", "", ascii_fold(text).lower())
+
+
+def extract_abstract(pdf, page=1, heading=ABSTRACT_HEADING, title=None):
+    """Best-effort abstract from a two- or one-column first page. Check by eye.
+
+    The text runs from a line that is just the heading (a regex; "abstract" by
+    default, but e.g. "artist talk|poster|studio report" for items that print
+    their text under the section's name) to the introduction, keywords, the
+    page number or the item's `title` (printed after the text on some one-page
+    items). Running headers and figure captions are dropped."""
+    start_re = re.compile(rf"^\s*({heading})\s*[.:—-]?\s*$", re.I)
+    # Column cropping cuts running headers short, so drop parts of them too.
+    running = [_letters(l) for l in running_lines(pdf, page)]
+    is_running = lambda l: len(_letters(l)) >= 12 and any(_letters(l) in r for r in running)
+    title_key = _letters(title or "")
+    is_title = lambda l: title_key and len(_letters(l)) >= 8 and title_key.startswith(_letters(l))
     for columns in (("left", "right"), (None,)):
         lines = []
         for col in columns:
             lines += page_text(pdf, page, col).splitlines()
-        start = next((i for i, l in enumerate(lines) if ABSTRACT_START.match(l)), None)
+        # An "Abstract" heading wins over a section name printed above it.
+        found = [i for i, l in enumerate(lines) if start_re.match(l)]
+        start = next((i for i in found if re.match(r"\s*abstract", lines[i], re.I)), found[0] if found else None)
         if start is None:
             continue
-        out = []
+        out, caption = [], False
         for line in lines[start + 1:]:
-            if ABSTRACT_END.match(line):
+            if ABSTRACT_END.match(line) or PAGE_NUMBER.match(line) or is_title(line):
                 break
-            out.append(line.rstrip())
-        text = tidy_paragraphs("\n".join(out))
+            if is_running(line):
+                continue
+            # A caption runs to the next blank line.
+            caption = bool(CAPTION.match(line)) or (caption and line.strip() != "")
+            if not caption:
+                out.append(line.rstrip())
+        text = tidy_paragraphs(mark_paragraphs("\n".join(out)))
         if len(text) > 80:
             return text
     return ""
+
+
+def mark_paragraphs(text):
+    """pdftotext runs a column's paragraphs together. A line that ends a
+    sentence well short of the column width ends its paragraph."""
+    lines = text.splitlines()
+    widths = sorted(len(l.strip()) for l in lines if l.strip())
+    if len(widths) < 4:
+        return text
+    full = widths[len(widths) * 3 // 4]
+    out = []
+    for line in lines:
+        out.append(line)
+        if line.strip() and SENTENCE_END.search(line.strip()) and len(line.strip()) < 0.75 * full:
+            out.append("")
+    return "\n".join(out)
 
 
 # A paragraph that stops without closing punctuation and is followed by one

@@ -100,7 +100,7 @@ doi:                 # reserved
 ---
 ```
 
-Extra fields for creative works (all optional except `format`):
+Extra fields for creative works (all optional; `format` is asked of every artist, but old years may not record it):
 
 ```yaml
 work:
@@ -179,14 +179,14 @@ Each year is a small, self-contained job that any fresh session can pick up from
 ## Phases (one PR each, or one per year where marked)
 
 **Phase 1: infrastructure + pilots**
-- [ ] `_contributions` collection config, `contribution.html` layout, `contribution-list.html` include, `/proceedings/` and `/proceedings/creative-works/` indexes
-- [ ] `check_contributions.py` wired into both workflows
-- [ ] Pilot with **2018**, which has refereed papers (already split), non-refereed abstracts and **refereed creative works** in one year, so both the paper and the work page shapes are tested on real data. Check the built tags against Scholar's guidelines and test with Zotero
-- [ ] Fix the stale 2011 row in `docs/proceedings-status.md` (the volume is committed and linked) and point the doc's plan at this plan/issue
+- [x] `_contributions` collection config, `contribution.html` layout, `contribution-list.html` include, `/proceedings/` and `/proceedings/creative-works/` indexes
+- [x] `check_contributions.py` wired into both workflows
+- [x] Pilot with **2018**, which has refereed papers (already split), non-refereed abstracts and **refereed creative works** in one year, so both the paper and the work page shapes are tested on real data. Check the built tags against Scholar's guidelines and test with Zotero
+- [x] Fix the stale 2011 row in `docs/proceedings-status.md` (the volume is committed and linked) and point the doc's plan at this plan/issue
 
 **Phase 2: migrate the other already-split years**
-- [ ] 2001, 2005 (with the 2005 concert programme's works), 2006 (existing PDF paths kept)
-- [ ] 2023 (abstracts and concert works now on the page → entries, with `chroma:` for the 6 full papers)
+- [x] 2001, 2005 (with the 2005 concert programme's works), 2006 (existing PDF paths kept)
+- [x] 2023 (abstracts and concert works now on the page → entries, with `chroma:` for the 6 full papers)
 
 **Phase 3: split volumes that already have title lists** (one PR per year; check each list against the PDF's TOC first, since the 2009/2010 lists look short). Add each year's creative works in the same PR where the volume or a programme has them.
 - [ ] 2000 · [ ] 2004 · [ ] 2007 · [ ] 2008 · [ ] 2009 · [ ] 2010 (needs OCR on some pages) · [ ] 2011
@@ -239,7 +239,8 @@ From a text search of every volume (October 2026). These are **provisional** and
 | 2002, 2004 | "Refereed Papers" and "Non-refereed Papers" sections |
 | 2005 | "Refereed Papers" |
 | 2007, 2014, 2017, 2018 | Government statement: "fully refereed papers therefore meet Australian Government requirements for fully-refereed research papers" (HERDC wording) |
-| 2008–2010 | "Refereed Papers"; 2010 also "Artist Talk" |
+| 2008 | "Papers", each marked "* Denotes papers selected by peer review of full paper", with the government statement |
+| 2009–2010 | "Refereed Papers"; 2010 also "Artist Talk" |
 | 2011 | No statement found yet; check the front matter by eye |
 | 2015, 2016 | "The peer review process applied to full papers … impartial and independent assessment … by independent, qualified experts". 2015: Refereed Full Papers, Studio Reports, Artist Talks. 2016: Refereed Papers, Creative Works, Artist Talks |
 | 2017 | Refereed Papers, Refereed Abstracts, Refereed Artist Talks, Refereed Performance Works |
