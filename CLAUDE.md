@@ -21,6 +21,12 @@ and CSS live in this repo (Pico CSS plus `assets/css/main.css`).
 
 ## Conventions
 
+- Record what you find in an issue: a lost programme or schedule, a name or
+  detail someone supplies, a review, and anything left unknown, skipped or not
+  entered. Do this even when you're about to act on it, so the gaps stay
+  visible and anyone can fill them in later (see #29–#35 for examples).
+- Anything you bring into the repo goes through a pull request, never
+  straight to `main`.
 - Slugs (file names) are permanent URLs: never rename published entries.
 - An item's own PDF lives in the same folder as its page,
   `proceedings/ACMCYYYY-proceedings/` (Scholar's same-directory rule; the
