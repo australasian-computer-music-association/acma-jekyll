@@ -32,7 +32,7 @@ does). ACMC 2019 already accepted reviewed abstracts only.
 | 2004 | One PDF, 105 pp | Yes, plain titles | One big PDF |
 | 2005 | 47 PDFs (44 items + front matter), concert programme, workshops | ✅ Entries: 2 keynotes, 1 invited speaker, 24 papers, 4 artist talks, 6 studio reports, 4 posters, 5 workshops, 36 creative works (32 concert works, 4 installations) | ✅ Done. Review status per paper from the contents page: 15 full paper, 9 abstract |
 | 2006 | 55 PDFs (52 items; 3 duplicates) | ✅ Entries: 2 keynotes, 1 invited speaker, 29 papers, 5 posters, 4 studio reports, 7 artist talks, 4 workshops | ✅ Done. No front matter survives, so review status is unknown except for keynotes |
-| 2007 | One PDF, 134 pp | Yes, plain titles | One big PDF |
+| 2007 | One PDF, 134 pp, split into 32 per-item PDFs; conference schedule recovered from the Wayback Machine | ✅ Entries: 2 keynotes, 19 papers, 5 artist talks, 4 studio reports, 2 posters, 23 creative works (6 concerts, from the schedule) | ✅ Done. Review status per paper from the contents page: 15 "*" full paper, 4 "%" abstract; keynotes invited; the rest unknown. Concert works have no program notes, and most have no format; untitled install-space works not entered |
 | 2008 | One PDF, 119 pp | Yes, plain titles | One big PDF |
 | 2009 | One PDF, 138 pp | Yes, plain titles (list looks short) | One big PDF |
 | 2010 | One PDF, 98 pp | Yes, plain titles (list looks short) | One big PDF |
