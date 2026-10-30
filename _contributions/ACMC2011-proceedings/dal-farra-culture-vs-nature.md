@@ -8,7 +8,7 @@ section: Presentations of Research (Refereed Abstracts and Research Papers)
 order: 6
 pages: 28-29
 reviewing: abstract
-pdf: /proceedings/ACMC2011-proceedings/farra-culture-vs-nature.pdf
+pdf: /proceedings/ACMC2011-proceedings/dal-farra-culture-vs-nature.pdf
 ---
 We are living in a world reaching a critical point where the equilibrium between a healthy climate environment, the energy our society needs to maintain or improve this lifestyle and the interconnected economies could pass more quickly than expected from the current complex balance to a complete new reality where unbalance would be the rule and human beings would need to be as creative as never before to survive.
 
