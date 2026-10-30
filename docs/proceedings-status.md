@@ -41,7 +41,7 @@ does). ACMC 2019 already accepted reviewed abstracts only.
 | 2013 | Held with ICMC 2013 | No | ICMC 2013 is in the ICMC archive, 82 papers: <https://quod.lib.umich.edu/i/icmc/bbp2372.2013>. No separate ACMC track |
 | 2014 | Papers PDF (110 pp), talks/posters PDF (68 pp), 7 concert programmes | No | One big PDF ×2 |
 | 2015 | One PDF, 160 pp | No | One big PDF |
-| 2016 | One PDF, 121 pp, recovered from the Wayback Machine (`proceedings/ACMC2016-proceedings.pdf`) | No | One big PDF |
+| 2016 | One PDF, 121 pp, recovered from the Wayback Machine (`proceedings/ACMC2016-proceedings.pdf`), split into one PDF per full paper plus section PDFs for the abstracts and posters, artist talks and creative works | ✅ Entries: 12 full papers, 14 abstracts and posters, 6 artist talks, 42 creative works (2 concerts, installations, a listening room, immersive installations and AR soundwalks) | ✅ Done. Full Refereed Papers full paper (the volume's review statement covers full papers only); the rest unknown. Creative works are printed in the volume with program notes and venues, but no days. Tomlinson's and Whalley's abstracts are on an overprinted page (OCR used); McIntyre's abstract is printed twice |
 | 2017 | One PDF, 79 pp | No | One big PDF |
 | 2018 | 15 paper PDFs, plus front matter, abstracts and creative works PDFs | ✅ Entries: 15 papers, 4 abstracts, 24 creative works | ✅ Done (pilot year) |
 | 2019 | One PDF, 86 pp (reduced), programme booklet | No (page is still the call) | One big PDF; abstracts only |
