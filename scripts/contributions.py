@@ -149,11 +149,35 @@ CAPTION = re.compile(r"^\s*(figure|fig\.|table)\s*\d+", re.I)
 
 
 def running_lines(pdf, page):
-    """Lines printed on both this page and the next (or previous) one: running
-    headers and footers, which pdftotext puts in the middle of the text."""
-    here = set(l.strip() for l in page_text(pdf, page).splitlines() if l.strip())
+    """Running headers and footers: lines printed on both this page and the
+    next (or previous) one, as keys from running_key(). pdftotext puts them in
+    the middle of the text. The page number is ignored when comparing, so
+    "ACMC2000 Page 1" matches "ACMC2000 Page 2"."""
+    here = set(running_key(l) for l in page_text(pdf, page).splitlines() if l.strip())
     other = page_text(pdf, page + 1) or (page_text(pdf, page - 1) if page > 1 else "")
-    return here & set(l.strip() for l in other.splitlines() if l.strip())
+    return here & set(running_key(l) for l in other.splitlines() if l.strip())
+
+
+def running_key(line):
+    """Letters only, no digits: what's left of a running header once its page
+    number is ignored."""
+    return re.sub(r"[^a-z]", "", ascii_fold(line).lower())
+
+
+def header_fragment(line, running=()):
+    """Is this line a running header, or a piece of one left by column cropping
+    ("ACMC200", "00 Page 18", "Pag", "ge 107")? `running` holds the keys of
+    the page's running lines (see running_lines)."""
+    key = running_key(line)
+    if not key or len(line.strip()) > 40:
+        return False
+    if key in "acmcpage" and len(line.strip()) <= 16:
+        return True
+    return len(key) >= 12 and any(key in r for r in running)
+
+
+# The same glued to the end of a text line by pdftotext ("colPage 107").
+GLUED_HEADER = re.compile(r"(?<=[a-z])(?:ACMC\s?\d{0,4}\s*)?Page\s?\d{1,4}\s*$")
 
 
 def _letters(text):
@@ -167,36 +191,52 @@ def extract_abstract(pdf, page=1, heading=ABSTRACT_HEADING, title=None):
     default, but e.g. "artist talk|poster|studio report" for items that print
     their text under the section's name) to the introduction, keywords, the
     page number or the item's `title` (printed after the text on some one-page
-    items). Running headers and figure captions are dropped."""
-    start_re = re.compile(rf"^\s*({heading})\s*[.:—-]?\s*$", re.I)
-    # Column cropping cuts running headers short, so drop parts of them too.
-    running = [_letters(l) for l in running_lines(pdf, page)]
-    is_running = lambda l: len(_letters(l)) >= 12 and any(_letters(l) in r for r in running)
-    title_key = _letters(title or "")
-    is_title = lambda l: title_key and len(_letters(l)) >= 8 and title_key.startswith(_letters(l))
-    for columns in (("left", "right"), (None,)):
-        lines = []
-        for col in columns:
-            lines += page_text(pdf, page, col).splitlines()
-        # An "Abstract" heading wins over a section name printed above it.
-        found = [i for i, l in enumerate(lines) if start_re.match(l)]
-        start = next((i for i in found if re.match(r"\s*abstract", lines[i], re.I)), found[0] if found else None)
-        if start is None:
-            continue
-        out, caption = [], False
-        for line in lines[start + 1:]:
-            if ABSTRACT_END.match(line) or PAGE_NUMBER.match(line) or is_title(line):
-                break
-            if is_running(line):
-                continue
-            # A caption runs to the next blank line.
-            caption = bool(CAPTION.match(line)) or (caption and line.strip() != "")
-            if not caption:
-                out.append(line.rstrip())
-        text = tidy_paragraphs(mark_paragraphs("\n".join(out)))
+    items). Running headers and figure captions are dropped.
+
+    The page is first cropped into two columns, then read whole as a fallback.
+    scripts/test_extract_abstracts.py scores the strategies against the
+    reviewed abstracts of 2000, 2007 and 2008: cropping matched on 51 of 67,
+    reading order on 41, and reading order was better on only 5 (it often
+    runs on past the abstract when a page has no "Introduction" heading)."""
+    for columns in COLUMN_STRATEGIES:
+        text = extract_abstract_from(pdf, page, heading, title, columns)
         if len(text) > 80:
             return text
     return ""
+
+
+# Each strategy is the sequence of page_text() columns whose lines are joined.
+COLUMN_STRATEGIES = ((None,), ("left", "right"))
+
+
+def extract_abstract_from(pdf, page, heading, title, columns):
+    """One strategy of extract_abstract(): "" if the heading isn't found."""
+    start_re = re.compile(rf"^\s*({heading})\s*[.:—-]?\s*$", re.I)
+    # Column cropping cuts running headers short, so drop parts of them too.
+    running = running_lines(pdf, page)
+    is_running = lambda l: header_fragment(l, running)
+    title_key = _letters(title or "")
+    is_title = lambda l: title_key and len(_letters(l)) >= 8 and title_key.startswith(_letters(l))
+    lines = []
+    for col in columns:
+        lines += page_text(pdf, page, col).splitlines()
+    # An "Abstract" heading wins over a section name printed above it.
+    found = [i for i, l in enumerate(lines) if start_re.match(l)]
+    start = next((i for i in found if re.match(r"\s*abstract", lines[i], re.I)), found[0] if found else None)
+    if start is None:
+        return ""
+    out, caption = [], False
+    for line in lines[start + 1:]:
+        if ABSTRACT_END.match(line) or PAGE_NUMBER.match(line) or is_title(line):
+            break
+        if is_running(line):
+            continue
+        line = GLUED_HEADER.sub("", line)
+        # A caption runs to the next blank line.
+        caption = bool(CAPTION.match(line)) or (caption and line.strip() != "")
+        if not caption:
+            out.append(line.rstrip())
+    return tidy_paragraphs(mark_paragraphs("\n".join(out)))
 
 
 def mark_paragraphs(text):

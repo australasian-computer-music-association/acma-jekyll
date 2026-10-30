@@ -29,7 +29,14 @@ MEDIA_KINDS = {"audio", "video", "score", "documentation", "review", "website"}
 SLUG = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
 KNOWN_KEYS = set(REQUIRED) | {"pages", "pdf", "section_pdf", "reviewing", "chroma", "doi",
                               "keywords", "work", "media", "research_statement", "bio", "pdf_pages"}
-RUNNING_HEADER = re.compile(r"Proceedings of the Australasian Computer Music Conference|^ACMC\s?\d{2,4}\b", re.I | re.M)
+# The volume's running header, whole or in the pieces column cropping leaves
+# ("ACMC200", "00 Page 18", "colPage 107"), anywhere in a paragraph.
+RUNNING_HEADER = re.compile(
+    r"Proceedings of the Australasian Computer Music Conference"
+    r"|\bACMC\s?\d{0,4}\s+Pag|\bACMC\d{3}\b|\bACMC\d\b"  # ACMC2000 Page 1; cropped ACMC200 (a mention like "ACMC 2019" is fine)
+    r"|(?:\b\d{1,4}\s+|[a-z])Pag(?:e\s?\d{1,4})?\b"  # 00 Page 18, colPage 107, "Pag" from "Page"
+    r"|\bPag\b|\bge\s\d{1,4}\b",       # the halves of a cropped "Page 107"
+    re.I)
 CAPTION = re.compile(r"^(Figure|Fig\.|Table)\s*\d+", re.I)
 PLACEHOLDER = re.compile(r"^((format )?not (recorded|known|stated)|unknown|n/?a|tbc|tba|-+|\?+)$", re.I)
 AFFILIATION = re.compile(r"\b(University|Universität|Université|Universidad|Conservatorium|"
@@ -51,8 +58,10 @@ def body_problems(body):
                         "the author's affiliation left over from the PDF?")
     paras = [p.strip() for p in re.split(r"\n\s*\n", text) if p.strip()]
     for p in paras:
-        if RUNNING_HEADER.search(p):
-            problems.append(f"contains the volume's running header (“{' '.join(p.split()[:8])} …”)")
+        m = RUNNING_HEADER.search(p)
+        if m:
+            around = p[max(0, m.start() - 20):m.end() + 20].replace("\n", " ")
+            problems.append(f"contains the volume's running header or a piece of it (“…{around}…”)")
         elif re.fullmatch(r"\d{1,4}", p):
             problems.append(f"has a paragraph that is just “{p}”: a page number left over from the PDF?")
         elif CAPTION.match(p):
