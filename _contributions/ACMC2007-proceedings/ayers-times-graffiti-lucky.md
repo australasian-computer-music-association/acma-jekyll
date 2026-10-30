@@ -7,7 +7,6 @@ type: creative-work
 section: Concert 1
 order: 34
 work:
-  format: format not recorded # neither the schedule nor the volume describes it
   presented:
     event: Concert 1
     venue: Band Room, Peter Karmel Building, ANU
