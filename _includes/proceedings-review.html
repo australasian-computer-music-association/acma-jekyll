@@ -8,7 +8,22 @@ repeating it.  {% include proceedings-review.html %}
 {%- if proc.review_statement or proc.committees %}
 <h2 id="review-process">Review process and committees</h2>
 {%- if proc.review_statement %}
-<blockquote>{{ proc.review_statement | markdownify }}</blockquote>
+{%- comment -%}
+Statements quoted from the volumes often start a line with the "*" that marks
+refereed papers on the contents page ("* Denotes papers selected by peer
+review of full paper"). Markdown would read that as a list bullet, so escape
+it. Liquid has no "\n" in string literals, hence the captures: `bullet` is a
+newline then "* ", `escaped` the same with the backslash. Prepending a newline
+lets the first line match too; markdownify ignores it.
+{%- endcomment -%}
+{%- capture nl %}
+{% endcapture -%}
+{%- capture bullet %}
+* {% endcapture -%}
+{%- capture escaped %}
+\* {% endcapture -%}
+{%- assign statement = proc.review_statement | prepend: nl | replace: bullet, escaped -%}
+<blockquote>{{ statement | markdownify }}</blockquote>
 {%- endif %}
 {%- for committee in proc.committees %}
 <p><strong>{{ committee.name }}:</strong> {{ committee.members | join: ", " }}</p>
