@@ -37,6 +37,10 @@ RUNNING_HEADER = re.compile(
     r"|(?:\b\d{1,4}\s+|[a-z])Pag(?:e\s?\d{1,4})?\b"  # 00 Page 18, colPage 107, "Pag" from "Page"
     r"|\bPag\b|\bge\s\d{1,4}\b",       # the halves of a cropped "Page 107"
     re.I)
+# Characters no abstract should hold: PDF text layers encode some footers and
+# symbols as control characters (ACMC 2011's "Page" footer comes out as them
+# around "3DJH").
+CONTROL = re.compile(r"[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]")
 CAPTION = re.compile(r"^(Figure|Fig\.|Table)\s*\d+", re.I)
 PLACEHOLDER = re.compile(r"^((format )?not (recorded|known|stated)|unknown|n/?a|tbc|tba|-+|\?+)$", re.I)
 AFFILIATION = re.compile(r"\b(University|Universität|Université|Universidad|Conservatorium|"
@@ -58,6 +62,11 @@ def body_problems(body):
                         "the author's affiliation left over from the PDF?")
     paras = [p.strip() for p in re.split(r"\n\s*\n", text) if p.strip()]
     for p in paras:
+        m = CONTROL.search(p)
+        if m:
+            around = CONTROL.sub("�", p[max(0, m.start() - 20):m.end() + 20]).replace("\n", " ")
+            problems.append(f"contains a control character, shown as � (“…{around}…”): "
+                            "PDF residue to delete")
         m = RUNNING_HEADER.search(p)
         if m:
             around = p[max(0, m.start() - 20):m.end() + 20].replace("\n", " ")
