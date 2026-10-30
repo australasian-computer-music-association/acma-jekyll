@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Begin Jekyll SEO tag v2.9.1 -->
+<title>Multi-Feature Musical Instrument Sound Classifier w/User Determined Generalisation Performance | Australasian Computer Music Association</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Multi-Feature Musical Instrument Sound Classifier w/User Determined Generalisation Performance" />
+<meta name="author" content="Ian Kaminskyj" />
+<meta property="og:locale" content="en_AU" />
+<meta name="description" content="A previously developed musical instrument sound classification system has been extended in the following ways: (a) three additional features have been extracted (cepstral coefficients,…" />
+<meta name="twitter:description" property="og:description" content="A previously developed musical instrument sound classification system has been extended in the following ways: (a) three additional features have been extracted (cepstral coefficients,…" />
+<link rel="canonical" href="https://computermusic.org.au/proceedings/ACMC2002-proceedings/kaminskyj-multi-feature-musical.html" />
+<meta property="og:url" content="https://computermusic.org.au/proceedings/ACMC2002-proceedings/kaminskyj-multi-feature-musical.html" />
+<meta property="og:site_name" content="Australasian Computer Music Association" />
+<meta property="og:image" content="https://computermusic.org.au/proceedings/ACMC2002-proceedings/assets/images/acmc2019-concert-e1618799441533.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2002-07-06T00:00:00+10:00" />
+<meta property="article:modified_time" content="2002-07-06T00:00:00+10:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://computermusic.org.au/proceedings/ACMC2002-proceedings/assets/images/acmc2019-concert-e1618799441533.jpg" />
+<meta name="twitter:title" content="Multi-Feature Musical Instrument Sound Classifier w/User Determined Generalisation Performance" />
+<meta name="twitter:site" content="@acma89" />
+<meta name="twitter:creator" content="@Ian Kaminskyj" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Ian Kaminskyj"},"dateModified":"2002-07-06T00:00:00+10:00","datePublished":"2002-07-06T00:00:00+10:00","description":"A previously developed musical instrument sound classification system has been extended in the following ways: (a) three additional features have been extracted (cepstral coefficients,…","headline":"Multi-Feature Musical Instrument Sound Classifier w/User Determined Generalisation Performance","image":"https://computermusic.org.au/proceedings/ACMC2002-proceedings/assets/images/acmc2019-concert-e1618799441533.jpg","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://computermusic.org.au/assets/logos/acma-logo-square-black.png"},"name":"Ian Kaminskyj"},"url":"https://computermusic.org.au/proceedings/ACMC2002-proceedings/kaminskyj-multi-feature-musical.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+  
+  
+  
+<meta name="citation_title" content="Multi-Feature Musical Instrument Sound Classifier w/User Determined Generalisation Performance">
+<meta name="citation_author" content="Ian Kaminskyj">
+<meta name="citation_publication_date" content="2002">
+<meta name="citation_conference_title" content="Proceedings of the Australasian Computer Music Conference 2002">
+<meta name="citation_publisher" content="Australasian Computer Music Association">
+<meta name="citation_firstpage" content="53">
+<meta name="citation_lastpage" content="62">
+<meta name="citation_pdf_url" content="https://computermusic.org.au/proceedings/ACMC2002-proceedings/kaminskyj-multi-feature-musical.pdf">
+<meta name="citation_abstract_html_url" content="https://computermusic.org.au/proceedings/ACMC2002-proceedings/kaminskyj-multi-feature-musical.html">
+<meta name="citation_language" content="en">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "name": "Multi-Feature Musical Instrument Sound Classifier w/User Determined Generalisation Performance",
+  "url": "https://computermusic.org.au/proceedings/ACMC2002-proceedings/kaminskyj-multi-feature-musical.html",
+  "author": [{"@type": "Person", "name": "Ian Kaminskyj"}],
+  "datePublished": "2002-07-06",
+  "encoding": {"@type": "MediaObject", "encodingFormat": "application/pdf", "contentUrl": "https://computermusic.org.au/proceedings/ACMC2002-proceedings/kaminskyj-multi-feature-musical.pdf"},
+  "copyrightNotice": "All copyright remains with the authors.",
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Proceedings of the Australasian Computer Music Conference 2002",
+    "publisher": {"@type": "Organization", "name": "Australasian Computer Music Association"}
+  }
+}
+</script>
+  <link type="application/atom+xml" rel="alternate" href="https://computermusic.org.au/feed.xml" title="Australasian Computer Music Association" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="/assets/vendor/pico/pico.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/logos/logo@16.png">
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/logos/logo@32.png">
+  
+  <link rel="icon" type="image/png" sizes="180x180" href="/assets/logos/logo@180.png">
+  
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/logos/logo@192.png">
+  
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/logos/logo@512.png">
+  
+  <link rel="apple-touch-icon" href="/assets/logos/logo@180.png">
+</head>
+<body class="layout-contribution">
+  <header class="container">
+    <nav aria-label="Main">
+      <ul>
+        <li>
+          <a class="logo" href="/">
+            <picture>
+              <source srcset="/assets/logos/acma-logo-square-white.svg" media="(prefers-color-scheme: dark)">
+              <img src="/assets/logos/acma-logo-square-black.svg" alt="Australasian Computer Music Association">
+            </picture>
+          </a>
+        </li>
+      </ul>
+      <ul>
+        
+        <li><a href="/about/">About</a></li>
+        
+        <li><a href="/news/">News</a></li>
+        
+        <li><a href="/chroma/">Chroma</a></li>
+        
+        <li><a href="/conferences/">Conference</a></li>
+        
+        <li><a href="/community/">Community</a></li>
+        
+        <li><a href="/committee/">Committee</a></li>
+        
+        <li><a href="/membership/">Membership</a></li>
+        
+        <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </nav>
+  </header>
+
+  
+
+  <main class="container">
+    <article class="content contribution">
+  <p class="meta contribution-kind">Paper · <a href="/conferences/acmc-2002/#review-process">Peer reviewed (full paper)</a></p>
+  <h1>Multi-Feature Musical Instrument Sound Classifier w/User Determined Generalisation Performance</h1>
+  <p class="contribution-authors">Ian Kaminskyj</p>
+  <p class="meta">In <a href="/conferences/acmc-2002/"><cite>Proceedings of the Australasian Computer Music Conference 2002</cite></a>, Melbourne, RMIT University / Victorian College of Arts, pp. 53–62. Australasian Computer Music Association.</p>
+  <h2 class="abstract-heading">Abstract</h2>
+  <p>A previously developed musical instrument sound classification system has been extended in the following ways: (a) three additional features have been extracted (cepstral coefficients, spectral centroid and presence of vibrato), (b) automatic instrument elimination, and (c) hierarchic and hybrid architectures introduced. Testing the system using the leave-one-out strategy with recordings taken from the same instruments used during system development has yielded a classification accuracy of 89-92% and reliability of 89-92% depending on the classification architecture used. Instrument families were identified with an accuracy of 96%, while sustain versus impulsive instruments were identified with 100% accuracy. Extensive generalisation testing using a single stage classifier over three different collections of instrument recordings showed that the system classification accuracy varied from 33% up to 61%. Applying a number of enhancements to improve the generalisation performance of the system improved the classification results by anywhere from 13 to 50 percentage points. Across four different collections of recordings, the single stage classifier consistently achieved a classification accuracy of 87-90% when the leave-one-out test strategy was used. Using instead the hierarchic classifier, a further 3% improvement would be possible. This shows that when allowed to do so, the system homes in remarkably well to the defining characteristics of any given set of test recordings. The user of the system is given direct control over its performance, which is dictated by (a) which classifier architecture is used, and (b) how much information the user is willing to provide it prior to classification being attempted.</p>
+  <p><a role="button" href="/proceedings/ACMC2002-proceedings/kaminskyj-multi-feature-musical.pdf">Download PDF</a>
+  </p>
+  <p class="meta">All copyright remains with the authors.</p>
+
+  <h2>How to cite</h2>
+  <p class="how-to-cite">Ian Kaminskyj. 2002. “Multi-Feature Musical Instrument Sound Classifier w/User Determined Generalisation Performance.” In <cite>Proceedings of the Australasian Computer Music Conference 2002</cite>, 53–62. Melbourne, RMIT University / Victorian College of Arts: Australasian Computer Music Association. https://computermusic.org.au/proceedings/ACMC2002-proceedings/kaminskyj-multi-feature-musical.html</p>
+  <details>
+    <summary>BibTeX</summary>
+<pre><code>@inproceedings{kaminskyj2002multi,
+  author = {Ian Kaminskyj},
+  title = {{Multi-Feature Musical Instrument Sound Classifier w/User Determined Generalisation Performance}},
+  booktitle = {Proceedings of the Australasian Computer Music Conference 2002},
+  pages = {53--62},
+  year = {2002},
+  publisher = {Australasian Computer Music Association},
+  address = {Melbourne, RMIT University / Victorian College of Arts},
+  url = {https://computermusic.org.au/proceedings/ACMC2002-proceedings/kaminskyj-multi-feature-musical.pdf}
+}</code></pre>
+  </details>
+
+  <p><a href="/conferences/acmc-2002/">← All of ACMC 2002</a></p>
+</article>
+
+  </main>
+
+  <footer class="container">
+    <small>&copy; Australasian Computer Music Association 2026</small>
+    <ul>
+      
+      <li><a href="https://twitter.com/acma89">Twitter</a></li>
+      
+      <li><a href="https://www.facebook.com/acma89">Facebook</a></li>
+      
+      <li><a href="https://www.instagram.com/aus_computer_music">Instagram</a></li>
+      
+      <li><a href="https://github.com/australasian-computer-music-association">GitHub</a></li>
+      
+      <li><a href="/feed.xml">RSS</a></li>
+      
+      <li><a href="/privacy/">Privacy</a></li>
+    </ul>
+  </footer>
+</body>
+</html>
