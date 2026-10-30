@@ -25,14 +25,14 @@ does). ACMC 2019 already accepted reviewed abstracts only.
 | Year | What we hold | Contributions listed on the page? | Status |
 |---|---|---|---|
 | 1993–1999 | A few papers (Mikropolyphonie, author copies); see "Before 2000" below | 1994 and 1999 paper lists from Chroma | **Mostly missing**; printed volumes in libraries |
-| 2000 | One PDF, 105 pp | Yes, plain titles | One big PDF |
+| 2000 | One PDF, 105 pp, split into one PDF per paper and the workshop, plus a section PDF for the abstracts | ✅ Entries: 13 full papers, 11 abstracts, 1 workshop | ✅ Done. Review status per item from the contents page: 3 papers * (peer review of full paper), 10 papers and all 11 abstracts † (peer review by abstract); the workshop is unmarked. No concert programme survives (Chroma 28's schedule lists ten concerts without works), so no creative works |
 | 2001 | One PDF per item, converted from the original Word files | ✅ Entries: 15 papers, 7 artist talks, 4 studio reports | ✅ Done. Review status per paper from the contents page: 3 (REF) full paper, 12 selected by abstract. Bandt & Paine survives as HTML on the archived Sound Design Project site (entry links it, no PDF); Doornbusch still missing (entry has no PDF or abstract) |
 | 2002 | One PDF, 201 pp; also the original per-paper print-run files (`_drafts/found/ACMC2002-per-paper/`) | Yes, plain titles | Per-paper originals found; not yet linked |
 | 2003 | 2 PDFs (Weinberg keynote, Fraietta); 5 more found (`_drafts/found/acmc2001-2003/`) | Yes, about 30 titles, 2 linked | **Mostly missing**; NLA holds the printed volume |
 | 2004 | One PDF, 105 pp | Yes, plain titles | One big PDF |
 | 2005 | 47 PDFs (44 items + front matter), concert programme, workshops | ✅ Entries: 2 keynotes, 1 invited speaker, 24 papers, 4 artist talks, 6 studio reports, 4 posters, 5 workshops, 36 creative works (32 concert works, 4 installations) | ✅ Done. Review status per paper from the contents page: 15 full paper, 9 abstract |
 | 2006 | 55 PDFs (52 items; 3 duplicates) | ✅ Entries: 2 keynotes, 1 invited speaker, 29 papers, 5 posters, 4 studio reports, 7 artist talks, 4 workshops | ✅ Done. No front matter survives, so review status is unknown except for keynotes |
-| 2007 | One PDF, 134 pp | Yes, plain titles | One big PDF |
+| 2007 | One PDF, 134 pp, split into 32 per-item PDFs; conference schedule recovered from the Wayback Machine | ✅ Entries: 2 keynotes, 19 papers, 5 artist talks, 4 studio reports, 2 posters, 23 creative works (6 concerts, from the schedule) | ✅ Done. Review status per paper from the contents page: 15 "*" full paper, 4 "%" abstract; keynotes invited; the rest unknown. Concert works have no program notes, and most have no format; untitled install-space works not entered |
 | 2008 | One PDF, 119 pp, split into one PDF per item | ✅ Entries: 2 keynotes, 16 papers, 4 artist talks, 2 posters, 1 workshop | ✅ Done. Every paper marked * on the contents page ("selected by peer review of full paper"); talks, posters and workshop unknown. No creative works recorded: the volume has none and the conference site's programme page wasn't archived |
 | 2009 | One PDF, 138 pp | Yes, plain titles (list looks short) | One big PDF |
 | 2010 | One PDF, 98 pp | Yes, plain titles (list looks short) | One big PDF |

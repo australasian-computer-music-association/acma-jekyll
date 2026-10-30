@@ -25,10 +25,13 @@ from contributions import (ROOT, broken_sentence, load_conferences, load_contrib
 REQUIRED = ["title", "authors", "year", "type", "section", "order"]
 WORK_KINDS = {"composition", "performance", "installation", "audiovisual",
               "improvisation", "sound-art", "other"}
-MEDIA_KINDS = {"audio", "video", "score", "documentation", "website"}
+MEDIA_KINDS = {"audio", "video", "score", "documentation", "review", "website"}
 SLUG = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
 KNOWN_KEYS = set(REQUIRED) | {"pages", "pdf", "section_pdf", "reviewing", "chroma", "doi",
                               "keywords", "work", "media", "research_statement", "bio", "pdf_pages"}
+RUNNING_HEADER = re.compile(r"Proceedings of the Australasian Computer Music Conference|^ACMC\s?\d{2,4}\b", re.I | re.M)
+CAPTION = re.compile(r"^(Figure|Fig\.|Table)\s*\d+", re.I)
+PLACEHOLDER = re.compile(r"^((format )?not (recorded|known|stated)|unknown|n/?a|tbc|tba|-+|\?+)$", re.I)
 AFFILIATION = re.compile(r"\b(University|Universität|Université|Universidad|Conservatorium|"
                          r"Conservatory|Institute|College|Polytechnic)\b")
 
@@ -47,6 +50,13 @@ def body_problems(body):
         problems.append(f"names an institution in its first words (“{opening} …”): "
                         "the author's affiliation left over from the PDF?")
     paras = [p.strip() for p in re.split(r"\n\s*\n", text) if p.strip()]
+    for p in paras:
+        if RUNNING_HEADER.search(p):
+            problems.append(f"contains the volume's running header (“{' '.join(p.split()[:8])} …”)")
+        elif re.fullmatch(r"\d{1,4}", p):
+            problems.append(f"has a paragraph that is just “{p}”: a page number left over from the PDF?")
+        elif CAPTION.match(p):
+            problems.append(f"has a figure or table caption (“{' '.join(p.split()[:6])} …”)")
     for a, b in zip(paras, paras[1:]):
         if broken_sentence(a, b):
             problems.append(f"sentence split across paragraphs at “…{' '.join(a.split()[-3:])} / "
@@ -129,15 +139,23 @@ def check(site_dir=None):
 
         if fm.get("type") == "creative-work":
             work = fm.get("work") or {}
+            # Works known only from a programme often have no recorded format:
+            # leave it out rather than writing a placeholder.
             if not work.get("format"):
-                err("creative works need `work.format` (instrumentation or medium)")
+                warn("no `work.format` (instrumentation or medium); fine if no source records it")
+            elif PLACEHOLDER.match(str(work["format"]).strip()):
+                err(f"`work.format` is a placeholder (“{work['format']}”); leave it out instead")
             if work.get("kind") and work["kind"] not in WORK_KINDS:
                 err(f"unknown work.kind `{work['kind']}`; one of {', '.join(sorted(WORK_KINDS))}")
         elif fm.get("work"):
             warn("`work` details are only shown for type creative-work")
         for m in fm.get("media") or []:
-            if not str(m.get("url", "")).startswith(("http://", "https://")):
-                err(f"media url must be a full http(s) link: {m.get('url')}")
+            url = str(m.get("url", ""))
+            if url.startswith("/"):
+                if not os.path.isfile(site_path(url)):
+                    err(f"media file not found: {url}")
+            elif not url.startswith(("http://", "https://")):
+                err(f"media url must be a site path starting with / or a full http(s) link: {url}")
             if m.get("kind") not in MEDIA_KINDS:
                 warn(f"media kind `{m.get('kind')}` is not one of {', '.join(sorted(MEDIA_KINDS))}")
         if fm.get("chroma") and not str(fm["chroma"]).startswith("https://"):

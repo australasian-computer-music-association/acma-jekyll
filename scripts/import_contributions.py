@@ -31,7 +31,8 @@ One row per contribution, in programme or volume order (that order becomes
 Existing entries are left alone unless --force is given. With
 --extract-abstracts, an empty abstract is drafted from the item's PDF (its own
 `pdf`, or the conference's `proceedings.source_pdf` at `pages` plus
-`page_offset`). Drafted text must be checked by eye.
+`page_offset`), starting after an "Abstract" heading, or after any heading
+matching --abstract-heading. Drafted text must be checked by eye.
 
 See docs/adding-proceedings.md for the whole process.
 """
@@ -41,7 +42,7 @@ import os
 import shutil
 import sys
 
-from contributions import (CONTRIBUTIONS, dump_entry, extract_abstract, item_pdf_url,
+from contributions import (ABSTRACT_HEADING, CONTRIBUTIONS, dump_entry, extract_abstract, item_pdf_url,
                            load_conferences, make_slug, parse_pages, site_path, year_folder)
 
 
@@ -98,6 +99,9 @@ def main():
     ap.add_argument("year", type=int)
     ap.add_argument("csv")
     ap.add_argument("--extract-abstracts", action="store_true", help="draft empty abstracts from the PDFs")
+    ap.add_argument("--abstract-heading", default=ABSTRACT_HEADING, metavar="REGEX",
+                    help='the heading the drafted text starts after (default "abstract"); '
+                         'e.g. "abstract|artist talk|poster|studio report"')
     ap.add_argument("--force", action="store_true", help="overwrite existing entries")
     ap.add_argument("--dry-run", action="store_true", help="show what would be written")
     args = ap.parse_args()
@@ -142,7 +146,7 @@ def main():
                 pdf = site_path(proc["source_pdf"])
                 page = parse_pages(fm["pages"])[0] + int(proc.get("page_offset") or 0)
             if pdf:
-                body = extract_abstract(pdf, page)
+                body = extract_abstract(pdf, page, args.abstract_heading, fm["title"])
                 if not body:
                     print(f"row {i}: no abstract found in {os.path.basename(pdf)} p.{page}")
 

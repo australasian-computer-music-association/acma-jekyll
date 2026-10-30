@@ -23,7 +23,8 @@ up to date, so a new session can carry on from the branch alone.
   Other years' PRs run in parallel. Template or script changes go in their
   own PR, unless they're tiny fixes the year needs; say so in the PR.
 - Tools: `pip install pyyaml pypdf`; poppler (`pdftotext`, `pdfinfo`) is
-  needed. Build with `bundle exec jekyll build`.
+  needed, and `ocrmypdf` (`brew install ocrmypdf`) for years that need OCR.
+  Build with `bundle exec jekyll build`.
 
 ## 1. Survey the sources
 
@@ -39,8 +40,12 @@ up to date, so a new session can carry on from the branch alone.
   juries/committees. Quote review
   statements **verbatim**.
 - Check the text layer (`pdftotext` gives words, not empty strings or
-  gibberish). 2014's papers volume has every letter shifted by 3, so decode it
-  or OCR it (`ocrmypdf`); 2002 and 2010 have some image-only pages.
+  gibberish) on a few pages through the volume. Follow the **OCR** section of
+  `docs/adding-proceedings.md`: image-only pages (2002, 2010) get a text layer
+  with `ocrmypdf --skip-text` before splitting, and that file replaces the
+  volume; garbled text (2014's papers volume shifts every letter by 3) is
+  OCRed into a scratch copy for drafting only, never committed; messy but
+  readable text is left alone and the abstract is fixed by hand.
 
 ## 2. Conference front matter
 
@@ -70,17 +75,28 @@ For a volume to split, add `source_pdf` and `page_offset`. Commit and push.
   file and **don't move or rename it**. Then run
   `python3 scripts/split_proceedings.py YYYY --fix-metadata` to put the right
   title and authors inside the PDFs. 2018 is the worked example.
-- `python3 scripts/import_contributions.py YYYY file.csv --extract-abstracts`
+- `python3 scripts/import_contributions.py YYYY file.csv --extract-abstracts`.
+  Items that print their text under the section's name rather than
+  "Abstract" (artist talks, posters, studio reports) also need
+  `--abstract-heading "abstract|artist talk|poster|studio report"`, using the
+  volume's wording.
 - **Read every drafted abstract** against the PDF. Fix cropped author lines,
   words that lost their hyphens at line ends (`computeraided` →
   `computer-aided`), and en dashes lost from the text layer. Keep the authors'
-  own typos as printed. Then run `python3 scripts/check_contributions.py`
-  and clear its body warnings: a body that starts in lower case or with an
-  institution is header text left over from the PDF, and a sentence split
-  across two paragraphs is a page break.
-- Creative works: program note in the body, `work.format` (required),
-  `work.created`, `keywords` from "KW:" lines, and `work.kind` where it's
-  clear. The note starts after the **whole** header block (title,
+  own typos as printed. Paragraph breaks are guessed from short lines, so
+  check them against the page. Then run
+  `python3 scripts/check_contributions.py` and clear its body warnings: a
+  body that starts in lower case or with an institution is header text left
+  over from the PDF, a sentence split across two paragraphs is a page break,
+  and a running header, bare page number or figure caption is PDF layout.
+- Creative works: program note in the body, `work.format`, `work.created`,
+  `keywords` from "KW:" lines, and `work.kind` where it's clear. If no source
+  records a work's format, leave `work.format` out (the checker warns but
+  allows it); never write a placeholder such as "not recorded". Note each
+  detail's source in a YAML comment when it doesn't come from the volume.
+  When the volume has no programme, look for one on the archived conference
+  site and in concert reviews. Link a programme committed to the repo by its
+  site path, and a review with media `kind: review`. The note starts after the **whole** header block (title,
   instrumentation, affiliation). An instrumentation line can wrap onto a
   second line (ACMC 2018, *Noise in the Clouds*), so don't count lines.
 - Commit and push.
@@ -111,7 +127,9 @@ bundle exec jekyll build
 python3 scripts/check_contributions.py --site _site
 ```
 
-Look at the conference page and two entry pages in a browser or a screenshot.
+Look at the conference page and two entry pages in a browser or a
+screenshot. If you can't run a browser, read the built HTML instead and say
+in the PR that the visual check is still to do.
 Update the year's row in `docs/proceedings-status.md`. Commit and push.
 
 ## 7. Pull request
