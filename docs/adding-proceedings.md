@@ -96,6 +96,12 @@ proceedings:
 | `""` | (nothing shown) | unknown |
 
 Only record what was actually stated. Leaving a status unknown is fine.
+When the volume's own marks and the call for papers disagree, the volume
+wins: ACMC 2000's call promised full-paper review, but the contents page
+marks ten of the thirteen full papers "†" (peer review by abstract), so they
+are `abstract`. A `review_statement` may start with the volume's own "*"
+mark; the template stops Markdown turning it into a list bullet, so quote it
+as printed.
 
 Each entry's page shows only a short marker, such as "Peer reviewed (full
 paper)". Put `{% include proceedings-review.html %}` on the conference page
@@ -215,6 +221,21 @@ the introduction, keywords, the page number or the item's title, drops
 running headers and figure captions, and guesses paragraph breaks from short
 lines. Always read the drafts: two-column layouts, cropped author blocks,
 paragraph breaks and words split across lines need fixing by hand.
+
+Two cases the extractor can't handle:
+
+- **No abstract printed** (common before about 2005). Use the opening of the
+  paper's introduction, the sentences that say what the paper does, and add
+  a YAML comment above the body saying so, e.g. `# No abstract is printed:
+  the body is the statement of purpose from the paper's introduction.`
+  Scholar still gets a description, and the comment keeps the record honest.
+- **An abstract with no heading** (the text just starts under the authors).
+  The extractor looks for a heading line, so it finds nothing. Type the text
+  from the page into the CSV's `abstract` column.
+
+If you change the extractor, run `python3 scripts/test_extract_abstracts.py`
+before and after: it scores every strategy against the abstracts already
+reviewed in 2000, 2007 and 2008.
 
 ## OCR
 

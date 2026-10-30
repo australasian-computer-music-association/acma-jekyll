@@ -21,7 +21,9 @@ up to date, so a new session can carry on from the branch alone.
 - Only touch `_contributions/ACMCYYYY-proceedings/`, `proceedings/ACMCYYYY-proceedings/`, that year's
   `_conferences/` file, and that year's row in `docs/proceedings-status.md`.
   Other years' PRs run in parallel. Template or script changes go in their
-  own PR, unless they're tiny fixes the year needs; say so in the PR.
+  own PR, unless they're tiny fixes the year needs; say so in the PR. A
+  change to the abstract extractor is checked with
+  `python3 scripts/test_extract_abstracts.py` before and after.
 - Tools: `pip install pyyaml pypdf`; poppler (`pdftotext`, `pdfinfo`) is
   needed, and `ocrmypdf` (`brew install ocrmypdf`) for years that need OCR.
   Build with `bundle exec jekyll build`.
@@ -52,6 +54,10 @@ up to date, so a new session can carry on from the branch alone.
 Add `year`, `start_date`/`end_date` (if known) and the `proceedings:` block.
 Include `reviewing` defaults per section, set **only** from what the volume
 states; use `""` for unknown (see the table in `docs/adding-proceedings.md`).
+When the volume's marks and the call for papers disagree, **the volume
+wins** (2000: the call promised full-paper review, the contents page marks
+most papers "†", peer review by abstract). Don't ask; record the volume's
+mark and say so in the PR.
 Add the volume's `review_statement` (verbatim), its `committees` (juries,
 committees and organisers, as listed in the volume) and its `copyright`
 statement (verbatim), where the volume has them.
@@ -89,6 +95,14 @@ For a volume to split, add `source_pdf` and `page_offset`. Commit and push.
   body that starts in lower case or with an institution is header text left
   over from the PDF, a sentence split across two paragraphs is a page break,
   and a running header, bare page number or figure caption is PDF layout.
+  The checker also flags pieces of a running header inside a paragraph
+  ("ACMC200", "00 Page 18", "colPage 107"): delete them.
+- Two cases need typing rather than extraction, and need no discussion:
+  a paper with **no printed abstract** gets the opening of its introduction
+  (the sentences saying what the paper does) with a YAML comment above the
+  body saying so, as in `_contributions/ACMC2000-proceedings/`; an abstract
+  **with no heading** can't be found by the extractor, so type it from the
+  page into the CSV.
 - Creative works: program note in the body, `work.format`, `work.created`,
   `keywords` from "KW:" lines, and `work.kind` where it's clear. If no source
   records a work's format, leave `work.format` out (the checker warns but
