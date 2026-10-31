@@ -1,0 +1,18 @@
+---
+title: Apparition
+# Printed "Apparitin" in the heading; the abstract has "Apparition".
+authors:
+- Donna Hewitt
+year: 2021
+type: creative-work
+section: Performances
+order: 37
+pages: 29-30
+section_pdf: /proceedings/ACMC2021-proceedings.pdf
+work:
+  kind: audiovisual
+  format: voice, electronics and alternate controllers (wearables and the eMic)
+bio: 'Donna Hewitt is a vocalist, composer, instrument designer and academic. Donna’s specialises in electronic composition, music production and performance. Her creative practice explores mediatized performance environments and new ways of interfacing the human body and voice with electronic media. She is the inventor of the eMic, a sensor enhanced microphone stand for electronic music performance, and more recently has been creating wearable electronics for controlling both sound and lighting in performance. Her work has attracted funding from the Australia Council, most notably with all female collective Lady Electronica. Donna’s work has been featured as part of the VIVID Festival (2018), The Bondi Feast Festival (2018) and the MINT (Music in New Technologies) (2018) Conference in Halifax, Nova Scotia (2018). In 2019 she performed her #MeToo works in Tokyo and at the Convergence Festival of Music, Technology and Ideas, UK. She is currently a collaborator on a 5 year project funded by
+  Canada’s Social Sciences and Humanities research council (SSHRC) Reflective Iterative Scenario Enactments (RISE) is a Le PARC based 5-year (2020-2025) research-creation project designed to enact and investigate cataclysmic scenarios in 10 mini-operas. Donna has held academic positions at the Sydney Conservatorium of Music, Queensland, University of Technology. She coordinates the Bachelor of Music and teaching areas include music technology & production, performance, composition and creative collaboration. Donna is currently the Head of Department of Creative Arts and Communication. https://donnahewitt.net'
+---
+Apparition is a new audio-visual work for voice, electronics and alternate controllers including wearables and the eMic. The eMic is a modified microphone stand designed to capture the vocalist’s gestures and the interactions with the mic stand during the performance. The work merges voice, electronic and microphone captured sources and makes use of looping technology. This work explores the ways in which alternative controllers can be merged with and incorporated into contemporary popular forms. The body can be used as an instrumental layer within the piece of music, but the body can also produce the music via its’ movement. Music evokes images and memories, we can imagine spaces, and the feeling of our bodies inhabiting and moving within those spaces. I am interested in the way that the natural responses of my body to sound can be used to also generate the sound simultaneously. Traditional musical instruments are an extension of the body and as a musician becomes more adept at their instrument, their instrument almost feels as if it is naturally part of the body where the movement and sound align perfectly. This work explores the immersive experience of performance where the movement and sound align in a way that makes the performer feel at one with the music. Chion described the audio-visual pact when sounds and images come together as synchresis, which is the forging between something one sees and something one hears. I aim to forge synchresis between what I hear and what I feel in my body. I am hoping for a mental fusion between sound and body and for the audience similarly to experience sound and visual alignment that they may also be able to empathise with through their own corporeal memory and imagination.

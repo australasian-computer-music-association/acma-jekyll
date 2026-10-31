@@ -11,3 +11,4 @@ _site
 # global gitignore excludes them.
 !*.pdf
 __pycache__/
+.scratch/
