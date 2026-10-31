@@ -12,6 +12,14 @@ work:
   kind: composition
   format: 8-channel
   created: 2017
+  presented:
+    event: Concert 2, 6:30 pm
+    venue: Elder Hall, University of Adelaide
+    date: '2017-09-30'
+media:
+- kind: documentation
+  url: /proceedings/ACMC2017-proceedings/ACMC-2017-program.pdf
+  label: Conference programme (PDF), from the ACMA website
 ---
 BLAGOVESHTENIJE 07.04 (2013/17, ACMC 2017 version) is the third and final composition of a trilogy that consists of Bogorodica 28.08 (2005) and Deva 21.09 (2009), which addresses important dates in the Orthodox calendar attributed to the Mother of God. As with the other compositions in the trilogy, Blagoveshtenije 07.04 incorporates both sacred and secular influences. Various traditional instrumental timbres and rhythms, along with Macedonian Byzantine vocal manipulations form the sonic basis for the work.
 

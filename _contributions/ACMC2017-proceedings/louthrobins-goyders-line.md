@@ -11,6 +11,14 @@ pdf: /proceedings/ACMC2017-proceedings/louthrobins-goyders-line.pdf
 work:
   kind: composition
   format: electro-acoustic work (sawtooth waves through a vocoder)
+  presented:
+    event: Concert 2, 6:30 pm
+    venue: Elder Hall, University of Adelaide
+    date: '2017-09-30'
+media:
+- kind: documentation
+  url: /proceedings/ACMC2017-proceedings/ACMC-2017-program.pdf
+  label: Conference programme (PDF), from the ACMA website
 ---
 "The plains that I crossed in those days were not endlessly alike. Sometimes I looked over a great shallow valley with scattered trees and idle cattle and perhaps a meagre stream at its centre. Sometimes, at the end of a tract of utterly uncompromising country, the road rose towards what was unquestionably a hill before I saw ahead only another plain, level and bare and daunting."
 

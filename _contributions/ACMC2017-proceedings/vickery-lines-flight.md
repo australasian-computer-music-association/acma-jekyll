@@ -10,7 +10,15 @@ pages: '77'
 work:
   kind: composition
   format: clarinet and synchronized electronics
+  presented:
+    event: Concert 2, 6:30 pm
+    venue: Elder Hall, University of Adelaide
+    date: '2017-09-30'
 pdf: /proceedings/ACMC2017-proceedings/vickery-lines-flight.pdf
+media:
+- kind: documentation
+  url: /proceedings/ACMC2017-proceedings/ACMC-2017-program.pdf
+  label: Conference programme (PDF), from the ACMA website
 # The volume prints Yuen's subtitle ("Implications of Malabou's and Badiou's contemporary
 # accounts of subjectivity.") at the top of this note too; it's left out here.
 ---

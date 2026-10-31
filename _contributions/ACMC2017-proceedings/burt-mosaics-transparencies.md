@@ -11,7 +11,15 @@ work:
   kind: improvisation
   format: multichannel live electro-acoustic improvisation
   created: 2017
+  presented:
+    event: Concert 2, 6:30 pm
+    venue: Elder Hall, University of Adelaide
+    date: '2017-09-30'
 pdf: /proceedings/ACMC2017-proceedings/burt-mosaics-transparencies.pdf
+media:
+- kind: documentation
+  url: /proceedings/ACMC2017-proceedings/ACMC-2017-program.pdf
+  label: Conference programme (PDF), from the ACMA website
 ---
 Mosaics and Transparencies (2017) is a multichannel live electro-acoustic improvisational algorithmic composition that consists of a number of diverse sound recordings mixed and performed live over a multi-channel loudspeaker system. The sound recordings are each 1⁄2 hour long, and any portion can be played as part of the mix. They consist of algorithmic mixes of up to 61 samples arrayed in time so that each sample occurs only once or twice or three times during the 1⁄2 hour duration. The samples consist of a number of kinds of sounding material, each featuring lots of silence as well as sound: 1) Electro-acoustic sounds recorded with contact mics attached to a wooden resonator on which acoustic objects are placed. (Homage to Pauline Oliveros’s “Applebox” series of pieces).
 

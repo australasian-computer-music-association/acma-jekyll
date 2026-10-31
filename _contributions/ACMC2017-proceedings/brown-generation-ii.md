@@ -10,7 +10,15 @@ pages: '71'
 work:
   kind: performance
   format: live improviser with the Evol algorithmic music system
+  presented:
+    event: Concert 1, 1 pm
+    venue: Elder Hall, University of Adelaide
+    date: '2017-09-29'
 pdf: /proceedings/ACMC2017-proceedings/brown-generation-ii.pdf
+media:
+- kind: documentation
+  url: /proceedings/ACMC2017-proceedings/ACMC-2017-program.pdf
+  label: Conference programme (PDF), from the ACMA website
 # The heading reads "Generation 2"; the contents page and the note read "Generation II".
 ---
 Generation II is an interactive electronic music performance between a live improviser and the ‘Evol’ algorithmic music system. The work explores the premise that musical structure can arise from variations and elaboration of musical motifs. The work explores the automation of these process in the iterative improvised context of performance with a live algorithm.
