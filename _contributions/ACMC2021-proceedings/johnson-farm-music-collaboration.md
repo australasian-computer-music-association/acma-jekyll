@@ -1,0 +1,13 @@
+---
+title: 'Farm Music: A Collaboration with Junk'
+authors:
+- Bridget Johnson
+year: 2021
+type: abstract
+section: Papers and Talks
+# The volume prints no section headings; the section is the site's grouping of its programme-order items.
+order: 5
+pages: '5'
+section_pdf: /proceedings/ACMC2021-proceedings.pdf
+---
+The creation of collaborative works with non-musicians can often dictate new and different approaches to technology development and compositional strategies. This paper explores approaches to development of new music technology that is designed for, but removed from, a compositional process with non-musicians. It discusses the creative process for the development of a system for sonic actuation of farm junk that was part of the ‘Farm Music’ project installed at New Zealand’s Taranaki Arts Festival 2020. The paper looks at the actuation systems that were developed as well as compositional control systems for them. It also discusses the farm objects that were used in the installation and the considerations for actuation of farm junk in this public installation context. Farm Music was a collaboration with music therapist Chris O’Connor and producer Sally Barnett. The project engaged with community members with a focus on engaging men from local farms to focus on their mental health. A series of workshops were run by Chris O’Connor that encouraged the participants to look and listen for sounds in everyday objects. The participants then spent time collecting resonant objects from their farms and brought them to be part of the installation. The installation itself was designed to display the work that participants had completed as well as provide an opportunity for public engagement with the work and the sound making processes. The systems developed for the work needed to be modular so that whatever junk was found and brought to the installation was able to be actuated. From a technical perspective, the project involved the development of three different actuation systems that aligned with different temporal approaches discussed by music O’Connor: a drone, a scribble, and a strike. In order to create these sounds, surface transducers were used to create drones, motors with soft striking mechanisms for scribbles, and solenoids for strikes. In order to keep all systems modular, they were designed to be attached to mic stands so that final settings of actuators could be flexible depending on the items at the installation. The presentation discusses and shows the challenges and successes of working in this manner. Further, this presentation provides an as outline for conceptual and technical realizations of the work.
