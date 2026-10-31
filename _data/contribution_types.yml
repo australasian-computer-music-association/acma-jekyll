@@ -12,6 +12,8 @@ studio-report:
   label: Studio report
 poster:
   label: Poster
+demonstration:
+  label: Demonstration
 workshop:
   label: Workshop
 creative-work:
