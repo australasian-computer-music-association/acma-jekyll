@@ -128,7 +128,7 @@ def site_path(url):
 
 def page_text(pdf, page, column=None):
     """Text of one PDF page (1-based). column: None, 'left' or 'right'."""
-    args = ["pdftotext", "-f", str(page), "-l", str(page)]
+    args = ["pdftotext", "-enc", "UTF-8", "-f", str(page), "-l", str(page)]
     if column:
         info = subprocess.run(["pdfinfo", "-f", str(page), "-l", str(page), pdf],
                               capture_output=True, text=True).stdout
