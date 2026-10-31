@@ -1,5 +1,9 @@
 ---
-# The programme prints only the composer's biography for this work: no program note or format.
+# The programme prints only the composer's biography for this work: no program note. The
+# format is from the composer's submission ("Myth II.b for fixed media", "2ch electroacoustic
+# work", original 48 kHz/24 bit) in
+# the conference's OCS submission system (acm49750_ocs, in the ACMA website's October 2022
+# backup; the database holds titles and authors, and the uploaded submission files).
 title: Myth II
 authors:
 - Haruka Hirayama
@@ -10,6 +14,7 @@ order: 34
 section_pdf: /proceedings/ACMC2014-concerts/ACMC2014-Concerts-Thursday1715.pdf
 work:
   kind: composition
+  format: stereo fixed media
   presented:
     event: Diffusion Concert
     venue: VCA Founders Gallery

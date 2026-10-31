@@ -6,10 +6,16 @@ year: 2014
 type: creative-work
 section: Live Diffusion Concert
 order: 39
+# The instrumentation and year are from the score the composer submitted ("Peach Bloom Fan",
+# pour flûte basse amplifiée/voix, bol du temple et électro-acoustique bande en six pistes;
+# commande d'Art Zoyd; August 2012) in
+# the conference's OCS submission system (acm49750_ocs, in the ACMA website's October 2022
+# backup; the database holds titles and authors, and the uploaded submission files).
 section_pdf: /proceedings/ACMC2014-concerts/ACMC2014-Concerts-Thursday2000.pdf
 work:
   kind: composition
-  format: flute and 6-channel electroacoustic sound
+  format: amplified bass flute and voice, temple bowl and six-channel electroacoustic sound
+  created: 2012
   presented:
     event: Live Diffusion Concert
     venue: VCA Founders Gallery

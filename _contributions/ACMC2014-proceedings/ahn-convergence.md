@@ -6,9 +6,15 @@ year: 2014
 type: creative-work
 section: Concert 1
 order: 24
+# Format, year and duration (about 8 minutes) are from the composer's submission in
+# the conference's OCS submission system (acm49750_ocs, in the ACMA website's October 2022
+# backup; the database holds titles and authors, and the uploaded submission files).
+# The submission names no performer ("haven't found yet").
 section_pdf: /proceedings/ACMC2014-concerts/ACMC2014-Concerts-Wednesday2000.pdf
 work:
   kind: composition
+  format: alto saxophone and stereo fixed media
+  created: 2011
   presented:
     event: Concert 1
     venue: VCA Federation Hall
