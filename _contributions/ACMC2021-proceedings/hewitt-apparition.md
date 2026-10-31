@@ -6,6 +6,7 @@ authors:
 year: 2021
 type: creative-work
 section: Performances
+# The volume prints no section headings; the section is the site's grouping of its programme-order items.
 order: 37
 pages: 29-30
 section_pdf: /proceedings/ACMC2021-proceedings.pdf

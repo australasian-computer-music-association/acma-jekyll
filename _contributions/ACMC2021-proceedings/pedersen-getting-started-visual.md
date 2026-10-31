@@ -6,6 +6,7 @@ authors:
 year: 2021
 type: workshop
 section: Workshops
+# The volume prints no section headings; the section is the site's grouping of its programme-order items.
 order: 3
 pages: 3-4
 section_pdf: /proceedings/ACMC2021-proceedings.pdf

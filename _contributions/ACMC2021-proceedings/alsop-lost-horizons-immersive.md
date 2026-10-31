@@ -1,10 +1,12 @@
 ---
 title: Lost Horizons, an Immersive Computer-Based Work Integrating Text, Visual Imagery, Spatialized Sound in Performance
 authors:
+# The abstract speaks of "the authors/artists" and names Bilogan as poet and performer, but the volume lists Alsop alone.
 - Roger Alsop
 year: 2021
 type: abstract
 section: Papers and Talks
+# The volume prints no section headings; the section is the site's grouping of its programme-order items.
 order: 32
 pages: '25'
 section_pdf: /proceedings/ACMC2021-proceedings.pdf

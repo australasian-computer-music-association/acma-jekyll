@@ -5,6 +5,7 @@ authors:
 year: 2021
 type: abstract
 section: Papers and Talks
+# The volume prints no section headings; the section is the site's grouping of its programme-order items.
 order: 29
 pages: '23'
 section_pdf: /proceedings/ACMC2021-proceedings.pdf

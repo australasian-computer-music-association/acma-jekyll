@@ -4,7 +4,9 @@ authors:
 - Ivan Zavada
 year: 2021
 type: artist-talk
+# The abstract calls this "the proposed artist talk".
 section: Papers and Talks
+# The volume prints no section headings; the section is the site's grouping of its programme-order items.
 order: 36
 pages: 28-29
 section_pdf: /proceedings/ACMC2021-proceedings.pdf

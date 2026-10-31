@@ -1,11 +1,13 @@
 ---
 title: '“1002”: A Collaborative Networked Performance with CollidePd'
+# The heading prints the quotation marks as "Äú1002,Äù" (an encoding fault).
 authors:
 - Federico Camara Halac
 - Federico Ragessi
 year: 2021
 type: abstract
 section: Papers and Talks
+# The volume prints no section headings; the section is the site's grouping of its programme-order items.
 order: 13
 pages: '12'
 section_pdf: /proceedings/ACMC2021-proceedings.pdf
