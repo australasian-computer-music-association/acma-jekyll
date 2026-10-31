@@ -1,0 +1,12 @@
+---
+title: 'Listening and Creating on Hydra: The Metaphysics, Aesthetics, and Futurity of Speaker Orchestras'
+authors:
+- Victor A Arul
+year: 2024
+type: abstract
+section: Papers Presentation — Spatiality and Speaker Orchestras
+order: 24
+pages: '23'
+section_pdf: /proceedings/ACMC2024-proceedings.pdf
+---
+Since the contrivance of electronic concert acousmatics in the post-World War II European avant-garde, electroacoustic composers have been preoccupied with exploring the medium’s technological and aesthetic boundaries. One of the most natural curiosities which springs out of such a conceptual and artistic enterprise is – “what happens if we increase the number of speakers?”. Today, various institutions encourage research on this question through a digital environment, such as through loudspeaker orchestras and digital spatialisation, including the Birmingham ElectroAcoustic Sound Theatre and Harvard University’s Hydra, and through speaker arrays with wave field synthesis, such as the Experimental Media and Performing Arts Center at Rensselaer. In this presentation, I explicate upon the metaphysical constraints of loudspeaker orchestras by considering philosophy on spatiality, temporality, and superimposition by Karen Barad (2016, 2018), Bruno Latour (2005), and Ludwig Wittgenstein (2015). I then discuss the aesthetic implications and limitations of listening to pieces played on these systems in live concert settings. I construct an aesthetic argument from the aforementioned metaphysics, and from the technological interfaces and realities of such systems (Tutschku 2017, Lokki 2008, James 2005). Specifically, I use the lenses of new materialism and actor-network theory to argue for a type of dialectical reduction mechanism on the experiential level. I then share my own experiences composing pieces for Harvard University’s Hydra, and show how these exemplify the aesthetic and metaphysical conclusions of my argument. The question which I would like to ultimately answer within the talk is the futurity of such loudspeaker orchestras. Namely, if the experiential domain of listening to these systems is so limited in comparison to these orchestras’ own metaphysical and material prospects, is there a point of continuing the development, lives, and proliferation of these systems? I argue that though a dialectical reductionism is introduced on the aesthetic level, the product of such an ontological makeup still provides a unique aesthetic outcome for listeners compared to other speaker setups, including other ‘hyper-spatial’ arrangements.
