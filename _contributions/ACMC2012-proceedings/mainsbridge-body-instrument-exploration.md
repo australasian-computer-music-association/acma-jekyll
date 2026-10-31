@@ -1,0 +1,12 @@
+---
+title: Body as Instrument – An Exploration of Gestural Interface Design
+authors:
+- Mary Mainsbridge
+year: 2012
+type: artist-talk
+section: Artist Talks
+order: 24
+pages: '126'
+pdf: /proceedings/ACMC2012-proceedings/mainsbridge-body-instrument-exploration.pdf
+---
+As a live electronic musician and vocalist, the challenge of creating dynamic, engaging performances with digital technology has prompted an exploration of non-contact gestural systems that offer increased subtlety and intuitive control. Existing gestural controller technologies offer vocal performers with opportunities to expand their natural vocal capacity through physical manipulation of digital signal processing by tapping into the body as a natural instrument. This paper will document preliminary investigations into ways the human body can be integrated as an input into gestural systems within musical performance. The expressive potential of these technologies will be explored by tracing recurrent issues in the design of non-contact gestural controllers. Two main issues are identified – the development of suitable mapping strategies and design of feedback mechanisms. Finding simple mapping approaches that accommodate the complexity of musical performance is recognised as a primary motivation for developers. There appears to be a need among performers for interfaces that can accommodate a broad range of gestures and also communicate the relationship between gesture and sound to the audience. Vocalists in particular require a vocabulary of gestures that create flexible pathways for expression. Most gestural controllers reflect novel approaches rather than a uniform approach to gesture recognition. Whether future visions of a universal gestural language that is body-centric and not device based are possible will be discussed. Another way of utilising and increasing the range of expression available through non-contact gestural systems is ensuring that adequate feedback is present. Visual feedback is one way of delivering more information to the performer, which also establishes cues for audience comprehension of musical processes and stronger relationships between the performer's actions and sounds created. This design feature is often overlooked in the development of non-contact gestural interfaces yet can possibly deliver the finer control necessary to accommodate individual forms of performer expression.
