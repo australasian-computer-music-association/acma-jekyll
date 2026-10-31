@@ -10,8 +10,6 @@ type: artist-talk
 section: Artist Talks (non-refereed)
 order: 18
 pages: '113'
-source_pdf: /proceedings/ACMC2014-proceedings.pdf
-pdf_pages: 7-7
 pdf: /proceedings/ACMC2014-proceedings/scottjames-harmonious-system-alice.pdf
 ---
 Alice in Exile combines words, beats and noise in reflection of what appears to be a post-digital delusion surrounding technology, creativity and defiance. The end of World War II left poets questioning mainstream politics and culture. Kerouac is said to have coined the term "beat generation" to describe the down-and-out status of himself and peers during those post-war years. Defying social conformity, mainstream conventions, and literary tradition was central to their work.

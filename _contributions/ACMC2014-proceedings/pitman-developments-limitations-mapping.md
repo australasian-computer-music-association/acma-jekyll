@@ -7,8 +7,6 @@ type: poster
 section: Posters (non-refereed)
 order: 20
 pages: 121-124
-source_pdf: /proceedings/ACMC2014-proceedings.pdf
-pdf_pages: 15-18
 pdf: /proceedings/ACMC2014-proceedings/pitman-developments-limitations-mapping.pdf
 ---
 Musical affect experiments have shown that common physiological markers, such as heart rate, brain waves, skin conductance, and respiratory variance, are all affected by varying musical forms and structures (Ellis and Brighouse 1952).
