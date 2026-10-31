@@ -1,0 +1,17 @@
+---
+title: 'Renga for White Noise: Algorithmic Composition and Artificial Intelligence with the Principles of Japanese Linked Verse Poetry'
+authors:
+- Austin Oting Har
+year: 2024
+type: creative-work
+section: Telemetic Concert (Sydney, 22 October)
+order: 1
+pages: 12-13
+section_pdf: /proceedings/ACMC2024-proceedings.pdf
+work:
+  presented:
+    event: Telemetic Concert (Sydney, 22 October)
+    venue: Australian Institute of Music, Sydney, Amphitheatre
+    date: '2024-10-22'
+---
+This music is created using an algorithmic framework that applies the principles of renga — a 14th century genre of Japanese poetry consisting of linked verses improvised by one or more Zen monks — to white noise. Two sources of white noise evolve through manipulations of musical parameters across variously interlinking phrases. In this collaborative performance between human and computer, renga principles are transmediated into computer music. The work is intended to evoke the Zen experience of moment-to-moment awareness in renga, and is inspired by Nobel laureate Kawabata Yasunari’s transmediation of renga principles into his novels. Jōji Yuasa’s filter-based techniques in his Zen-influenced electroacoustic white noise compositions provides the sonic context for this work. Like Yuasa's choice of sound material, being composed of the full spectrum of frequencies, white noise is also selected for its manifestation of the Buddhist principle of “many in one and one in many”. The algorithmic composition system is developed in Max and Javascript. The conceptual framework of “degrees of impressiveness” and “degrees of relatedness” used in renga scholarship governs the composition of individual verses/phrases and their links (tsukeai). A Max patch responds using generative processes — within this conceptual framework — that are informed by the phrase being performed by the human musician. Generative algorithms enable decision-making operations based on renga rules traditionally devised for evoking the Zen experience. Every phrase develops one of two topics (timbre or rhythm) that correspond to renga’s two topics: seasonal or nonseasonal (dai or zo). The topics are developed following renga's linked-verse structure where the performers make decisions in the moment, creating a unique version in each performance. The jo-ha-kyū structure of renga is used, as is ma (space), with substantial space between the most impressive sounds. Renga’s 5-7-5/7-7 syllable count gives metrical structure to rhythms. By using filter sweeps, accelerations, decelerations, phasing, and articulations as parameters, the human and AI collaborators showcase the characteristic shifting pitches and shifting tempi of traditional Japanese music. A low frequency oscillator and reverb audio effects adds a live digital sound design dimension inspired by the contemporary Japanese noise artist Merzbow. Renga offers a framework for variable transmediations across sensory (the syllable count), semiotic (the linking structure), and signal dimensions (telematic performance and generative composition) in each performance. This can be scaled for multiple human and AI collaborators, including with spatial diffusion and visualisation. While the AI improvises with the same parameters as the human, it expresses itself in gestures that are different, impossible, and unnatural to human hands on a MIDI controller — contributing to research on the futurity of embodiment in AI performance.
