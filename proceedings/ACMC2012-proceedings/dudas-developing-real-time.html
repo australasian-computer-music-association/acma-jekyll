@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Begin Jekyll SEO tag v2.9.1 -->
+<title>Developing Real-Time Systems for Concert Performance | Australasian Computer Music Association</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Developing Real-Time Systems for Concert Performance" />
+<meta name="author" content="Richard Dudas" />
+<meta property="og:locale" content="en_AU" />
+<meta name="description" content="This artist talk describes the compositional and technical aspects of several of the author’s compositional projects using the Max/MSP graphical programming environment. Musical choices…" />
+<meta name="twitter:description" property="og:description" content="This artist talk describes the compositional and technical aspects of several of the author’s compositional projects using the Max/MSP graphical programming environment. Musical choices…" />
+<link rel="canonical" href="https://computermusic.org.au/proceedings/ACMC2012-proceedings/dudas-developing-real-time.html" />
+<meta property="og:url" content="https://computermusic.org.au/proceedings/ACMC2012-proceedings/dudas-developing-real-time.html" />
+<meta property="og:site_name" content="Australasian Computer Music Association" />
+<meta property="og:image" content="https://computermusic.org.au/proceedings/ACMC2012-proceedings/assets/images/acmc2019-concert-e1618799441533.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2012-07-12T00:00:00+10:00" />
+<meta property="article:modified_time" content="2012-07-12T00:00:00+10:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="https://computermusic.org.au/proceedings/ACMC2012-proceedings/assets/images/acmc2019-concert-e1618799441533.jpg" />
+<meta name="twitter:title" content="Developing Real-Time Systems for Concert Performance" />
+<meta name="twitter:site" content="@acma89" />
+<meta name="twitter:creator" content="@Richard Dudas" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Richard Dudas"},"dateModified":"2012-07-12T00:00:00+10:00","datePublished":"2012-07-12T00:00:00+10:00","description":"This artist talk describes the compositional and technical aspects of several of the author’s compositional projects using the Max/MSP graphical programming environment. Musical choices…","headline":"Developing Real-Time Systems for Concert Performance","image":"https://computermusic.org.au/proceedings/ACMC2012-proceedings/assets/images/acmc2019-concert-e1618799441533.jpg","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://computermusic.org.au/assets/logos/acma-logo-square-black.png"},"name":"Richard Dudas"},"url":"https://computermusic.org.au/proceedings/ACMC2012-proceedings/dudas-developing-real-time.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+  
+  
+  
+<meta name="citation_title" content="Developing Real-Time Systems for Concert Performance">
+<meta name="citation_author" content="Richard Dudas">
+<meta name="citation_publication_date" content="2012">
+<meta name="citation_conference_title" content="Interactive: Australasian Computer Music Conference 2012 Conference Proceedings">
+<meta name="citation_publisher" content="Australasian Computer Music Association">
+<meta name="citation_issn" content="1448-7780">
+<meta name="citation_firstpage" content="121">
+<meta name="citation_lastpage" content="124">
+<meta name="citation_pdf_url" content="https://computermusic.org.au/proceedings/ACMC2012-proceedings/dudas-developing-real-time.pdf">
+<meta name="citation_abstract_html_url" content="https://computermusic.org.au/proceedings/ACMC2012-proceedings/dudas-developing-real-time.html">
+<meta name="citation_language" content="en">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "name": "Developing Real-Time Systems for Concert Performance",
+  "url": "https://computermusic.org.au/proceedings/ACMC2012-proceedings/dudas-developing-real-time.html",
+  "author": [{"@type": "Person", "name": "Richard Dudas"}],
+  "datePublished": "2012-07-12",
+  "encoding": {"@type": "MediaObject", "encodingFormat": "application/pdf", "contentUrl": "https://computermusic.org.au/proceedings/ACMC2012-proceedings/dudas-developing-real-time.pdf"},
+  "copyrightNotice": "All Copyright remains with the authors.",
+  "isPartOf": {
+    "@type": "Book",
+    "name": "Interactive: Australasian Computer Music Conference 2012 Conference Proceedings",
+    "issn": "1448-7780",
+    "editor": [{"@type": "Person", "name": "Matt Hitchcock"}, {"@type": "Person", "name": "Jodie Taylor"}],
+    "publisher": {"@type": "Organization", "name": "Australasian Computer Music Association"}
+  }
+}
+</script>
+  <link type="application/atom+xml" rel="alternate" href="https://computermusic.org.au/feed.xml" title="Australasian Computer Music Association" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="/assets/vendor/pico/pico.min.css">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/logos/logo@16.png">
+  
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/logos/logo@32.png">
+  
+  <link rel="icon" type="image/png" sizes="180x180" href="/assets/logos/logo@180.png">
+  
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/logos/logo@192.png">
+  
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/logos/logo@512.png">
+  
+  <link rel="apple-touch-icon" href="/assets/logos/logo@180.png">
+</head>
+<body class="layout-contribution">
+  <header class="container">
+    <nav aria-label="Main">
+      <ul>
+        <li>
+          <a class="logo" href="/">
+            <picture>
+              <source srcset="/assets/logos/acma-logo-square-white.svg" media="(prefers-color-scheme: dark)">
+              <img src="/assets/logos/acma-logo-square-black.svg" alt="Australasian Computer Music Association">
+            </picture>
+          </a>
+        </li>
+      </ul>
+      <ul>
+        
+        <li><a href="/about/">About</a></li>
+        
+        <li><a href="/news/">News</a></li>
+        
+        <li><a href="/chroma/">Chroma</a></li>
+        
+        <li><a href="/conferences/">Conference</a></li>
+        
+        <li><a href="/community/">Community</a></li>
+        
+        <li><a href="/committee/">Committee</a></li>
+        
+        <li><a href="/membership/">Membership</a></li>
+        
+        <li><a href="/search/">Search</a></li>
+        
+      </ul>
+    </nav>
+  </header>
+
+  
+
+  <main class="container">
+    <article class="content contribution">
+  <p class="meta contribution-kind">Artist talk</p>
+  <h1>Developing Real-Time Systems for Concert Performance</h1>
+  <p class="contribution-authors">Richard Dudas</p>
+  <p class="meta">In <a href="/conferences/acmc-2012/"><cite>Interactive: Australasian Computer Music Conference 2012 Conference Proceedings</cite></a>, Brisbane, Queensland Conservatorium, Griffith University, pp. 121–124. Australasian Computer Music Association, ISSN 1448-7780.</p>
+  <h2 class="abstract-heading">Abstract</h2>
+  <p>This artist talk describes the compositional and technical aspects of several of the author’s compositional projects using the Max/MSP graphical programming environment. Musical choices and audio signal processing technologies used in the context of a real-time performance system often have a tightly interwoven relationship: sometimes technological developments are motivated by musical necessity, and conversely the construction of some of musical material is a consequence of technological considerations. This will be elucidated through examples from the author’s series of preludes for flute, clarinet, and alto flute. In addition to discussing the signal processing effects used in these pieces, an important emphasis will also be made on the pitch tracking and score following techniques used.</p>
+  <p><a role="button" href="/proceedings/ACMC2012-proceedings/dudas-developing-real-time.pdf">Download PDF</a>
+  </p>
+  <p class="meta">All Copyright remains with the authors.</p>
+
+  <h2>How to cite</h2>
+  <p class="how-to-cite">Richard Dudas. 2012. “Developing Real-Time Systems for Concert Performance.” In <cite>Interactive: Australasian Computer Music Conference 2012 Conference Proceedings</cite>, edited by Matt Hitchcock and Jodie Taylor, 121–124. Brisbane, Queensland Conservatorium, Griffith University: Australasian Computer Music Association. https://computermusic.org.au/proceedings/ACMC2012-proceedings/dudas-developing-real-time.html</p>
+  <details>
+    <summary>BibTeX</summary>
+<pre><code>@inproceedings{dudas2012developing,
+  author = {Richard Dudas},
+  title = {{Developing Real-Time Systems for Concert Performance}},
+  booktitle = {Interactive: Australasian Computer Music Conference 2012 Conference Proceedings},
+  editor = {Matt Hitchcock and Jodie Taylor},
+  pages = {121--124},
+  year = {2012},
+  publisher = {Australasian Computer Music Association},
+  address = {Brisbane, Queensland Conservatorium, Griffith University},
+  issn = {1448-7780},
+  url = {https://computermusic.org.au/proceedings/ACMC2012-proceedings/dudas-developing-real-time.pdf}
+}</code></pre>
+  </details>
+
+  <p><a href="/conferences/acmc-2012/">← All of ACMC 2012</a></p>
+</article>
+
+  </main>
+
+  <footer class="container">
+    <small>&copy; Australasian Computer Music Association 2026</small>
+    <ul>
+      
+      <li><a href="https://twitter.com/acma89">Twitter</a></li>
+      
+      <li><a href="https://www.facebook.com/acma89">Facebook</a></li>
+      
+      <li><a href="https://www.instagram.com/aus_computer_music">Instagram</a></li>
+      
+      <li><a href="https://github.com/australasian-computer-music-association">GitHub</a></li>
+      
+      <li><a href="/feed.xml">RSS</a></li>
+      
+      <li><a href="/privacy/">Privacy</a></li>
+    </ul>
+  </footer>
+</body>
+</html>
