@@ -1,8 +1,11 @@
 ---
-title: 'Rethinking Interactivity: From Material to Organic Modeling'
-# The paper's own heading and the contents page both repeat Goodman's title, a production error;
-# the paper is about solenoid drum beaters (see the abstract). The title as printed is kept
-# until the authors supply the intended one (issue).
+title: 'Interacting with Solenoid Drummers: A Quantitative Approach to Composing and Performing with Open-Loop Solenoid-Based Robotic Percussion Systems'
+# The volume prints this paper under Andrew Goodman's title, "Rethinking Interactivity: From
+# Material to Organic Modeling", on its first page and on the contents page (a production
+# error). The title here is the one the authors' group lists for ACMC 2012, Brisbane, in the
+# Victoria University of Wellington mechatronics publication list
+# (https://ecs.wgtn.ac.nz/Groups/Mechatronics/BibtexList, key ECS980086460); see issue #50.
+# The slug keeps the printed title because it is a published URL.
 authors:
 - Jim Murphy
 - Ajay Kapur
