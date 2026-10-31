@@ -28,7 +28,7 @@ WORK_KINDS = {"composition", "performance", "installation", "audiovisual",
 MEDIA_KINDS = {"audio", "video", "score", "documentation", "review", "website"}
 SLUG = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
 KNOWN_KEYS = set(REQUIRED) | {"pages", "pdf", "section_pdf", "reviewing", "chroma", "doi",
-                              "keywords", "work", "media", "research_statement", "bio", "pdf_pages"}
+                              "keywords", "work", "media", "research_statement", "bio", "pdf_pages", "source_pdf"}
 # The volume's running header, whole or in the pieces column cropping leaves
 # ("ACMC200", "00 Page 18", "colPage 107"), anywhere in a paragraph.
 RUNNING_HEADER = re.compile(

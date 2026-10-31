@@ -18,6 +18,8 @@ One row per contribution, in programme or volume order (that order becomes
                             the entry's folder), or "split" to cut it from the volume
                             with split_proceedings.py
     section_pdf             a PDF holding this item with others
+    source_pdf, pdf_pages   for an item in a second volume (2014): that volume and
+                            the item's PDF pages in it
     abstract                the abstract, or a creative work's program note
     keywords                separated by ";"
     reviewing               only to override the conference default; "unknown" = ""
@@ -62,7 +64,7 @@ def row_to_entry(row, year, order):
     }
     if g("pages"):
         fm["pages"] = g("pages")
-    for key in ("section_pdf", "chroma"):
+    for key in ("section_pdf", "chroma", "source_pdf", "pdf_pages"):
         if g(key):
             fm[key] = g(key)
     if g("reviewing"):
@@ -142,6 +144,9 @@ def main():
             pdf, page = None, 1
             if fm.get("pdf") and os.path.isfile(site_path(fm["pdf"])):
                 pdf = site_path(fm["pdf"])
+            elif fm.get("source_pdf") and parse_pages(fm.get("pdf_pages")):
+                pdf = site_path(fm["source_pdf"])
+                page = parse_pages(fm["pdf_pages"])[0]
             elif proc.get("source_pdf") and parse_pages(fm.get("pages")):
                 pdf = site_path(proc["source_pdf"])
                 page = parse_pages(fm["pages"])[0] + int(proc.get("page_offset") or 0)

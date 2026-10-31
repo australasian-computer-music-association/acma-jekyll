@@ -13,7 +13,10 @@ The entries are the single source of truth. Each entry with `pages` whose
 yet is cut from the conference's `proceedings.source_pdf`: PDF page = printed page +
 `proceedings.page_offset`. If the offset changes partway through a volume
 (unnumbered inserts), set `pdf_pages: 12-18` on the entry to give its PDF
-pages directly. Each output PDF gets the item's title and authors as metadata.
+pages directly. A year issued as more than one PDF (2014) keeps one volume in
+`proceedings.source_pdf`; an entry in another volume names it in its own
+`source_pdf`, with `pdf_pages` giving the pages in that file. Each output PDF
+gets the item's title and authors as metadata.
 
 --fix-metadata doesn't split anything: it rewrites the title, author and
 subject inside every existing per-item PDF of the year (e.g. PDFs supplied
@@ -59,7 +62,7 @@ def main():
         return
     if not proc.get("source_pdf"):
         sys.exit(f"The {args.year} conference has no `proceedings.source_pdf` to split.")
-    reader = PdfReader(site_path(proc["source_pdf"]))
+    readers = {proc["source_pdf"]: PdfReader(site_path(proc["source_pdf"]))}
     offset = int(proc.get("page_offset") or 0)
 
     made = 0
@@ -67,6 +70,10 @@ def main():
         pdf = fm.get("pdf") or ""
         if os.path.dirname(pdf) != year_dir_url(args.year):
             continue
+        source = fm.get("source_pdf") or proc["source_pdf"]
+        if source not in readers:
+            readers[source] = PdfReader(site_path(source))
+        reader = readers[source]
         span = parse_pages(fm.get("pdf_pages"))
         if not span:
             printed = parse_pages(fm.get("pages"))

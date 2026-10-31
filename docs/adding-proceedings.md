@@ -210,8 +210,10 @@ python3 scripts/split_proceedings.py YYYY
 ```
 
 If the offset changes partway through (unnumbered inserts), set
-`pdf_pages: 40-47` on the affected entries. Look at the first page of a few
-outputs.
+`pdf_pages: 40-47` on the affected entries. If the year was issued as more
+than one PDF (2014), keep one in `proceedings.source_pdf` and give each entry
+in another volume its own `source_pdf` and `pdf_pages`. Look at the first
+page of a few outputs.
 
 `import_contributions.py --extract-abstracts` drafts empty abstracts from the
 PDFs. It starts after an "Abstract" heading; items that print their text under
