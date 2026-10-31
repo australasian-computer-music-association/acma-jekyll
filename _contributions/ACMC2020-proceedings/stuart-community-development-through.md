@@ -11,7 +11,7 @@ section: Abstract Only Papers (no presentations)
 order: 72
 media:
 - kind: website
-  url: http://www.n10.as
+  url: https://www.n10.as
   label: Website
 - kind: website
   url: https://australasian-computer-music-association.github.io/acmc2020/poster_63.html

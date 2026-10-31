@@ -14,7 +14,7 @@ work:
 media:
 - kind: audio
   url: https://soundcloud.com/nicola-fumo-frattegiani/polvere-nera
-  label: Audio
+  label: Audio (SoundCloud)
 - kind: video
   url: https://youtu.be/cYRb5Qn6Rio
   label: Recording of Listening Room 1

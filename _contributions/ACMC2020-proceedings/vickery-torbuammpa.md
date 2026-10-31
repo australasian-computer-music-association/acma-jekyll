@@ -26,8 +26,8 @@ work:
     date: '2020-07-08'
 media:
 - kind: audio
-  url: http://lindsayvickery.bandcamp.com/track/t-o-r-b-u-a-m-m-p-a-2019-for-flute-bass-clarinet-electric-guitar-harp-piano-percussion-and-tape
-  label: Audio
+  url: https://lindsayvickery.bandcamp.com/track/t-o-r-b-u-a-m-m-p-a-2019-for-flute-bass-clarinet-electric-guitar-harp-piano-percussion-and-tape
+  label: Audio (Bandcamp)
 - kind: video
   url: https://youtu.be/KpqYpox7zMU
   label: Recording of Listening Room 3

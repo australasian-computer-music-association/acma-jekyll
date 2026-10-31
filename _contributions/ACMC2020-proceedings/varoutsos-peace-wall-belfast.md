@@ -9,7 +9,7 @@ order: 58
 media:
 - kind: video
   url: https://youtu.be/88Q91XPFF_A
-  label: Video
+  label: Video (YouTube)
 - kind: video
   url: https://youtu.be/Z9eg3Tb3dV0
   label: Recording of Spatialised Audio and Performance

@@ -16,7 +16,7 @@ work:
 media:
 - kind: video
   url: https://vimeo.com/390380677
-  label: Video
+  label: Video (Vimeo)
 - kind: video
   url: https://youtu.be/8WTeflA-Qs4
   label: Recording of Concert 2

@@ -17,7 +17,7 @@ keywords:
 media:
 - kind: video
   url: https://youtu.be/PR0LPOKeQDI
-  label: Video
+  label: Video (YouTube)
 - kind: video
   url: https://youtu.be/Z9eg3Tb3dV0
   label: Recording of Spatialised Audio and Performance

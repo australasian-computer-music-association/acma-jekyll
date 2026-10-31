@@ -16,7 +16,7 @@ work:
 media:
 - kind: audio
   url: https://soundcloud.com/stephen-oakes-175115657
-  label: Audio
+  label: Audio (SoundCloud)
 - kind: video
   url: https://youtu.be/yhmkX5qVV10
   label: Recording of Concert 3

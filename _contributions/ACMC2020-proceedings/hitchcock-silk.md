@@ -17,7 +17,7 @@ work:
 media:
 - kind: video
   url: https://www.youtube.com/watch?v=7CBVftnQjII
-  label: Video
+  label: Video (YouTube)
 - kind: video
   url: https://youtu.be/7CBVftnQjII
   label: Recording of Ambisonic Listening Room

@@ -14,7 +14,7 @@ work:
 media:
 - kind: video
   url: https://youtu.be/Wapn6mT1PtQ
-  label: Video
+  label: Video (YouTube)
 - kind: video
   url: https://youtu.be/-Y8QfZ70Nk0
   label: Recording of Concert 4

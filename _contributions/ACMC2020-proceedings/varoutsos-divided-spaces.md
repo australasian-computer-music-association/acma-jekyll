@@ -14,7 +14,7 @@ work:
 media:
 - kind: audio
   url: https://soundcloud.com/georgiosvaroutsos/sets/divided-spaces
-  label: Audio
+  label: Audio (SoundCloud)
 - kind: video
   url: https://youtu.be/KpqYpox7zMU
   label: Recording of Listening Room 3

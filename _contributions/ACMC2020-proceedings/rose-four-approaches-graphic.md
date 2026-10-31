@@ -14,7 +14,7 @@ keywords:
 media:
 - kind: video
   url: https://youtu.be/QhPTvP4ZDJs
-  label: Video
+  label: Video (YouTube)
 - kind: video
   url: https://youtu.be/wYl8gwqq_Co
   label: Recording of Synthesis, Interaction, and Notation

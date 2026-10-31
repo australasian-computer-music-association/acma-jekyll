@@ -1,4 +1,6 @@
 ---
+# The conference site also links https://lyndenbassett.bandcamp.com/track/piece-no-3, which no longer
+# exists (404 in October 2026, no Wayback Machine copy), so it is left out.
 # work.format and work.performers: from the program note's last paragraph (spellings as printed there).
 title: Piece No. 3
 authors:
@@ -20,9 +22,6 @@ work:
     venue: Online
     date: '2020-07-09'
 media:
-- kind: audio
-  url: https://lyndenbassett.bandcamp.com/track/piece-no-3
-  label: Audio
 - kind: video
   url: https://youtu.be/-Y8QfZ70Nk0
   label: Recording of Concert 4

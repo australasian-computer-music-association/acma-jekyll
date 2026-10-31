@@ -15,7 +15,7 @@ work:
 media:
 - kind: video
   url: https://vimeo.com/397733269
-  label: Video
+  label: Video (Vimeo)
 - kind: video
   url: https://youtu.be/-Y8QfZ70Nk0
   label: Recording of Concert 4

@@ -18,10 +18,10 @@ work:
 media:
 - kind: video
   url: https://youtu.be/AstlNI8VTRk
-  label: Video
+  label: Video (YouTube)
 - kind: audio
   url: https://soundcloud.com/ben_carey
-  label: Audio
+  label: Audio (SoundCloud)
 - kind: website
   url: https://australasian-computer-music-association.github.io/acmc2020/poster_97.html
   label: Page on the ACMC 2020 conference site

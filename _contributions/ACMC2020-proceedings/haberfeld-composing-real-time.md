@@ -13,7 +13,7 @@ reviewing: ''
 media:
 - kind: video
   url: https://youtu.be/7UqzwEbGKhA
-  label: Video
+  label: Video (YouTube)
 - kind: video
   url: https://youtu.be/ITJ2UvQ_P8A
   label: Recording of Computer Musicology and Composition

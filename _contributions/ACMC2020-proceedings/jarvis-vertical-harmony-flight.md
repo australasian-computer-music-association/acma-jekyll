@@ -9,7 +9,7 @@ order: 10
 media:
 - kind: video
   url: https://youtu.be/Ct-Sb-zGlG0
-  label: Video
+  label: Video (YouTube)
 - kind: video
   url: https://youtu.be/Df2m_d7aEgY
   label: Recording of DAWs, Liveness, and Algorithms

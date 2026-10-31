@@ -9,7 +9,7 @@ order: 74
 media:
 - kind: audio
   url: https://tonelist.bandcamp.com/album/ex-machina
-  label: Audio
+  label: Audio (Bandcamp)
 - kind: website
   url: https://australasian-computer-music-association.github.io/acmc2020/poster_43.html
   label: Page on the ACMC 2020 conference site

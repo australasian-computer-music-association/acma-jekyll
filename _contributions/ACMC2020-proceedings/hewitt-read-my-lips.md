@@ -19,7 +19,7 @@ work:
 media:
 - kind: video
   url: https://youtu.be/fuu5Pzs-ZBI
-  label: Video
+  label: Video (YouTube)
 - kind: website
   url: https://australasian-computer-music-association.github.io/acmc2020/poster_71.html
   label: Page on the ACMC 2020 conference site

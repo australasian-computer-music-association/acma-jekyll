@@ -9,7 +9,7 @@ order: 67
 media:
 - kind: video
   url: https://youtu.be/Fd0yvJpb7QY
-  label: Video
+  label: Video (YouTube)
 - kind: video
   url: https://youtu.be/wYl8gwqq_Co
   label: Recording of Synthesis, Interaction, and Notation

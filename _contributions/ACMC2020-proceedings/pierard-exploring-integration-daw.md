@@ -9,7 +9,7 @@ order: 9
 media:
 - kind: video
   url: https://vimeo.com/432341344
-  label: Video
+  label: Video (Vimeo)
 - kind: video
   url: https://youtu.be/Df2m_d7aEgY
   label: Recording of DAWs, Liveness, and Algorithms

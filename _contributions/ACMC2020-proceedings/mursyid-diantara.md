@@ -14,7 +14,7 @@ work:
 media:
 - kind: audio
   url: https://ideologikal.bandcamp.com
-  label: Audio
+  label: Audio (Bandcamp)
 - kind: video
   url: https://youtu.be/9gDckpBE2og
   label: Recording of Listening Room 2

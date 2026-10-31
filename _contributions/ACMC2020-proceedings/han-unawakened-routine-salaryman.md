@@ -14,7 +14,7 @@ work:
 media:
 - kind: video
   url: https://www.youtube.com/channel/UC3FT62Io_rbHpOVGSRBNj2Q
-  label: Video
+  label: Video (YouTube)
 - kind: video
   url: https://youtu.be/KpqYpox7zMU
   label: Recording of Listening Room 3

@@ -16,7 +16,7 @@ work:
 media:
 - kind: video
   url: https://youtu.be/XdphlWifu5Q
-  label: Video
+  label: Video (YouTube)
 - kind: video
   url: https://youtu.be/AKUVC31ZCgk
   label: Recording of Concert 1

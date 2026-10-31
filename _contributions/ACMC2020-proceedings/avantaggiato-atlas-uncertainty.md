@@ -16,7 +16,7 @@ work:
 media:
 - kind: video
   url: https://vimeo.com/264567646
-  label: Video
+  label: Video (Vimeo)
 - kind: video
   url: https://youtu.be/AKUVC31ZCgk
   label: Recording of Concert 1

@@ -17,7 +17,7 @@ work:
 media:
 - kind: audio
   url: https://benjamindrury.bandcamp.com
-  label: Audio
+  label: Audio (Bandcamp)
 - kind: video
   url: https://youtu.be/KpqYpox7zMU
   label: Recording of Listening Room 3

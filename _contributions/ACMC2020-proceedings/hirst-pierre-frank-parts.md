@@ -16,7 +16,7 @@ work:
 media:
 - kind: audio
   url: https://soundcloud.com/david-hirst-1
-  label: Audio
+  label: Audio (SoundCloud)
 - kind: video
   url: https://youtu.be/8WTeflA-Qs4
   label: Recording of Concert 2

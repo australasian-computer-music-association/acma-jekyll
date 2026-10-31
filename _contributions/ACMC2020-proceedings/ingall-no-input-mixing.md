@@ -12,7 +12,7 @@ reviewing: ''
 media:
 - kind: video
   url: https://www.youtube.com/watch?v=v7e_s1le5co
-  label: Video
+  label: Video (YouTube)
 - kind: video
   url: https://youtu.be/wYl8gwqq_Co
   label: Recording of Synthesis, Interaction, and Notation

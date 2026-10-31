@@ -17,7 +17,7 @@ work:
 media:
 - kind: audio
   url: https://alexismarieweaver.bandcamp.com/album/the-shimmering-haze
-  label: Audio
+  label: Audio (Bandcamp)
 - kind: video
   url: https://youtu.be/KpqYpox7zMU
   label: Recording of Listening Room 3

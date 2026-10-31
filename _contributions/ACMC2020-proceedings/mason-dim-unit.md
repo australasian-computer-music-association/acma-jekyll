@@ -17,7 +17,7 @@ work:
 media:
 - kind: audio
   url: https://dimunit.bandcamp.com/track/acmc2020
-  label: Audio
+  label: Audio (Bandcamp)
 - kind: video
   url: https://youtu.be/cYRb5Qn6Rio
   label: Recording of Listening Room 1

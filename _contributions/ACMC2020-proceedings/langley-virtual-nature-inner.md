@@ -19,7 +19,7 @@ work:
 media:
 - kind: video
   url: https://vimeo.com/431414088
-  label: Video
+  label: Video (Vimeo)
 - kind: video
   url: https://youtu.be/Z9eg3Tb3dV0
   label: Recording of Spatialised Audio and Performance

@@ -14,7 +14,7 @@ work:
 media:
 - kind: audio
   url: https://soundcloud.com/elsa-park/encroaching
-  label: Audio
+  label: Audio (SoundCloud)
 - kind: video
   url: https://youtu.be/3dyXnr6uG9w
   label: Recording of Listening Room 4

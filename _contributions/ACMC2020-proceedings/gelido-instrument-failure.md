@@ -17,10 +17,10 @@ work:
 media:
 - kind: video
   url: https://youtu.be/x1JR7MRy3nI
-  label: Video
+  label: Video (YouTube)
 - kind: audio
-  url: http://www.soundcloud.com/gelid0
-  label: Audio
+  url: https://soundcloud.com/gelid0
+  label: Audio (SoundCloud)
 - kind: video
   url: https://youtu.be/AKUVC31ZCgk
   label: Recording of Concert 1

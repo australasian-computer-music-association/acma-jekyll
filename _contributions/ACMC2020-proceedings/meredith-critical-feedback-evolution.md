@@ -17,7 +17,7 @@ work:
 media:
 - kind: video
   url: https://youtu.be/iFUZ2TDZzCk
-  label: Video
+  label: Video (YouTube)
 - kind: video
   url: https://youtu.be/yhmkX5qVV10
   label: Recording of Concert 3

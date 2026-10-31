@@ -9,7 +9,7 @@ order: 41
 media:
 - kind: video
   url: https://www.youtube.com/watch?v=ysOwzb2uiCI
-  label: Video
+  label: Video (YouTube)
 - kind: video
   url: https://youtu.be/0HK_UQzdNdw
   label: Recording of Culture, Communities, and Ecology
