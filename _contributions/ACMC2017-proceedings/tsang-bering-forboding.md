@@ -10,7 +10,15 @@ pages: '76'
 work:
   kind: audiovisual
   format: audiovisual work from field recordings and field footage data
+  presented:
+    event: Concert 2, 6:30 pm
+    venue: Elder Hall, University of Adelaide
+    date: '2017-09-30'
 pdf: /proceedings/ACMC2017-proceedings/tsang-bering-forboding.pdf
+media:
+- kind: documentation
+  url: /proceedings/ACMC2017-proceedings/ACMC-2017-program.pdf
+  label: Conference programme (PDF), from the ACMA website
 ---
 Bering(forboding) is an audiovisual piece created from a combination of field recordings and data taken from field footage. Bering(forboding) is an example of using multiple data elements in the composition process, and using data elements as methods of conveying narrative through the creative interaction between composer and data.
 

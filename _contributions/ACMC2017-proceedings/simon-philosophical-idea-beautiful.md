@@ -11,6 +11,14 @@ section_pdf: /proceedings/ACMC2017-proceedings/ACMC2017-performance-works-short-
 work:
   kind: performance
   format: improvised guitar and interactive electronics (Ableton Live, Max for Live), with screen
+  presented:
+    event: Concert 2, 6:30 pm
+    venue: Elder Hall, University of Adelaide
+    date: '2017-09-30'
+media:
+- kind: documentation
+  url: /proceedings/ACMC2017-proceedings/ACMC-2017-program.pdf
+  label: Conference programme (PDF), from the ACMA website
 ---
 This piece is part of the artist’s research in relation to working between music and philosophy. The structure of the works is a 3 part artifact comprised of textual and music components. The piece consists of improvised guitar and interactive electronic soundscape. Ableton Live is utilized with various custom built Max 4 Live applications. The guitar work is amplified though an Avid Eleven Rack that runs into an audio channel on Live. A screen with the “program” text and imagery is also part of the work.
 

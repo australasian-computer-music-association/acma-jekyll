@@ -11,8 +11,15 @@ pages: '74'
 work:
   kind: composition
   format: piano and electronics
+  presented:
+    event: Concert 2, 6:30 pm
+    venue: Elder Hall, University of Adelaide
+    date: '2017-09-30'
 pdf: /proceedings/ACMC2017-proceedings/hope-kaps-freed.pdf
 media:
+- kind: documentation
+  url: /proceedings/ACMC2017-proceedings/ACMC-2017-program.pdf
+  label: Conference programme (PDF), from the ACMA website
 - kind: website
   url: http://www.cathope.com/kaps-freed-2017.html
   label: The work on the composer's website (printed in the note)

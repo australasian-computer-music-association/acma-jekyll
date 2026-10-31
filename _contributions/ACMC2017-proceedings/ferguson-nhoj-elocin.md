@@ -11,7 +11,15 @@ pages: '73'
 work:
   kind: improvisation
   format: Mobile Noise Rig and Byzantine controller, quadraphonic
+  presented:
+    event: Concert 1, 1 pm
+    venue: Elder Hall, University of Adelaide
+    date: '2017-09-29'
 pdf: /proceedings/ACMC2017-proceedings/ferguson-nhoj-elocin.pdf
+media:
+- kind: documentation
+  url: /proceedings/ACMC2017-proceedings/ACMC-2017-program.pdf
+  label: Conference programme (PDF), from the ACMA website
 # The volume's heading and contents page read "Ehoj Elocin"; the note (and the duo's name,
 # John and Nicole reversed) is "Nhoj Elocin".
 ---

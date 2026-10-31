@@ -10,7 +10,15 @@ pages: '70'
 work:
   kind: composition
   format: flute, clarinet, violin, viola, cello and electronics
+  presented:
+    event: Concert 2, 6:30 pm
+    venue: Elder Hall, University of Adelaide
+    date: '2017-09-30'
 pdf: /proceedings/ACMC2017-proceedings/alsop-hush-caution-echoland.pdf
+media:
+- kind: documentation
+  url: /proceedings/ACMC2017-proceedings/ACMC-2017-program.pdf
+  label: Conference programme (PDF), from the ACMA website
 ---
 Hush! Caution! Echoland! is part of a series of works entitled “Sounding Finnegan’s Wake”.
 
