@@ -12,8 +12,15 @@ work:
   kind: performance
   format: NOISA instruments and Myo Armband
   presented:
-    event: Lunchtime Concert
+    event: Lunchtime Concert, Sunday 12.30 pm
     venue: Basil Jones Orchestral Hall, Queensland Conservatorium
+    date: '2016-07-10'
+media:
+- kind: website
+  url: https://nime2016.sched.com/print/all
+  label: Conference schedule (Sched)
+# Day and time from the conference schedule on Sched (nime2016.sched.com/print/all,
+# fetched 1 November 2026), which lists the works under the same sessions as the volume.
 # From the volume's Creative Works section (pp. 108–120), which prints each work's
 # program note under its venue; format is given only where the note states it.
 ---

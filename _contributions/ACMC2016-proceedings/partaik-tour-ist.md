@@ -13,7 +13,17 @@ work:
   kind: sound-art
   format: mobile app (augmented soundwalk)
   presented:
-    event: Augmented Reality Soundwalks
+    event: Sound Walks and Augmented Reality Experiences, Monday 3.30 pm
+    venue: from the Foyer, Queensland Conservatorium, into the South Bank Parklands
+    date: '2016-07-11'
+media:
+- kind: website
+  url: https://nime2016.sched.com/print/all
+  label: Conference schedule (Sched)
+# Day and time from the conference schedule on Sched (nime2016.sched.com/print/all,
+# fetched 1 November 2026), which lists the works under the same sessions as the volume.
+# Sched also lists it with the installations both days; the 3.30 pm slot is the walks
+# departing from the foyer on Monday.
 # From the volume's Creative Works section (pp. 108–120), which prints each work's
 # program note under its venue; format is given only where the note states it.
 ---

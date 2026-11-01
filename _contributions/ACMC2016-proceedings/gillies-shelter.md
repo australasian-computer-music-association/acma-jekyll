@@ -10,9 +10,23 @@ section_pdf: /proceedings/ACMC2016-proceedings/ACMC2016-creative-works.pdf
 work:
   kind: composition
   format: bass clarinet, electric guitar, and electronics
+  performers:
+  - Cat Hope (bass flute)
+  - Lindsay Vickery (bass clarinet)
+  - Aaron Wyatt (viola)
   presented:
-    event: Evening Concert
+    event: Evening Concert, Sunday 7.30 pm
     venue: Basil Jones Orchestral Hall, Queensland Conservatorium
+    date: '2016-07-10'
+media:
+- kind: website
+  url: https://nime2016.sched.com/print/all
+  label: Conference schedule (Sched)
+# Day and time from the conference schedule on Sched (nime2016.sched.com/print/all,
+# fetched 1 November 2026), which lists the works under the same sessions as the volume.
+# Performers from Sched, which lists bass flute, bass clarinet and viola; the volume's
+# note describes this version as for bass clarinet, electric guitar and electronics, so
+# the format is left as the volume gives it.
 # From the volume's Creative Works section (pp. 108–120), which prints each work's
 # program note under its venue; format is given only where the note states it.
 ---

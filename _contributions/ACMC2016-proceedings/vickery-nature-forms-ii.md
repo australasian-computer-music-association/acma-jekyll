@@ -11,9 +11,24 @@ work:
   kind: composition
   format: flute, clarinet, viola, cello, percussion, hybrid field recording and electronics
   created: 2016
+  performers:
+  - Cat Hope (bass flute)
+  - Lindsay Vickery (clarinet)
+  - Aaron Wyatt (viola)
+  - Vanessa Tomlinson (percussion)
   presented:
-    event: Evening Concert
+    event: Evening Concert, Sunday 7.30 pm
     venue: Basil Jones Orchestral Hall, Queensland Conservatorium
+    date: '2016-07-10'
+media:
+- kind: website
+  url: https://nime2016.sched.com/print/all
+  label: Conference schedule (Sched)
+# Day and time from the conference schedule on Sched (nime2016.sched.com/print/all,
+# fetched 1 November 2026), which lists the works under the same sessions as the volume.
+# Performers from Sched, which titles the work "for flute, clarinet, viola, percussion,
+# hybrid field recording and electronics" (no cello) and lists bass flute; the format
+# is left as the volume gives it.
 # From the volume's Creative Works section (pp. 108–120), which prints each work's
 # program note under its venue; format is given only where the note states it.
 ---
