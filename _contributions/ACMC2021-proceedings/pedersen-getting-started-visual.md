@@ -10,6 +10,12 @@ section: Workshops
 order: 3
 pages: 3-4
 section_pdf: /proceedings/ACMC2021-proceedings.pdf
+media:
+- kind: documentation
+  url: https://web.archive.org/web/20211022225018/https://schedule.acmc21.art/
+  label: Conference schedule, schedule.acmc21.art (Wayback Machine, October 2021)
+# Slot from the conference schedule (schedule.acmc21.art; github.com/vgiles/acmc21-calendar):
+# Thursday 26 August 2021, Session 1, 8:30 am, Room 3 (workshops and artist presentations), on Zoom.
 ---
 As co-curators of SeenSound, a Melbourne-based visual music and audio-visual improv series, we propose a practical workshop which introduces participants to both the concepts and the practice of visual music and audio-visual improv through engagement with historical examples and hands-on creation of their own performances, either individually or in small groups. The practical elements of the workshop will focus on relatively low-cost software and equipment, including open-source software, raspberry pi computing platforms and older / DIY audio-visual equipment that is affordable. The workshop will focus on a playful approach to technology and visual music concepts and will not assume familiarity with formal academic context or prior experience with technology. Participants with advanced technical skills or knowledge will be encouraged to make room for newcomers and engage with a "beginner’s mind" while exploring the audiovisual space as a way of refreshing their own creative practice.
 

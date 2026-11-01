@@ -10,6 +10,13 @@ section: Papers and Talks
 order: 36
 pages: 28-29
 section_pdf: /proceedings/ACMC2021-proceedings.pdf
+media:
+- kind: documentation
+  url: https://web.archive.org/web/20211022225018/https://schedule.acmc21.art/
+  label: Conference schedule, schedule.acmc21.art (Wayback Machine, October 2021)
+# Slot from the conference schedule (schedule.acmc21.art; github.com/vgiles/acmc21-calendar):
+# Thursday 26 August 2021, Session 10, 5 pm, Room 3 (workshops and artist presentations), on Zoom.
+# The schedule gives Zavada's name only, without a title.
 ---
 Jack-hammering, heavy drilling and pouring concrete are not sounds that one would normally associate with music. However, a group of students from the Sydney Conservatorium of Music have turned these activities into an engaging piece of music and have built music from the ground up through location sound capture on a construction site. Wearing hard hats and boots for their guided tour to the 34thfloor of AMP Capital’s Quay Quarter Tower, Circular Quay, eighteen first- and second-year students from the Digital Music and Media program at the Sydney Conservatorium of Music recorded the existing construction sounds over an afternoon. AMP Capital approached their neighbors at the Sydney Conservatorium of Music to help them document the sustainable ethos of the building –a vertical village supporting connection and collaboration rebuilt from 63 percent of the existing tower. Led by Dr Ivan Zavada, Senior Lecturer in Composition and Music Technology, the students extracted the industrial sounds of demolition and rendered them into the musical style of their choice, to create eighteen short musical pieces which Dr Zavada edited into one long (56 minute) audio visual experience. Dr Ivan Zavada, a specialist in electroacoustic music with a background in computer technology combined his own skills with an inspiring and progressive approach to teaching, allowing students to explore new ways of problem solving through creativity and innovation. The proposed artist talk will outline how Dr Zavada responded to the challenge of involving students to create something out of the ordinary while learning practical skills and initiating a unique collaboration with industry partner AMP Capital in Sydney.
 

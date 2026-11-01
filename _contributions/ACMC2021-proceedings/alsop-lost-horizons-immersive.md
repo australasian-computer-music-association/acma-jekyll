@@ -10,6 +10,13 @@ section: Papers and Talks
 order: 32
 pages: '25'
 section_pdf: /proceedings/ACMC2021-proceedings.pdf
+media:
+- kind: documentation
+  url: https://web.archive.org/web/20211022225018/https://schedule.acmc21.art/
+  label: Conference schedule, schedule.acmc21.art (Wayback Machine, October 2021)
+# Slot from the conference schedule (schedule.acmc21.art; github.com/vgiles/acmc21-calendar):
+# Thursday 26 August 2021, Session 8, 2:30 pm, Room 1 (papers), on Zoom.
+# The work was performed that evening (alsop-lost-horizons).
 ---
 This paper discusses the effect of lockdown in Melbourne on the authors/artists, who are from very different cultures and histories, and how this effect may be represented through artistic works. It aims to offer insight to ways of communicating what cannot be communicated using traditional forms of artistic creativity, and to explore alternative ways to connect to an emotional state through art and technology. This has significance in developing creative approaches to integrating diverse art forms within a specific intention, to express the impact of isolation caused by lockdown for the artists.
 

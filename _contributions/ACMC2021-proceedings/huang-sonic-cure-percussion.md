@@ -10,6 +10,13 @@ order: 6
 pages: 6-7
 section_pdf: /proceedings/ACMC2021-proceedings.pdf
 bio: 'Weitong Huang: Fourth year Honours student studying a software engineering degree at the Australian National University (ANU). Weitong worked with Dr. Charles Martin in the Code/Creativity/Culture (C/C/C) Studio during the 2020 summer break in ANU’s Acton campus on the project.'
+media:
+- kind: documentation
+  url: https://web.archive.org/web/20211022225018/https://schedule.acmc21.art/
+  label: Conference schedule, schedule.acmc21.art (Wayback Machine, October 2021)
+# Slot from the conference schedule (schedule.acmc21.art; github.com/vgiles/acmc21-calendar):
+# Thursday 26 August 2021, Session 3, 11:30 am, Room 1 (papers), on Zoom.
+# The schedule's title: "Percussion Inspired Modular Synthesiser Interface in Augmented Reality".
 ---
 This paper describes a synthesizer interface that can be controlled using basic physical interactions between virtual objects in HoloLens 2 with augmented reality (AR) technology. We start by talking about high level designs, including our initiatives of creating this interface. And in the following section, we talk about implementation details of the virtual space and the sound-making mechanism. Finally, we conclude our work by a demonstration video showing our work, Sonic Cure. We would like to view our work as a novel musical performance tool rather than an actual art installation. And we address this in the future work section.
 
