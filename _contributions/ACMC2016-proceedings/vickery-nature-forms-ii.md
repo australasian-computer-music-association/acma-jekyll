@@ -21,11 +21,11 @@ work:
     venue: Basil Jones Orchestral Hall, Queensland Conservatorium
     date: '2016-07-10'
 media:
-- kind: website
-  url: https://nime2016.sched.com/print/all
-  label: Conference schedule (Sched)
+- kind: documentation
+  url: /archive/acmc2016/nime2016.sched.com/print/all.html
+  label: Conference schedule (Sched print view, archived copy)
 # Day and time from the conference schedule on Sched (nime2016.sched.com/print/all,
-# fetched 1 November 2026), which lists the works under the same sessions as the volume.
+# fetched 1 November 2026; copy in archive/acmc2016/), which lists the works under the same sessions as the volume.
 # Performers from Sched, which titles the work "for flute, clarinet, viola, percussion,
 # hybrid field recording and electronics" (no cello) and lists bass flute; the format
 # is left as the volume gives it.
