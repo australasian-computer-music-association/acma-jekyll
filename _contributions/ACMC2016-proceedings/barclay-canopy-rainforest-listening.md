@@ -12,7 +12,14 @@ work:
   kind: sound-art
   format: augmented reality app
   presented:
-    event: Augmented Reality Soundwalks
+    event: Augmented Reality Soundwalks, Sunday 10 July, 9 am to 9 pm, and Monday 11 July, 9 am to 12.30 pm
+    date: '2016-07-10'
+media:
+- kind: website
+  url: https://nime2016.sched.com/print/all
+  label: Conference schedule (Sched)
+# Day and time from the conference schedule on Sched (nime2016.sched.com/print/all,
+# fetched 1 November 2026), which lists the works under the same sessions as the volume.
 # From the volume's Creative Works section (pp. 108–120), which prints each work's
 # program note under its venue; format is given only where the note states it.
 ---
