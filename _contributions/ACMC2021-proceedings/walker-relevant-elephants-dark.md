@@ -12,6 +12,19 @@ section_pdf: /proceedings/ACMC2021-proceedings.pdf
 work:
   kind: performance
   format: synthesisers (Roland TB-3 and Roland Gaia or MC-808) with backing track
+  presented:
+    event: Session 7, 1:30 pm
+    venue: Online, streamed on YouTube
+    date: '2021-08-27'
+media:
+- kind: documentation
+  url: https://web.archive.org/web/20211022225018/https://schedule.acmc21.art/
+  label: Conference schedule, schedule.acmc21.art (Wayback Machine, October 2021)
+- kind: video
+  url: https://www.youtube.com/watch?v=BDnawhwtrGw
+  label: Day 2 live stream, Friday 27 August (YouTube, Australian Institute of Music)
+# Slot from the conference schedule (schedule.acmc21.art; github.com/vgiles/acmc21-calendar):
+# Friday 27 August 2021, Session 7, 1:30 pm, Room 2 (performances), streamed on YouTube.
 ---
 Relevant Elephants are me, Ash Walker, and my two stuffed elephants, Relevant and Irreverent. We wish to present a live set exploring how synthesisers can be used to create atmosphere and texture. The elephants will use our recently released ep “The Dark Side of Baboons” as a basis for the performance. I have also worked as a composer and sound designer on several theatre productions and am endlessly fascinated by the way a sound can evoke a certain mood. I also aim to explore the relationship between sound and mood in this performance.
 
