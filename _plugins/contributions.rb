@@ -1,4 +1,4 @@
-# Two small jobs for the _contributions collection (the per-item proceedings).
+# Small jobs for the _contributions collection (the per-item proceedings).
 Jekyll::Hooks.register :site, :post_read do |site|
   conferences = site.collections["conferences"].docs
   entries = site.collections["contributions"]&.docs || []
@@ -24,5 +24,11 @@ Jekyll::Hooks.register :site, :post_read do |site|
   site.static_files.each do |file|
     next unless file.url.start_with?("/proceedings/") && %w(.pdf .zip).include?(file.extname)
     file.data["sitemap"] = false unless own_pdfs.include?(file.url)
+  end
+
+  # 3. Keep archived copies of old conference sites (archive/, issue #29) out
+  # of the sitemap: they are kept as sources, not as pages of this site.
+  site.static_files.each do |file|
+    file.data["sitemap"] = false if file.url.start_with?("/archive/")
   end
 end

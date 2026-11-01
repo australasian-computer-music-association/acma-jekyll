@@ -1,0 +1,2 @@
+# Archived copies of old sites (issue #29) are kept byte for byte: no line-ending changes.
+archive/** -text
